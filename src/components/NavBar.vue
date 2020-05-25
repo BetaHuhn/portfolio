@@ -1,17 +1,13 @@
 <template>
   <div id="header" class="navbar noselect" :class="isScroll && 'headerScroll'">
-    <div class="logo">
+    <router-link @mouseover="$hideCursor" @mouseleave="$showCursor" to="/" class="nolink" ><div class="logo">
       <img width="40px" src="/static/logo.png">
       <p>Maximilian Schiller</p>
-    </div>
+    </div></router-link>
     <div class="nav">
-      <p class="link" :class="languageIsEn && 'primary'" @click="switchLangToEn">en</p>
+      <p class="link" @mouseover="$hideCursor" @mouseleave="$showCursor" :class="languageIsEn && 'primary'" @click="switchLangToEn">en</p>
       <p>/</p>
-      <p class="link" :class="languageIsDe && 'primary'" @click="switchLangToDe">de</p>
-      <!-- <router-link class="link primary" to="/dashboard">Home</router-link>
-      <router-link class="link" to="/projects">Projects</router-link>
-      <router-link class="link" to="/gallery">Gallery</router-link>
-      <router-link class="link" to="/contact">Contact</router-link> -->
+      <p class="link" @mouseover="$hideCursor" @mouseleave="$showCursor" :class="languageIsDe && 'primary'" @click="switchLangToDe">de</p>
     </div>
   </div>
 </template>
@@ -45,9 +41,11 @@
         }
       },
       switchLangToEn: function(){
+        localStorage.setItem('lang', "en");
          this.$store.dispatch("switchLangToEn");
       },
       switchLangToDe: function(){
+        localStorage.setItem('lang', "de");
          this.$store.dispatch("switchLangToDe");
       }
     },
@@ -69,6 +67,9 @@
     height: 70px;
     font-size: 20px;
     transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
   }
 
   .headerScroll {
@@ -86,6 +87,7 @@
     text-decoration: none;
     color: var(--font);
     margin: 1.2rem;
+    cursor: pointer;
   }
 
   .primary {
@@ -103,5 +105,33 @@
 
   .logo img {
     margin-right: 1rem;
+  }
+
+  .nolink{
+    text-decoration: none;
+    color: var(--font);
+  }
+
+  @media screen and (max-width: 1000px) {
+    .logo{
+      margin-left: 1rem;
+    }
+    .logo p{
+      display: none;
+    }
+    .logo img {
+      margin-top: 15px;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    .link{
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+
+    .nav{
+      margin-right: 1rem;
+    }
   }
 </style>

@@ -1,8 +1,8 @@
 <template>
     <div class="console">
-        <p><span class="green">{{hostname}}</span>:<span class="blue">~{{path}}</span>$</p>
+        <p class="hostname"><span class="green">{{bashConsole.hostname}}</span>:<span class="blue">~{{bashConsole.path}}</span>$</p>
         <p v-if="!isFinished" id="text" class="command">{{currentText}}</p>
-        <a v-else href="mailto:schiller@mxis.ch" class="command">{{currentText}}</a>
+        <a @mouseover="$hideCursor" @mouseleave="$showCursor" v-else href="mailto:schiller@mxis.ch" class="command">{{this.content[this.content.current].endText}}</a>
     </div>
 </template>
 
@@ -16,33 +16,32 @@
                 isFinished: false,
             }
         },
-        props: {
-            hostname: {
-                type: String
+        computed: {
+            bashConsole: {
+                get: function () {
+                    return this.$store.state.bashConsole;
+                }
             },
-            path: {
-                type: String
+            content: {
+                get: function () {
+                    return this.$store.state.content;
+                },
             },
-            messages: {
-                type: Array
-            },
-            endText: {
-                type: String
-            }
         },
         methods: {
             runAnimation: async function () {
                 await this.timer(1000);
                 this.currentText = "";
                 this.isFinished = false;
-                for (let i in this.messages) {
+                for (let i in this.content[this.content.current].messages) {
                     this.currentIndex = i;
-                    await this.typeText(this.messages[this.currentIndex]);
+                    await this.typeText(this.content[this.content.current].messages[this.currentIndex]);
                     await this.timer(800);
                     await this.removeText();
                 }
+                await this.typeText(this.content[this.content.current].endText);
                 this.isFinished = true;
-                this.typeText(this.endText);
+
             },
             removeText: function () {
                 return new Promise((resolve) => {
@@ -66,7 +65,7 @@
                     }
                     setTimeout(() => {
                         resolve();
-                    }, 100 * text.length);
+                    }, 80 * text.length);
                 })
             }
         },
@@ -85,18 +84,23 @@
         width: 750px;
         margin-top: 2rem;
         border-right: 3px solid var(--primary);
+        box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.18)
     }
-
     .selected {
         background: var(--font);
         color: #000 !important;
     }
 
+    .hostname{
+        margin-top: 16px;
+    }
+
     .command {
-        margin-left: 0.5rem;
+        margin-left: 0.2rem;
         text-decoration: none;
         color: var(--font);
         margin-top: 16px;
+        text-align: left;
     }
 
     .command::after {
@@ -110,6 +114,19 @@
         margin-left: 1px;
         -webkit-animation: blink 1s step-end infinite;
         animation: blink 1s step-end infinite;
+    }
+
+    @media screen and (max-width: 750px) {
+        .console{
+            width: 90%;
+            font-size: 10px;
+        }
+        .command{
+            margin-top: 10px;
+        }
+        .hostname{
+            margin-top: 10px;
+        }
     }
 
     @-webkit-keyframes blink {

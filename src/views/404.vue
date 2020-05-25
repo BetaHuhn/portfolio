@@ -1,20 +1,21 @@
 <template>
     <div id="error">
         <main>
+            <NavBar />
             <div class="content">
                 <div class="not-found-wrapper">
                     <div class="branding noselect">
                         <div class="wordmark"> <img src="/static/404.svg"></div>
                     </div>
-                    <h2>Error 404</h2>
-                    <div style="text-align:center;margin-bottom:40px;">Either the short url doesn't exist or you are
-                        trying to use a url that is not valid
+                    <h2>{{content[content.current].error}} 404</h2>
+                    <div style="text-align:center;margin-bottom:40px;">
+                        <p>{{content[content.current].notFound}}</p>
                     </div>
                     <div class="main-button">
-                        <button onclick="window.location.href='/'" class="clean"> ← Go back Home</button> 
+                        <button @mouseover="$hideCursor" @mouseleave="$showCursor" onclick="window.location.href='/'" class="clean"> ← {{content[content.current].backHome}}</button> 
                     </div>
                     <div> 
-                        <a class="link" target="_top" href="mailto:webmaster@mxis.ch">Report a problem</a> 
+                        <a @mouseover="$hideCursor" @mouseleave="$showCursor" class="reportLink" target="_top" href="mailto:webmaster@mxis.ch">{{content[content.current].reportProblem}}</a> 
                     </div>
                 </div>
             </div>
@@ -23,15 +24,55 @@
 </template>
 
 <script>
+    import NavBar from '@/components/NavBar'
 
     export default {
         name: 'App',
+        components:{
+            NavBar
+        },
+        computed: {
+            content: {
+                get: function () {
+                    return this.$store.state.content;
+                },
+            }
+        },
+        methods:{
+            detectLang: function () {
+                if (localStorage.getItem('lang')){
+                    if(localStorage.getItem('lang') == "de"){
+                        this.$store.dispatch("switchLangToDe");
+                        localStorage.setItem('lang', "de");
+                    }else{
+                        this.$store.dispatch("switchLangToEn");
+                        localStorage.setItem('lang', "en");
+                    }
+                }else{
+                    if(navigator.language.includes("de")){
+                        this.$store.dispatch("switchLangToDe");
+                        localStorage.setItem('lang', "de");
+                    }else{
+                        this.$store.dispatch("switchLangToEn");
+                        localStorage.setItem('lang', "en");
+                    }	
+                }	 
+            }
+        },
+        mounted(){
+            this.detectLang();
+        }
     }
 </script>
 
-<style lang="scss">
+<style scoped>
     #error {
         height: 100%;
+        -webkit-animation: fadein 1s;
+        -moz-animation: fadein 1s;
+        -ms-animation: fadein 1s;
+        -o-animation: fadein 1s;
+        animation: fadein 1s;
     }
 
     #error .content {
@@ -133,5 +174,10 @@
         margin-bottom: 20px;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         user-select: none;
+    }
+
+    .reportLink{
+        color: var(--primary);
+        text-decoration: none;
     }
 </style>

@@ -3,29 +3,22 @@
         <h1>{{project.name}}</h1>
         <p>{{descriptionText}}</p>
         <p class="githubStats">{{languageText}}
-            <font-awesome-icon icon="star" size="lg" class="icon" />{{stars}}</p>
+            <!-- <font-awesome-icon icon="star" size="lg" class="icon" />{{stars}}</p> -->
         <!-- <span>{{updatedAt}}</span> -->
         <div class="content-links-wrapper">
             <div class="content-links">
-                <a :href="project.demo" class="content-link">Live Demo</a>
-                <a :href="`https://github.com/${project.github}`" class="content-link">GitHub</a>
+                <a @mouseover="$hideCursor" @mouseleave="$showCursor" :href="project.demo" class="content-link">Live Demo</a>
+                <a @mouseover="$hideCursor" @mouseleave="$showCursor" :href="`https://github.com/${project.github}`" class="content-link">GitHub</a>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    const humanizeDuration = require('humanize-duration')
+    //const humanizeDuration = require('humanize-duration')
 
     export default {
         name: 'ProjectCard',
-        data: function () {
-            return {
-                stars: 0,
-                language: "",
-                description: ""
-            }
-        },
         computed: {
             content: {
                 get: function () {
@@ -34,19 +27,19 @@
             },
             descriptionText: {
                 get: function() {
-                    if(this.description.length < 1){
+                    if(this.project.description[this.content.current].length < 1){
                         return this.content[this.content.current].loading;
                     }else{
-                        return this.description;
+                        return this.project.description[this.content.current];
                     }
                 }
             },
             languageText: {
                 get: function() {
-                    if(this.language.length < 1){
+                    if(this.project.language.length < 1){
                         return this.content[this.content.current].loading;
                     }else{
-                        return this.language;
+                        return this.project.language;
                     }
                 }
             }
@@ -54,6 +47,12 @@
         props: {
             project: {
                 name: {
+                    type: String
+                },
+                description: {
+                    type: String
+                },
+                language: {
                     type: String
                 },
                 demo: {
@@ -66,8 +65,8 @@
         },
         methods: {
             queryGithub: async function () {
-                //return null
-                fetch(`https://api.github.com/repos/${this.project.github}`)
+                return null
+                /* fetch(`https://api.github.com/repos/${this.project.github}`)
                     .then(async response => {
                         const data = await response.json();
                         if (!response.ok) {
@@ -87,7 +86,7 @@
                     .catch(error => {
                         this.description = this.content[this.content.current].loadingError;
                         console.error('There was an error!', error);
-                    });
+                    }); */
             }
         },
         mounted() {
@@ -101,13 +100,15 @@
         background-color: var(--background-light);
         border-radius: 10px;
         padding: 20px 20px;
-        width: 100%;
+        width: 90%;
         min-height: 200px;
         position: relative;
+        box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.18)
     }
 
     .content-item h1 {
         margin: 0;
+        font-size: 27px;
     }
 
     .content-item span {
@@ -154,5 +155,21 @@
         color: var(--primary);
         position: absolute;
         bottom: 50px;
+    }
+
+    .githubStats svg{
+        margin-bottom: 2px;
+    }
+
+    @media screen and (max-width: 750px) {
+        .content-item h1 {
+            font-size: 22px;
+        }
+        .content-item p {
+            margin-top: 5px;
+        }
+        .githubStats{
+            margin-top: 5px;
+        }
     }
 </style>

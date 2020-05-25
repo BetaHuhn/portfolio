@@ -6,13 +6,14 @@
                 <Console hostname="betahuhn@MaxServer" path="/about" :messages="content[content.current].messages"
                     :endText="content[content.current].endText" />
                 <div id="social" class="socials">
-                    <a href="https://github.com/BetaHuhn">
+                    <a @mouseover="$hideCursor" @mouseleave="$showCursor" href="https://github.com/BetaHuhn">
                         <font-awesome-icon :icon="['fab', 'github']" size="lg" class="iconLogo" /></a>
-                    <a href="https://instagram.com/creerow">
+                    <a @mouseover="$hideCursor" @mouseleave="$showCursor" href="https://instagram.com/creerow">
                         <font-awesome-icon :icon="['fab', 'instagram']" size="lg" class="iconLogo" /></a>
-                    <a href="https://dribbble.com/creerow">
+                    <a @mouseover="$hideCursor" @mouseleave="$showCursor" href="https://dribbble.com/creerow">
                         <font-awesome-icon :icon="['fab', 'dribbble']" size="lg" class="iconLogo" /></a>
                 </div>
+                <div id="stickTo"></div>
             </div>
         </div>
         <div class="content">
@@ -21,34 +22,26 @@
                 <ProjectCard v-for="project in projects" :key="project.name" :project="project" />
             </div>
         </div>
+        <div class="skills">
+            <h1 class="headline">{{content[content.current].skills}}</h1>
+            <div class="skill-grid">
+                <SkillCard v-for="skill in skills" :key="skill.name" :skill="skill" />
+            </div>
+        </div>
         <div class="gallery">
             <h1 class="headline" style="margin-bottom: 0;">{{content[content.current].gallery}}</h1>
             <div class="navLink">
-                <p>{{content[content.current].link.click}} <a href="/gallery">{{content[content.current].link.here}}</a> {{content[content.current].link.more}}</p>
+                <p>{{content[content.current].link.click}} <router-link @mouseover="$hideCursor" @mouseleave="$showCursor" to="/gallery">{{content[content.current].link.here}}</router-link> {{content[content.current].link.more}}</p>
             </div>
             <div class="photo-grid">
-                <Photo v-for="index in photos.firstLoad" :key="index" :src="'/static/images/photo-' + index + '.jpg'" />
+                <Photo v-for="index in photos.firstLoad" :key="index" :src="'photo-' + index + '.jpg'" />
             </div>
         </div>
         <hr class="devider">
         <div class="contact">
-            <h1 class="headline">{{content[content.current].contactHead}}</h1>
+            <h1 class="headline" style="margin-bottom: 0;">{{content[content.current].contactHead}}</h1>
             <p class="subline">{{content[content.current].contactSub}}</p>
-            <div class="contact-content">
-                <label for="name">{{content[content.current].name}}</label>
-                <input name="name" placeholder="Richard Hendrix">
-                <label for="email">{{content[content.current].email}}</label>
-                <input name="email" placeholder="richard@piedpiper.com">
-                <label for="message">{{content[content.current].message}}</label>
-                <textarea name="message" :placeholder="content[content.current].messagePlaceholder" />
-                <div class="hero">
-                    <a id="heroBtn" class="hero__button" href="/login" style="--x:285px; --y:57px;">
-                    <span>{{content[content.current].reachOut}}</span>
-                    </a>
-                    <div class="hero__line"></div>
-                    <p class="p4">{{content[content.current].orEmail}} <a class="contactLink" href="mailto:hello@mxis.ch" target="_blank">hello@mxis.ch</a></p>
-                </div>
-            </div>
+            <Contact />
         </div>
         <Footer />
     </div>
@@ -58,8 +51,10 @@
     import NavBar from '@/components/NavBar'
     import Console from '@/components/Console'
     import ProjectCard from '@/components/ProjectCard'
+    import SkillCard from '@/components/SkillCard'
     import Photo from '@/components/Photo'
     import Footer from '@/components/Footer'
+    import Contact from '@/components/Contact'
 
     export default {
         name: 'Home',
@@ -67,8 +62,10 @@
             NavBar,
             Console,
             ProjectCard,
+            SkillCard,
             Photo,
-            Footer
+            Footer,
+            Contact
         },
         data: function () {
             return {
@@ -79,6 +76,11 @@
             bashConsole: {
                 get: function () {
                     return this.$store.state.bashConsole;
+                }
+            },
+            skills: {
+                get: function () {
+                    return this.$store.state.skills;
                 }
             },
             projects: {
@@ -99,24 +101,36 @@
         },
         methods: {
             scrollSocial: function () {
-                if (!this.socialAttached && window.scrollY > 300) {
+                const windowTop = window.pageYOffset;
+                const top = document.getElementById("stickTo").offsetTop;
+                if(windowTop > top){
                     this.socialAttached = true;
                     document.getElementById("social").classList.add('fixed-top');
-                }
-                if (this.socialAttached && window.scrollY < 300) {
+                }else{
                     this.socialAttached = false;
                     document.getElementById("social").classList.remove('fixed-top');
                 }
             },
             detectLang: function () {
-                console.log(navigator.language)
-                if(navigator.language.includes("de")){
-                    this.$store.dispatch("switchLangToDe");
+                if (localStorage.getItem('lang')){
+                    if(localStorage.getItem('lang') == "de"){
+                        localStorage.setItem('lang', "de");
+                        this.$store.dispatch("switchLangToDe");
+                    }else{
+                        localStorage.setItem('lang', "en");
+                        this.$store.dispatch("switchLangToEn");
+                    }
                 }else{
-                    this.$store.dispatch("switchLangToEn");
-                }		 
+                    if(navigator.language.includes("de")){
+                        localStorage.setItem('lang', "de");
+                        this.$store.dispatch("switchLangToDe");
+                    }else{
+                        localStorage.setItem('lang', "en");
+                        this.$store.dispatch("switchLangToEn");
+                    }	
+                }	 
             },
-                    
+            
         },
         created() {
             window.addEventListener('scroll', this.scrollSocial);
@@ -130,14 +144,20 @@
     }
 </script>
 
-<style lang="scss">
+<style scoped>
     #home{
         margin-bottom: 5rem;
+        -webkit-animation: fadein 1s;
+        -moz-animation: fadein 1s;
+        -ms-animation: fadein 1s;
+        -o-animation: fadein 1s;
+        animation: fadein 1s;
     }
     .landing-wrapper {
         /* background-color: rgb(117, 117, 117); */
         background: url("/static/backgroundBig.jpg");
         background-position: center center;
+        background-size: cover;
     }
 
     .landing {
@@ -156,33 +176,60 @@
 
     .headline {
         text-align: center;
-        margin: 3rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    @media screen and (max-width: 750px) {
+        .headline{
+            font-size: 20px;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
     }
 
     .subline {
         text-align: center;
-        margin-top: -2.5rem;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .content-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, max(500px));
+        grid-template-columns: repeat(auto-fit, max(400px));
         justify-content: center;
-        column-gap: 3rem;
-        row-gap: 2rem;
+        column-gap: 1rem;
+        row-gap: 1rem;
         justify-items: center;
-        max-width: 80%;
+        max-width: 1000px;
         width: 80%;
         margin: auto;
     }
 
+    @media screen and (max-width: 500px) {
+        .content-grid {
+            grid-template-columns: repeat(auto-fit, max(300px));
+        }
+    }
+
     .photo-grid {
         display: grid;
-        /* grid-template-columns: 1fr 1fr 1fr; */
-        grid-template-columns: repeat(auto-fit, max(400px));
+        grid-template-columns: repeat(auto-fit, max(300px));
         justify-content: center;
-        column-gap: 3rem;
-        row-gap: 2rem;
+        column-gap: 1rem;
+        row-gap: 1rem;
+        justify-items: center;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .skill-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, max(300px));
+        justify-content: center;
+        column-gap: 1.5rem;
+        row-gap: 1rem;
         justify-items: center;
         max-width: 80%;
         margin: auto;
@@ -202,6 +249,14 @@
         font-size: 25px;
     }
 
+    @media screen and (max-width: 750px) {
+        .socials a{
+            margin-right: 10px;
+            margin-left: 10px;
+            font-size: 20px;
+        }
+    }
+
     .fixed-top {
         position: fixed;
         top: 0;
@@ -212,6 +267,10 @@
     .fixed-top a {
         margin-top: 1.5rem;
         font-size: 15px;
+    }
+
+    #stickTo{
+        margin-top: -80px;
     }
 
     .iconLogo {
@@ -259,127 +318,5 @@
         width: 80%;
         margin-top: 4rem;
     }  
-
-    .contact{
-        margin-bottom: 4rem;
-    }
-
-    .contact-content{
-        max-width: 450px;
-        width: 85%;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-    }
-    .contact-content a{
-        color: var(--primary);
-        text-decoration: none;
-    }
-
-    .contact-content input,
-    .contact-content textarea{
-        display: block;
-        background: var(--background-light);
-        color: var(--font);
-        font-size: 1rem;
-        border-radius: 10px;
-        border: 0;
-        outline: 0;
-        padding: 12px 14px;
-        margin-top: 5px;
-        margin-bottom: 15px;
-    }
-
-    .hero {
-        display:grid;
-        justify-items:center;
-        grid-gap:0.8rem;
-        margin:1rem 0;
-        padding:0 10%;
-        text-align:center
-    }
-    @media (max-width:1200px) {
-        .hero {
-            padding:0
-        }
-    }
-    @media (max-width:600px) {
-        .hero {
-            margin-top:10vh
-        }
-    }
-    .hero__buttons {
-        display:grid;
-        justify-items:center;
-        grid-gap:1rem
-    }
-    .hero__button {
-        display:inline-block;
-        position:relative;
-        padding:1rem 2.5rem;
-        background:radial-gradient(farthest-corner at var(--x,0) var(--y,0),var(--primary),var(--primary));
-        text-decoration:none;
-        text-align:center;
-        white-space:nowrap;
-        cursor:pointer;
-        -webkit-user-select:none;
-        -moz-user-select:none;
-        -ms-user-select:none;
-        user-select:none;
-        border:0;
-        border-radius:100px
-    }
-    .hero__button:after {
-        content:"";
-        position:absolute;
-        left:3px;
-        right:3px;
-        top:3px;
-        bottom:3px;
-        background:var(--background-light);
-        border-radius:inherit;
-        opacity:.9;
-        transition:opacity .6s cubic-bezier(.51,.92,.24,1)
-    }
-    .hero__button span {
-        position:relative;
-        color:var(--font);
-        z-index:1
-    }
-    .hero__button:hover:after {
-        opacity:.8
-    }
-    .hero__line {
-        width:1px;
-        height:25px;
-        background:var(--font);
-        margin: 0;
-    }
-    .p4 {
-        margin: 0;
-    }
-    .contactLink {
-        position:relative;
-        color:var(--font);
-        text-decoration:none;
-        white-space:nowrap
-    }
-    .contactLink:after {
-        content:"";
-        position:absolute;
-        height:2px;
-        left:0;
-        right:0;
-        top:100%;
-        background: var(--primary);
-        transition:transform .3s cubic-bezier(.51,.92,.24,1)
-    }
-    .contactLink:hover:after {
-        transform:translateY(2px)
-    }
-    .contactLink:active:after {
-        transform:translateY(1px);
-        transition:none
-    }
 
 </style>
