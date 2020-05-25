@@ -7,13 +7,27 @@ const routes = [
   {
     path: '/',
     name: 'Home',
+    meta: { scrollToTop: true },
     component: () => import("@/views/Home")
+  },
+  {
+    path: '/gallery',
+    name: 'Gallery',
+    meta: { scrollToTop: true },
+    component: () => import("@/views/Gallery")
+  },
+  {
+    path: '/inprint',
+    alias: '/impressum',
+    name: 'Inprint',
+    meta: { scrollToTop: true },
+    component: () => import("@/views/Inprint")
   },
   {
     path: '*',
     name: '404',
-    component: () => import("@/views/404.vue"),
-    meta: { scrollToTop: true }
+    meta: { scrollToTop: true },
+    component: () => import("@/views/404.vue")
   },
 ]
 
