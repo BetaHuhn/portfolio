@@ -15,7 +15,7 @@ function defaultState() {
           here: "hier",
           more: "um mehr zu sehen"
         },
-        gallery: "Fotogallerie",
+        gallery: "Fotogalerie",
         inprint: "Impressum",
         followInstagram: "Folg mir auf Instagram",
         contactHead: "Sag Hallo!",
@@ -34,6 +34,7 @@ function defaultState() {
         backHome: "Zurück",
         reportProblem: "Ein Problem melden",
         loading: "Lädt...",
+        loadingImage: "Lädt Vollbild...",
         loadingError: "Fehler: Der Inhalt konnte nicht geladen werden",
         messages: [
           "Hallo, mein Name ist Maximilian",
@@ -71,6 +72,7 @@ function defaultState() {
         backHome: "Go back home",
         reportProblem: "Report a problem",
         loading: "Loading...",
+        loadingImage: "Loading Image...",
         loadingError: "Error: Couldn't load content",
         messages: [
           "Hello, my Name is Maximilian",
@@ -182,7 +184,9 @@ function defaultState() {
     ],
     photos: {
       firstLoad: 6,
-      total: 126,
+      total: 200,
+      current: 0,
+      modal: false
     },
     contact: {
       name: "",
@@ -224,6 +228,13 @@ export default new Vuex.Store({
     },
     changeContactMessage(state, message){
       state.contact.message = message;
+    },
+    showImageModal(state, id){
+      state.photos.current = id;
+      state.photos.modal = true;
+    },
+    hideImageModal(state){
+      state.photos.modal = false;
     }
   },
   actions: {
@@ -266,5 +277,11 @@ export default new Vuex.Store({
     changeContactMessage( context, message){
       context.commit("changeContactMessage", message)
     },
+    showImageModal( context, id ){
+      context.commit("showImageModal", id)
+    },
+    hideImageModal( context ){
+      context.commit("hideImageModal")
+    }
   }
 })

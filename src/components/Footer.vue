@@ -1,6 +1,11 @@
 <template>
   <footer>
     <div class="footer">
+      <div class="bottomNav">
+        <router-link @mouseover.native="$hideCursor" @mouseleave.native="$showCursor" to="/" class="nolink" >Home</router-link>
+        <router-link @mouseover.native="$hideCursor" @mouseleave.native="$showCursor" to="/gallery" class="nolink" >{{content[content.current].gallery}}</router-link>
+        <router-link @mouseover.native="$hideCursor" @mouseleave.native="$showCursor" :to="'/' + content[content.current].inprint.toLowerCase()" class="nolink" >{{content[content.current].inprint}}</router-link>
+      </div>
       <p class="noselect">© Maximilian Schiller 2020</p>
     </div>
   </footer>
@@ -9,6 +14,13 @@
 <script>
   export default {
     name: 'Footer',
+    computed: {
+      content: {
+        get: function () {
+            return this.$store.state.content;
+        },
+      },
+    }
   }
 </script>
 
@@ -20,7 +32,7 @@
   }
 
   .footer {
-    max-width: 400px;
+    max-width: 90%;
     margin: auto;
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -29,15 +41,30 @@
     padding: 0px 10px;
   }
 
-  .nav {
+  .bottomNav {
     display: flex;
     list-style: none;
     padding: 0;
     justify-content: center;
     font-weight: 600;
+    width: 90%;
+    margin: auto;
   }
 
-  .nav li {
-    margin: 1rem;
+  .bottomNav a{
+    margin: 1rem 2rem;
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 750px) {
+    .bottomNav a{
+      margin: 0.8rem 1rem;
+      font-size: 17px;
+    }
+  }
+
+  .nolink{
+    text-decoration: none;
+    color: var(--font);
   }
 </style>

@@ -1,10 +1,12 @@
 <template>
   <div id="header" class="navbar noselect" :class="isScroll && 'headerScroll'">
-    <router-link @mouseover="$hideCursor" @mouseleave="$showCursor" to="/" class="nolink" ><div class="logo">
-      <img width="40px" src="/static/logo.png">
-      <p>Maximilian Schiller</p>
-    </div></router-link>
-    <div class="nav">
+    <router-link to="/" class="nolink" >
+      <div class="logo" @mouseover="$hideCursor" @mouseleave="$showCursor">
+        <img width="40px" src="/static/logo.png">
+        <p>Maximilian Schiller</p>
+      </div>
+    </router-link>
+    <div class="nav" v-if="!modal">
       <p class="link" @mouseover="$hideCursor" @mouseleave="$showCursor" :class="languageIsEn && 'primary'" @click="switchLangToEn">en</p>
       <p>/</p>
       <p class="link" @mouseover="$hideCursor" @mouseleave="$showCursor" :class="languageIsDe && 'primary'" @click="switchLangToDe">de</p>
@@ -29,6 +31,11 @@
             languageIsDe: {
                 get: function () {
                     return (this.$store.state.content.current == "de") ? true : false;
+                }
+            },
+            modal: {
+                get: function () {
+                    return this.$store.state.photos.modal;
                 }
             },
     },
@@ -61,7 +68,7 @@
 <style scope>
   .navbar {
     position: fixed;
-    z-index: 1000;
+    z-index: 1;
     top: 0;
     width: 100%;
     height: 70px;
