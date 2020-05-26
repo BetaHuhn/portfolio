@@ -1,6 +1,7 @@
 <template>
     <div id="gallery">
         <NavBar />
+        <ImageModal v-if="photos.modal" :id="photos.current"></ImageModal>
         <div class="landing-wrapper">
             <div class="landing">
                 <h1 id="galleryHead" class="galleryHead">{{content[content.current].gallery}}</h1>
@@ -12,7 +13,7 @@
                 <a @mouseover="$hideCursor" @mouseleave="$showCursor" href="https://instagram.com/creerow">{{content[content.current].followInstagram}}</a><span> 👉</span>
             </div>
             <div class="photo-grid">
-                <Photo v-for="index in photos.total" :key="index" :src="'photo-' + index + '.jpg'" />
+                <Photo v-for="index in photos.total" :key="index" :id="index" />
             </div>
             <div class="hero">
                 <router-link @mouseover="$hideCursor" @mouseleave="$showCursor" id="heroBtn" class="hero__button" to="/" style="--x:285px; --y:57px;">
@@ -27,6 +28,7 @@
 <script>
     import NavBar from '@/components/NavBar'
     import Photo from '@/components/Photo'
+    import ImageModal from '@/components/ImageModal'
     import Footer from '@/components/Footer'
 
     export default {
@@ -34,6 +36,7 @@
         components: {
             NavBar,
             Photo,
+            ImageModal,
             Footer
         },
         data: function () {
@@ -83,7 +86,7 @@
                         this.$store.dispatch("switchLangToEn");
                     }	
                 }	 
-            }   
+            }
         },
         created() {
             window.addEventListener('scroll', this.scrollSocial);
@@ -166,7 +169,7 @@
         position: fixed;
         top: 0;
         margin-top: 15px;
-        z-index: 1001;
+        z-index: 1;
         font-size: 25px;
     }
 
