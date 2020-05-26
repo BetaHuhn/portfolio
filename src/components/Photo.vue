@@ -1,7 +1,6 @@
 <template>
-    <div class="photo-item">
-         <v-lazy-image :src="'/static/images/full/' + src" :src-placeholder="'/static/images/lazy/' + src" />
-       <!--  <img :src="src"> -->
+    <div class="photo-item" @mouseover="$hideCursor" @mouseleave="$showCursor">
+         <v-lazy-image @click.native="show" :src="'/static/images/medium/photo-' + id + '.jpg'" :src-placeholder="'/static/images/lazy/photo-' + id + '.jpg'" />
     </div>
 </template>
 
@@ -11,23 +10,32 @@
     export default {
         name: 'Photo',
         props: {
-            src: {
-                type: String
+            id: {
+                type: Number
             }
         },
         components:{
             VLazyImage
+        },
+        methods: {
+            show: function () {
+                document.body.classList.add("modal-open");
+                this.$store.dispatch("showImageModal", this.id)
+               
+            }
         }
     }
 </script>
 
-<style scope>
+<style scoped>
     .photo-item {
         background-position: center center;
         border-radius: 10px;
         position: relative;
         overflow: hidden;
         box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.18);
+        height: 300px;
+        width: 300px;
     }
 
     .photo-item img {
@@ -43,7 +51,7 @@
     .v-lazy-image {
         filter: blur(10px);
         transition: filter 0.7s;
-        transition-delay: 0.2s;
+        transition-delay: 0.4s;
         border-radius: 10px;
     }
     .v-lazy-image-loaded {

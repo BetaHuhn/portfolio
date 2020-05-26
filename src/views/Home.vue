@@ -1,6 +1,7 @@
 <template>
     <div id="home">
         <NavBar />
+        <ImageModal v-if="photos.modal" :id="photos.current"></ImageModal>
         <div class="landing-wrapper">
             <div class="landing">
                 <Console hostname="betahuhn@MaxServer" path="/about" :messages="content[content.current].messages"
@@ -34,7 +35,7 @@
                 <p>{{content[content.current].link.click}} <router-link @mouseover="$hideCursor" @mouseleave="$showCursor" to="/gallery">{{content[content.current].link.here}}</router-link> {{content[content.current].link.more}}</p>
             </div>
             <div class="photo-grid">
-                <Photo v-for="index in photos.firstLoad" :key="index" :src="'photo-' + index + '.jpg'" />
+                <Photo v-for="index in photos.firstLoad" :key="index" :id="index" />
             </div>
         </div>
         <hr class="devider">
@@ -53,6 +54,7 @@
     import ProjectCard from '@/components/ProjectCard'
     import SkillCard from '@/components/SkillCard'
     import Photo from '@/components/Photo'
+    import ImageModal from '@/components/ImageModal'
     import Footer from '@/components/Footer'
     import Contact from '@/components/Contact'
 
@@ -64,6 +66,7 @@
             ProjectCard,
             SkillCard,
             Photo,
+            ImageModal,
             Footer,
             Contact
         },
@@ -261,7 +264,7 @@
         position: fixed;
         top: 0;
         margin-top: 0;
-        z-index: 1001;
+        z-index: 1;
     }
 
     .fixed-top a {
@@ -317,6 +320,5 @@
         max-width: 600px;
         width: 80%;
         margin-top: 4rem;
-    }  
-
+    }
 </style>
