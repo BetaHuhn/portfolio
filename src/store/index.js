@@ -1,5 +1,6 @@
 import Vue from "vue"
 import Vuex from "vuex"
+import BlogEntries from '../statics/blog.js';
 
 Vue.use(Vuex)
 
@@ -26,6 +27,7 @@ function defaultState() {
         messagePlaceholder: "Deine Frage, Feedback oder Nachricht kommt hier her",
         reachOut: "Abschicken",
         orEmail: "Oder sende mir direkt eine Email an",
+        by: "von",
         errorUnknown: 'Es ist ein Fehler aufgetreten, bitter versuche es erneut',
         success: "Deine Nachricht wurde abgeschickt!",
         errorContact: "Deine Nachricht konnte leider nicht abgeschickt werden",
@@ -64,6 +66,7 @@ function defaultState() {
         messagePlaceholder: "Your question, feedback or message goes here",
         reachOut: "Reach out!",
         orEmail: "or send an email directly to",
+        by: "by",
         errorUnknown: 'An error ocurred, please try again.',
         success: "Your message was sent!",
         errorContact: "Your message couldn't be sent, sorry",
@@ -182,6 +185,9 @@ function defaultState() {
         language: "Vue.js"
       }
     ],
+    blog: {
+      ...BlogEntries,
+    },
     photos: {
       firstLoad: 6,
       total: 200,

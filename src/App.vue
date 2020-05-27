@@ -30,12 +30,13 @@
   }
 </script>
 
-<style lang="scss">
+<style>
   :root {
     --font: #fff;
     --font-light: rgb(148, 148, 148);
     --background: #222;
     --background-light: #333;
+    --background-light-nd: #2b2b2b;
     --primary: #60ddaf;
     --red: #d94141;
   }
