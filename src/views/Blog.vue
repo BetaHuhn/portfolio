@@ -1,20 +1,26 @@
 <template>
-    <div id="inprint">
+    <div id="blog">
         <NavBar />
         <div class="landing-wrapper">
             <div class="landing">
-                <h1 id="galleryHead" class="galleryHead">{{content[content.current].inprint}}</h1>
+                <h1 id="blogHead" class="blogHead">{{title}}</h1>
                 <div id="stickTo"></div>
             </div>
         </div>
-        <div class="inprint">
-            <div class="content">
-                <h2>Address</h2>
-                <p class="text">Maximilian Schiller<br />
-                    Kronbühlstr. 11a<br />
-                    78351 Bodman-Ludwigshafen</p>
-                <h2>Contact</h2>
-                <p class="text">E-Mail: <a href="mailto:webmaster@mxis.ch">webmaster@mxis.ch</a></p>
+        <div class="blog-wrapper">
+            <div class="blog-item" v-for="item in blog[section]" :key="item.id" @mouseover="$hideCursor" @mouseleave="$showCursor">
+                <router-link :to="`/${section}/${item.id}`">
+                <div class="blog-title">
+                    <h2>{{item[content.current].title}}</h2>
+                </div>
+                <div class="blog-content">
+                    <p>{{item[content.current].description}}</p>
+                    <div class="blog-bottom">
+                        <span>{{item.date}}</span>
+                        <font-awesome-icon icon="arrow-right" size="lg" class="arrowIcon" />
+                    </div>
+                </div>
+                </router-link>
             </div>
         </div>
         <Footer />
@@ -24,12 +30,17 @@
 <script>
     import NavBar from '@/components/NavBar'
     import Footer from '@/components/Footer'
-
+    import '../../node_modules/highlight.js/styles/vs2015.css'
     export default {
-        name: 'Inprint',
+        name: 'Home',
         components: {
             NavBar,
             Footer
+        },
+        props: {
+            section: {
+                type: String
+            }
         },
         data: function () {
             return {
@@ -37,43 +48,53 @@
             }
         },
         computed: {
+            blog: {
+                get: function () {
+                    return this.$store.state.blog;
+                }
+            },
             content: {
                 get: function () {
                     return this.$store.state.content;
                 },
             },
+            title: {
+                get: function(){
+                    return this.section.charAt(0).toUpperCase() + this.section.slice(1)
+                }
+            }
         },
         methods: {
             scrollSocial: function () {
                 const windowTop = window.pageYOffset;
                 const top = document.getElementById("stickTo").offsetTop;
-                if(windowTop > top){
+                if (windowTop > top) {
                     this.socialAttached = true;
-                    document.getElementById("galleryHead").classList.add('fixed-top');
-                }else{
+                    document.getElementById("blogHead").classList.add('fixed-top');
+                } else {
                     this.socialAttached = false;
-                    document.getElementById("galleryHead").classList.remove('fixed-top');
+                    document.getElementById("blogHead").classList.remove('fixed-top');
                 }
             },
             detectLang: function () {
-                if (localStorage.getItem('lang')){
-                    if(localStorage.getItem('lang') == "de"){
+                if (localStorage.getItem('lang')) {
+                    if (localStorage.getItem('lang') == "de") {
                         localStorage.setItem('lang', "de");
                         this.$store.dispatch("switchLangToDe");
-                    }else{
+                    } else {
                         localStorage.setItem('lang', "en");
                         this.$store.dispatch("switchLangToEn");
                     }
-                }else{
-                    if(navigator.language.includes("de")){
+                } else {
+                    if (navigator.language.includes("de")) {
                         localStorage.setItem('lang', "de");
                         this.$store.dispatch("switchLangToDe");
-                    }else{
+                    } else {
                         localStorage.setItem('lang', "en");
                         this.$store.dispatch("switchLangToEn");
-                    }	
-                }	 
-            }   
+                    }
+                }
+            },
         },
         created() {
             this.detectLang();
@@ -81,12 +102,15 @@
         },
         destroyed() {
             window.removeEventListener('scroll', this.scrollSocial);
+        },
+        mounted(){
+             document.getElementById("circle").style.setProperty("--scale", "".concat(1));
         }
     }
 </script>
 
 <style scoped>
-    #inprint{
+    #blog {
         margin-bottom: 5rem;
         -webkit-animation: fadein 1s;
         -moz-animation: fadein 1s;
@@ -94,6 +118,7 @@
         -o-animation: fadein 1s;
         animation: fadein 1s;
     }
+
     .landing-wrapper {
         /* background-color: rgb(117, 117, 117); */
         background: url("/static/backgroundBig.jpg");
@@ -117,7 +142,7 @@
     }
 
     @media screen and (max-width: 750px) {
-        .headline{
+        .headline {
             font-size: 20px;
             margin-top: 2rem;
             margin-bottom: 2rem;
@@ -131,27 +156,34 @@
         margin-right: auto;
     }
 
+    .blogHead {
+        font-size: 40px;
+        margin: 0;
+        margin-top: -60px;
+    }
+
     .fixed-top {
         position: fixed;
         top: 0;
         margin-top: 15px;
-        z-index: 1001;
+        z-index: 1;
         font-size: 25px;
     }
 
     @media screen and (max-width: 750px) {
-        .galleryHead{
+        .blogHead {
             margin-right: 10px;
             margin-left: 10px;
             font-size: 30px;
         }
+
         .fixed-top {
             font-size: 18px;
             margin-top: 22px;
         }
     }
 
-    #stickTo{
+    #stickTo {
         margin-top: -80px;
     }
 
@@ -159,21 +191,52 @@
         margin-right: 1rem;
     }
 
-    .content{
-        width: 300px;
-        height: 100%;
+    .blog-wrapper {
+        max-width: 800px;
         margin: auto;
+        margin-top: 3rem;
         margin-bottom: 3rem;
     }
 
-    .content a {
-        text-decoration: none;
-        color: #60ddaf;
-        font-weight: 600;
+    .blog-item{
+        background: var(--background-light);
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
     }
 
-    .content h1 {
-        text-align: center;
+    .blog-item a{
+        text-decoration: none;
+        color: var(--font);
+    }
+
+    .blog-title{
+        border-bottom: 1px solid var(--background);
+        padding: 20px;
+    }
+
+    .blog-title h2{
+        margin: 0;
+    }
+
+    .blog-content{
+        padding: 20px;
+    }
+
+    .blog-content p{
+        margin-top: 0;
+    }
+
+    .blog-bottom{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: var(--primary);
+    }
+
+    .arrowIcon{
+        font-size: 30px;
+        color: var(--primary);
     }
 
 </style>

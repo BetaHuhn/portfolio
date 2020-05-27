@@ -115,6 +115,7 @@
                 }
             },
             detectLang: function () {
+                console.log(this.content.current)
                 if (localStorage.getItem('lang')){
                     if(localStorage.getItem('lang') == "de"){
                         localStorage.setItem('lang', "de");
@@ -136,13 +137,14 @@
             
         },
         created() {
+            this.detectLang();
             window.addEventListener('scroll', this.scrollSocial);
         },
         destroyed() {
             window.removeEventListener('scroll', this.scrollSocial);
         },
         mounted(){
-            this.detectLang();
+            this.$showCursor;
         }
     }
 </script>
@@ -234,7 +236,7 @@
         column-gap: 1.5rem;
         row-gap: 1rem;
         justify-items: center;
-        max-width: 80%;
+        max-width: 1000px;
         margin: auto;
     }
 
@@ -320,5 +322,6 @@
         max-width: 600px;
         width: 80%;
         margin-top: 4rem;
+        border: 0;
     }
 </style>

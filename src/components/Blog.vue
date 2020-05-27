@@ -1,43 +1,46 @@
 <template>
-    <div id="gallery">
+    <div id="blog">
         <NavBar />
-        <ImageModal v-if="photos.modal" :id="photos.current"></ImageModal>
-        <div class="landing-wrapper">
+        <div class="landing-wrapper" :style="{ backgroundImage: `url(${blog.image})`}">
             <div class="landing">
-                <h1 id="galleryHead" class="galleryHead">{{content[content.current].gallery}}</h1>
+                <h1 id="blogHead" class="blogHead">{{blog[content.current].title}}</h1>
                 <div id="stickTo"></div>
             </div>
         </div>
-        <div class="gallery">
-            <div class="navLink">
-                <a @mouseover="$hideCursor" @mouseleave="$showCursor" href="https://instagram.com/creerow">{{content[content.current].followInstagram}}</a><span> 👉</span>
+        <div class="blog-wrapper">
+            <MarkdownDe v-if="content.current == 'de'" />
+            <MarkdownEn v-else />
+            <hr class="devider">
+            <div class="blog-info">
+                <p>{{blog.date}} <span>{{content[content.current].by}} Maximilian Schiller</span></p>
             </div>
-            <div class="photo-grid">
-                <Photo v-for="index in photos.total" :key="index" :id="index" />
-            </div>
-            <div class="hero">
+        </div>
+        <div class="hero">
                 <router-link @mouseover="$hideCursor" @mouseleave="$showCursor" id="heroBtn" class="hero__button" to="/" style="--x:285px; --y:57px;">
                     <span>{{content[content.current].backHome}}</span>
                 </router-link>
             </div>
-        </div>
         <Footer />
     </div>
 </template>
 
 <script>
     import NavBar from '@/components/NavBar'
-    import Photo from '@/components/Photo'
-    import ImageModal from '@/components/ImageModal'
     import Footer from '@/components/Footer'
-
+    import '../../node_modules/highlight.js/styles/vs2015.css'
     export default {
-        name: 'Gallery',
+        name: 'Home',
         components: {
             NavBar,
-            Photo,
-            ImageModal,
             Footer
+        },
+        props: {
+            section: {
+                type: String
+            },
+            blog: {
+                type: Object
+            }
         },
         data: function () {
             return {
@@ -45,11 +48,6 @@
             }
         },
         computed: {
-            photos: {
-                get: function () {
-                    return this.$store.state.photos;
-                }
-            },
             content: {
                 get: function () {
                     return this.$store.state.content;
@@ -60,46 +58,51 @@
             scrollSocial: function () {
                 const windowTop = window.pageYOffset;
                 const top = document.getElementById("stickTo").offsetTop;
-                if(windowTop > top){
+                if (windowTop > top) {
                     this.socialAttached = true;
-                    document.getElementById("galleryHead").classList.add('fixed-top');
-                }else{
+                    document.getElementById("blogHead").classList.add('fixed-top');
+                } else {
                     this.socialAttached = false;
-                    document.getElementById("galleryHead").classList.remove('fixed-top');
+                    document.getElementById("blogHead").classList.remove('fixed-top');
                 }
             },
             detectLang: function () {
-                if (localStorage.getItem('lang')){
-                    if(localStorage.getItem('lang') == "de"){
+                if (localStorage.getItem('lang')) {
+                    if (localStorage.getItem('lang') == "de") {
                         localStorage.setItem('lang', "de");
                         this.$store.dispatch("switchLangToDe");
-                    }else{
+                    } else {
                         localStorage.setItem('lang', "en");
                         this.$store.dispatch("switchLangToEn");
                     }
-                }else{
-                    if(navigator.language.includes("de")){
+                } else {
+                    if (navigator.language.includes("de")) {
                         localStorage.setItem('lang', "de");
                         this.$store.dispatch("switchLangToDe");
-                    }else{
+                    } else {
                         localStorage.setItem('lang', "en");
                         this.$store.dispatch("switchLangToEn");
-                    }	
-                }	 
-            }
+                    }
+                }
+            },
         },
         created() {
             this.detectLang();
+            this.$options.components["MarkdownDe"] = () => import(`@/markdowns/de/${this.section}/${this.blog.id}.md`);
+            this.$options.components["MarkdownEn"] = () => import(`@/markdowns/en/${this.section}/${this.blog.id}.md`);
             window.addEventListener('scroll', this.scrollSocial);
         },
         destroyed() {
             window.removeEventListener('scroll', this.scrollSocial);
+        },
+        mounted(){
+             document.getElementById("circle").style.setProperty("--scale", "".concat(1));
         }
     }
 </script>
 
-<style scoped>
-    #gallery{
+<style>
+    #blog {
         margin-bottom: 5rem;
         -webkit-animation: fadein 1s;
         -moz-animation: fadein 1s;
@@ -107,9 +110,9 @@
         -o-animation: fadein 1s;
         animation: fadein 1s;
     }
+
     .landing-wrapper {
         /* background-color: rgb(117, 117, 117); */
-        background: url("/static/backgroundBig.jpg");
         background-position: center center;
         background-size: cover;
     }
@@ -130,7 +133,7 @@
     }
 
     @media screen and (max-width: 750px) {
-        .headline{
+        .headline {
             font-size: 20px;
             margin-top: 2rem;
             margin-bottom: 2rem;
@@ -144,20 +147,7 @@
         margin-right: auto;
     }
 
-    .photo-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, max(300px));
-        justify-content: center;
-        column-gap: 1rem;
-        row-gap: 1rem;
-        justify-items: center;
-        max-width: 1200px;
-        margin: auto;
-        margin-bottom: 3rem;
-    }
-
-
-    .galleryHead {
+    .blogHead {
         font-size: 40px;
         margin: 0;
         margin-top: -60px;
@@ -172,18 +162,19 @@
     }
 
     @media screen and (max-width: 750px) {
-        .galleryHead{
+        .blogHead {
             margin-right: 10px;
             margin-left: 10px;
             font-size: 30px;
         }
+
         .fixed-top {
             font-size: 18px;
             margin-top: 22px;
         }
     }
 
-    #stickTo{
+    #stickTo {
         margin-top: -80px;
     }
 
@@ -191,9 +182,98 @@
         margin-right: 1rem;
     }
 
-    .gallery{
+    .blog-wrapper {
+        max-width: 800px;
+        margin: auto;
         margin-top: 3rem;
         margin-bottom: 3rem;
+    }
+
+    .blog-wrapper img {
+        max-width: 100%;
+        display: block;
+        margin: auto;
+    }
+
+    .blog-info {
+        color: var(--font-light);
+    }
+
+    .blog-info span {
+        font-style: italic;
+    }
+
+    .devider{
+        height: 3px;
+        color: var(--primary);
+        background: var(--primary);
+        width: 100%;
+        margin-top: 4rem;
+        border: 0;
+    }
+
+    blockquote {
+        border-left: 3px solid var(--primary);
+        margin-left: 0;
+        padding-left: 10px;
+        color: var(--font-light);
+    }
+
+    a {
+        color: var(--primary);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    ul>li {
+        text-indent: -5px;
+    }
+
+    ul>li:before {
+        content: "-";
+        text-indent: -5px;
+        margin-right: 5px;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        font-size: 100%;
+        font: inherit;
+    }
+
+    table th {
+        font-weight: bold;
+        padding: 6px 13px;
+    }
+
+    thead tr{
+        background-color: var(--background-light);
+    }
+
+    table td {
+        padding: 6px 13px;
+    }
+
+    tbody tr {
+        background-color: var(--background-light-nd);
+    }
+
+    tbody tr:nth-child(2n) {
+        background-color: var(--background-light);
+    }
+
+    pre {
+        background: var(--background-light);
+        width: 100%;
+        padding: 20px 20px;
     }
 
     .hero {
@@ -202,7 +282,8 @@
         grid-gap:0.8rem;
         margin:1rem 0;
         padding:0 10%;
-        text-align:center
+        text-align:center;
+        margin-bottom: 2rem;
     }
     @media (max-width:1200px) {
         .hero {
@@ -254,37 +335,5 @@
     }
     .hero__button:hover:after {
         opacity:.8
-    }
-
-    .navLink{
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    .navLink a {
-        position: relative;
-        color: var(--font);
-        text-decoration: none;
-        white-space: nowrap;
-        font-size: 20px;
-    }
-    .navLink a:after {
-        content: "";
-        position: absolute;
-        height: 2px;
-        left: 0;
-        right: 0;
-        top: 100%;
-        background: var(--primary);
-        transition: transform .3s cubic-bezier(.51, .92, .24, 1)
-    }
-    
-    .navLink a:hover:after {
-        transform: translateY(2px)
-    }
-
-    .navLink a:active:after {
-        transform: translateY(1px);
-        transition: none
     }
 </style>
