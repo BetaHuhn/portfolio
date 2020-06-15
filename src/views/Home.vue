@@ -11,7 +11,7 @@
                         <font-awesome-icon :icon="['fab', 'github']" size="lg" class="iconLogo" /></a>
                     <a @mouseover="$hideCursor" @mouseleave="$showCursor" href="https://instagram.com/creerow">
                         <font-awesome-icon :icon="['fab', 'instagram']" size="lg" class="iconLogo" /></a>
-                    <a @mouseover="$hideCursor" @mouseleave="$showCursor" href="https://dribbble.com/creerow">
+                    <a @mouseover="$hideCursor" @mouseleave="$showCursor" href="https://dribbble.com/betahuhn">
                         <font-awesome-icon :icon="['fab', 'dribbble']" size="lg" class="iconLogo" /></a>
                 </div>
                 <div id="stickTo"></div>
