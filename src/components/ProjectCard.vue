@@ -1,10 +1,8 @@
 <template>
     <div class="content-item">
         <h1>{{project.name}}</h1>
-        <p>{{descriptionText}}</p>
+        <p class="content-description">{{descriptionText}}</p>
         <p class="githubStats">{{languageText}}
-            <!-- <font-awesome-icon icon="star" size="lg" class="icon" />{{stars}}</p> -->
-        <!-- <span>{{updatedAt}}</span> -->
         <div class="content-links-wrapper">
             <div class="content-links">
                 <a @mouseover="$hideCursor" @mouseleave="$showCursor" :href="project.demo" class="content-link">Live Demo</a>
@@ -15,7 +13,6 @@
 </template>
 
 <script>
-    //const humanizeDuration = require('humanize-duration')
 
     export default {
         name: 'ProjectCard',
@@ -62,35 +59,6 @@
                     type: String
                 },
             }
-        },
-        methods: {
-            queryGithub: async function () {
-                return null
-                /* fetch(`https://api.github.com/repos/${this.project.github}`)
-                    .then(async response => {
-                        const data = await response.json();
-                        if (!response.ok) {
-                            const error = (data && data.message) || response.status;
-                            this.description = error;
-                            return Promise.reject(error);
-                        }
-                        console.log(data)
-                        this.stars = data.stargazers_count;
-                        this.language = (data.language != null) ? data.language : this.content[this.content.current].loadingError;
-                        this.description = (data.description != null) ? data.description : this.content[this.content.current].loadingError;
-                        let now = new Date();
-                        let before = new Date(data.updated_at);
-                        let diff = now - before;
-                        this.updatedAt = "updated " + humanizeDuration(diff, { round: true, largest: 1 }) + " ago";
-                    })
-                    .catch(error => {
-                        this.description = this.content[this.content.current].loadingError;
-                        console.error('There was an error!', error);
-                    }); */
-            }
-        },
-        mounted() {
-            this.queryGithub();
         }
     }
 </script>
@@ -101,7 +69,7 @@
         border-radius: 10px;
         padding: 20px 20px;
         width: 90%;
-        min-height: 200px;
+        /* min-height: 200px; */
         position: relative;
         box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.18)
     }
@@ -109,6 +77,10 @@
     .content-item h1 {
         margin: 0;
         font-size: 27px;
+    }
+
+    .content-description{
+        margin-bottom: 75px;
     }
 
     .content-item span {

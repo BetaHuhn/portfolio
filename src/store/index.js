@@ -96,7 +96,7 @@ function defaultState() {
     },
     skills: [
       {
-        name: "HTML • CSS • JavaScript",
+        name: "HTML5 • CSS • JavaScript",
         description: "Fundamental Web Development",
         icon: ['fab', "html5"],
         color: "#EC5F38"
@@ -159,31 +159,51 @@ function defaultState() {
         demo: "https://zgk.mxis.ch",
         github: "BetaHuhn/aufgabenManager",
         description: {
-          de: "Aufgaben Manager für Schulen",
-          en: "Task Manager for schools"
+          de: "Eine einfach zu benutzende Plattform für Schüler und Lehrer für die Verwaltung von Hausaufgaben während der Corona-Home-Schooling Zeit.",
+          en: "An easy to use homework manager for schools during the corona pandemic."
         },
-        language: "Node.js"
-      },
-      {
-        name: "Pixel Art Country selector",
-        demo: "https://flags.mxis.ch",
-        github: "BetaHuhn/countryPicker",
-        description: {
-          de: "Pixel Art Land picker",
-          en: "Pixel art country selector"
-        },
-        language: "Node.js"
+        language: "HTML5 • Node.js"
       },
       {
         name: "Portfolio Website",
         demo: "/",
         github: "BetaHuhn/portfolio",
         description: {
-          de: "Die aktuelle Seite",
-          en: "The site you are currently viewing"
+          de: "Meine Portfolio website (die aktuelle Seite).",
+          en: "My portfolio website (the site you are currently viewing)"
         },
         language: "Vue.js"
-      }
+      },
+      {
+        name: "BetaHuhn Share",
+        demo: "https://share.betahuhn.de",
+        github: "BetaHuhn/BetaHuhn-Share",
+        description: {
+          de: "Dieses Projekt soll es erleichtern Text, URLs oder Dateien zwischen verschiedenen Geräten zu teilen.",
+          en: "Easily create a short url which links to text, URLs or files."
+        },
+        language: "HTML5 • Node.js"
+      },
+      {
+        name: "BetaHuhn Forward",
+        demo: "https://forward.betahuhn.de",
+        github: "BetaHuhn/betahuhn-forward",
+        description: {
+          de: "Du brauchst eine Wegwerf E-Mail-Adresse für eine Website? Du willst nicht der ganzen Welt deine persönliche E-Mail-Adresse mitteilen? Mit diesem Service kannst du schnell und einfach eine temporäre E-Mail-Adresse erstellen.",
+          en: "Need a throw away email for a website? Don't want to share your personal email with the whole world? With this service you can create alias emails which temporarly redirects emails to your main email."
+        },
+        language: "HTML5 • Node.js"
+      },
+      {
+        name: "Pixel Art Country selector",
+        demo: "https://flags.mxis.ch",
+        github: "BetaHuhn/countryPicker",
+        description: {
+          de: "Anstatt dein Land in einem Formular aus einer langen List auszuwählen, male einfach die Flagge.",
+          en: "Instead of choosing your country using a dropdown, draw your flag."
+        },
+        language: "HTML5 • Node.js"
+      },
     ],
     blog: {
       ...BlogEntries,
