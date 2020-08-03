@@ -32,7 +32,7 @@
     import Footer from '@/components/Footer'
     import '../../node_modules/highlight.js/styles/vs2015.css'
     export default {
-        name: 'Home',
+        name: 'Blog',
         components: {
             NavBar,
             Footer

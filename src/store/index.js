@@ -37,6 +37,7 @@ function defaultState() {
         reportProblem: "Ein Problem melden",
         loading: "Lädt...",
         loadingImage: "Lädt Vollbild...",
+        loadingExperience: "Lädt Experience...",
         loadingError: "Fehler: Der Inhalt konnte nicht geladen werden",
         messages: [
           "Hallo, mein Name ist Maximilian",
@@ -76,6 +77,7 @@ function defaultState() {
         reportProblem: "Report a problem",
         loading: "Loading...",
         loadingImage: "Loading Image...",
+        loadingExperience: "Loading Experience...",
         loadingError: "Error: Couldn't load content",
         messages: [
           "Hello, my Name is Maximilian",

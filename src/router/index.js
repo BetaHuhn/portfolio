@@ -73,6 +73,16 @@ const routes = [
     component: () => import("@/views/Gallery")
   },
   {
+    path: '/experience/schesaplana',
+    alias: '/schesaplana',
+    name: 'SchesaplanaExperience',
+    meta: {
+      title: 'Schesaplana - Maximilian Schiller',
+      scrollToTop: true
+    },
+    component: () => import("@/views/experiences/Schesaplana")
+  },
+  {
     path: '/inprint',
     alias: '/impressum',
     name: 'Inprint',

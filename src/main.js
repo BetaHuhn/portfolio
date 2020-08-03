@@ -3,14 +3,14 @@ import App from './App.vue'
 import store from './store'
 import router from './router'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faStar, faDatabase, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faStar, faDatabase, faArrowRight, faMountain } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faInstagram, faDribbble, faVuejs, faLinux, faHtml5, faNodeJs, faGitAlt, faAdobe, faPython } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueCodeHighlight from 'vue-code-highlight';
  
 Vue.use(VueCodeHighlight)
  
-library.add(faStar, faGithub, faInstagram, faDribbble, faDatabase, faVuejs, faLinux, faHtml5, faNodeJs, faGitAlt, faAdobe, faPython, faArrowRight)
+library.add(faStar, faGithub, faInstagram, faDribbble, faDatabase, faVuejs, faLinux, faHtml5, faNodeJs, faGitAlt, faAdobe, faPython, faArrowRight, faMountain)
  
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
