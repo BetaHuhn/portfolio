@@ -3,7 +3,6 @@
     <router-link to="/" class="nolink" >
       <div class="logo" @mouseover="$hideCursor" @mouseleave="$showCursor">
         <img width="40px" src="/static/logo.png">
-        <p>Maximilian Schiller</p>
       </div>
     </router-link>
     <div class="nav" v-if="!modal">
@@ -16,7 +15,7 @@
 
 <script>
   export default {
-    name: 'NavBar',
+    name: 'Header',
     computed: {
             languageIsEn: {
                 get: function () {
@@ -66,11 +65,12 @@
 <style scope>
   .navbar {
     position: fixed;
-    z-index: 1;
+    z-index: 100;
     top: 0;
     width: 100%;
     height: 70px;
     font-size: 20px;
+    opacity: 0;
     transition: 0.2s ease-in-out;
     -webkit-transition: 0.2s ease-in-out;
     -moz-transition: 0.2s ease-in-out;
@@ -78,8 +78,7 @@
   }
 
   .headerScroll {
-    background: var(--background-light);
-    box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.18);
+    opacity: 1;
   }
 
   .nav {
@@ -110,6 +109,7 @@
 
   .logo img {
     margin-right: 1rem;
+    margin-top: 1.2rem;
   }
 
   .nolink{

@@ -1,5 +1,6 @@
 <template>
     <div id="experience">
+        <Header />
         <main>
             <slot></slot>
         </main>
@@ -8,12 +9,12 @@
 </template>
 
 <script>
-    import NavBar from '@/components/NavBar'
-    import Footer from '@/components/Footer'
+    import Header from '@/components/experiences/Header'
+    import Footer from '@/components/experiences/Footer'
     export default {
         name: 'ExperienceBase',
         components: {
-            NavBar,
+            Header,
             Footer
         },
         data: function () {

@@ -223,6 +223,7 @@ function defaultState() {
       success: false,
       error: false
     },
+    isScroll: false,
     inputInvalid: false,
     error: false
   }
@@ -256,6 +257,9 @@ export default new Vuex.Store({
     },
     changeContactMessage(state, message){
       state.contact.message = message;
+    },
+    changeIsScroll(state, newValue) {
+      state.isScroll = newValue;
     },
     showImageModal(state, id){
       state.photos.current = id;

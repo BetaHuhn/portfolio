@@ -5,8 +5,13 @@
             <div v-if="loaded" class="content-transition"></div>
         </div>
         <transition name="appear">
-            <div v-if="loaded" class="headline">
-                <h1>Schesaplana</h1>
+            <div v-if="loaded">
+                <div class="headline">
+                    <h1>Schesaplana</h1>
+                </div>
+                <div v-if="!isScroll" class="scroll-icon-wrapper">
+                    <font-awesome-icon icon="chevron-down" size="lg" class="scroll-icon" />
+                </div>
             </div>
         </transition>
         <div :style= "[loaded ? {opacity: 1} : {opacity: 0}]">
@@ -20,6 +25,13 @@
                         <leaflet-map />
                     </div>
                 </section>
+                <section class="image-section">
+                    <carousel class="image-carousel">
+                        <div v-for="index in 4" :key="index" class="image-item">
+                            <v-lazy-image :src="'/static/images/experience/photo-1.jpg'" />
+                        </div>
+                    </carousel>
+                </section>
             </div>
         </div>
         <div class="main-loading" v-if="!loaded">
@@ -31,6 +43,7 @@
 <script>
     import ExperienceBase from '@/components/ExperienceBase'
     import Loader from '@/components/Loader'
+    import Carousel from '@/components/Carousel'
     import LeafletMap from '@/components/LeafletMap'
     import VLazyImage from "v-lazy-image"
 
@@ -45,17 +58,25 @@
             ExperienceBase,
             Loader,
             VLazyImage,
-            LeafletMap
+            LeafletMap,
+            Carousel,
         },
         computed: {
             content: {
                 get: function () {
                     return this.$store.state.content;
                 },
-            }
+            },
+            isScroll: function () {
+                return this.$store.state.isScroll;
+            },
         },
-        methods: {
-            
+        watch: {
+            loaded: function(newValue){
+                if(newValue){
+                    document.getElementById('footerExperience').style.backgroundColor = "#b0b7c9"
+                }
+            }
         }
     }
 </script>
@@ -90,6 +111,36 @@
         font-size: 50px;
     }
 
+    .scroll-icon-wrapper{
+        position: absolute;
+        left: 50%;
+        top: 90%;
+        transform: translate(-50%, -50%);
+        animation: move 5s infinite;
+    }
+
+    .scroll-icon{
+        font-size: 40px;
+    }
+
+    @keyframes move {
+        0% {
+           top: 90%;
+        }
+
+        30% {
+           top: 93%;
+        }
+
+        60% {
+            top: 90%;
+        }
+
+        100% {
+           top: 90%;
+        }
+    }
+
     .v-lazy-image {
         opacity: 0;
         transition: all 0.3s ease-in;
@@ -99,11 +150,12 @@
     }
 
     .appear-enter-active, .appear-leave-active {
-        transition: opacity 0.3s;
+        transition: all 0.5s;
         transition-delay: 1s;
     }
     .appear-enter, .appear-leave-to /* .fade-leave-active below version 2.1.8 */ {
         opacity: 0;
+        top: 55%;
     }
     
     .content-transition{
@@ -115,7 +167,6 @@
     }
 
     .content-main{
-        height: 100vh;
         background: #b0b7c9;
         color: #000;
     }
@@ -125,7 +176,7 @@
         flex-direction: row;
         justify-content: center;
         width: 100%;
-        height: 80%;
+        height: 700px;
     }
 
     .section-right{
@@ -143,4 +194,13 @@
         color: #1855a4;
         text-decoration: none;
     }
+
+    .image-section{
+        display: flex;
+    }
+
+    .image-item img{
+        width: 100%;
+    }
+
 </style>
