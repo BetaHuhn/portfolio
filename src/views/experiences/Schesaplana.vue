@@ -26,10 +26,10 @@
                     </div>
                 </section>
                 <section class="image-section">
-                    <carousel class="image-carousel">
-                        <div v-for="index in 4" :key="index" class="image-item">
+                    <carousel>
+                        <carousel-item v-for="index in 4" :key="index">
                             <v-lazy-image :src="'/static/images/experience/photo-1.jpg'" />
-                        </div>
+                        </carousel-item>
                     </carousel>
                 </section>
             </div>
@@ -44,6 +44,7 @@
     import ExperienceBase from '@/components/ExperienceBase'
     import Loader from '@/components/Loader'
     import Carousel from '@/components/Carousel'
+    import CarouselItem from '@/components/CarouselItem'
     import LeafletMap from '@/components/LeafletMap'
     import VLazyImage from "v-lazy-image"
 
@@ -60,6 +61,7 @@
             VLazyImage,
             LeafletMap,
             Carousel,
+            CarouselItem
         },
         computed: {
             content: {
@@ -197,6 +199,7 @@
 
     .image-section{
         display: flex;
+        margin-top: 4rem;
     }
 
     .image-item img{
