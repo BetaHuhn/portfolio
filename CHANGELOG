@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.1
+
+* Update README: add badges and change formating
+
 ## v1.1.0
 
 * Add build and deploy workflows
