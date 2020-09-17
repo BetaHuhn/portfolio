@@ -9,7 +9,7 @@ function defaultState() {
     content: {
       current: "en",
       de: {
-        skills: "Das kann ich bereits...",
+        skills: "Damit habe ich bereits gearbeitet...",
         projects: "Einige meiner letzten Projekte",
         link:{
           click: "Klicke",
@@ -110,14 +110,20 @@ function defaultState() {
         color: "#41B883"
       },
       {
-        name: "NodeJS • Mongoose • ExpressJS",
+        name: "NodeJS • MongoDB • ExpressJS",
         description: "Backend Web Development",
         icon: ['fab', "node-js"],
         color: "#659E5A"
       },
       {
+        name: "TypeScript",
+        description: "Software Development",
+        icon: ['fas', "code"],
+        color: "#007ACC"
+      },
+      {
         name: "Linux",
-        description: "Cloud Computing",
+        description: "Cloud Computing/Server Administration",
         icon: ['fab', "linux"],
         color: "#fff"
       },
@@ -134,10 +140,10 @@ function defaultState() {
         color: "#F75036"
       },
       {
-        name: "MongoDB • MySQL",
-        description: "Database Management System",
-        icon: ['fa', "database"],
-        color: "#3b86c6"
+        name: "Continous Integration",
+        description: "Continous Integration with GitHub Actions and TravisCI",
+        icon: ['fas', "code-branch"],
+        color: "#3EB1CA"
       },
       {
         name: "Adobe Creative Cloud",
