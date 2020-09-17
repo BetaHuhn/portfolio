@@ -11,6 +11,8 @@ function defaultState() {
       de: {
         skills: "Damit habe ich bereits gearbeitet...",
         projects: "Einige meiner letzten Projekte",
+        projectsSubline: "From URL shortening and Open-Source libraries, to secure email forwarding, everything I built has the goal to help simplify tasks and protect users privacy. Here are some of the things I built in the last year:",
+        projectsDev: 'Im Moment arbeite ich an einem open-source, self-hosted URL kürzer und an MailPal, einer Platform welche dabei hilft deine Inbox von Spam frei zuhalten und deine Privatsphäre zu schützen.',
         link:{
           click: "Klicke",
           here: "hier",
@@ -51,6 +53,8 @@ function defaultState() {
       en: {
         skills: "Some things I know...",
         projects: "Some of my recent Projects",
+        projectsSubline: "From URL shortening and Open-Source libraries, to secure email forwarding, everything I built has the goal to help simplify tasks and protect users privacy. Here are some of the things I built in the last year:",
+        projectsDev: 'Currently I am building a self-hosted, open-source URL shortener and extending my email forwarding service into MailPal, a fully featured platform which helps you keep your inbox free and stops companies from tracking you around the internet.',
         link:{
           click: "Click",
           here: "here",
@@ -170,7 +174,7 @@ function defaultState() {
           de: "Einfache Bibliothek zur Integration einer Dark-Mode- / Light-Mode-Logik in jede Website. Bei NPM verfügbar.",
           en: "Simple library to integrate a dark-mode/light-mode logic with any website. Available for via NPM."
         },
-        language: "JavaScript • CSS"
+        language: "JavaScript • CSS • NPM"
       },
       {
         name: "Portfolio Website",
@@ -213,14 +217,14 @@ function defaultState() {
         language: "HTML5 • Node.js"
       },
       {
-        name: "Email Forwarding",
-        demo: "https://forward.betahuhn.de",
-        github: "BetaHuhn/betahuhn-forward",
+        name: "MailPal",
+        demo: "https://mailpal.cc",
+        github: "",
         description: {
-          de: "Du brauchst eine Wegwerf E-Mail-Adresse für eine Website? Du willst nicht der ganzen Welt deine persönliche E-Mail-Adresse mitteilen? Mit diesem Service kannst du schnell und einfach eine temporäre E-Mail-Adresse erstellen.",
-          en: "Need a throw away email for a website? Don't want to share your personal email with the whole world? With this service you can create alias emails which temporarly redirects emails to your main email."
+          de: "Du brauchst eine Wegwerf E-Mail-Adresse für eine Website? Du willst nicht der ganzen Welt deine persönliche E-Mail-Adresse mitteilen? Mit diesem Service kannst du schnell und einfach eine temporäre E-Mail-Adresse erstellen. Noch in der Entwicklung.",
+          en: "Need a throw away email for a website? Don't want to share your personal email with the whole world? With this service you can create alias emails which temporarly redirects emails to your main email. Currenly in development."
         },
-        language: "HTML5 • Node.js"
+        language: "Vue.js • Node.js • Haraka"
       },
       {
         name: "Pixel Art Country selector",

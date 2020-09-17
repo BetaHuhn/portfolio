@@ -18,10 +18,12 @@
             </div>
         </div>
         <div class="content">
-            <h1 class="headline">{{content[content.current].projects}}</h1>
+            <h1 class="headline" style="margin-bottom: 0;">{{content[content.current].projects}}</h1>
+            <p class="subline">{{content[content.current].projectsSubline}}</p>
             <div class="content-grid">
                 <ProjectCard v-for="project in projects" :key="project.name" :project="project" />
             </div>
+            <p class="subline">{{content[content.current].projectsDev}}</p>
         </div>
         <div class="skills">
             <h1 class="headline">{{content[content.current].skills}}</h1>
@@ -195,9 +197,16 @@
 
     .subline {
         text-align: center;
-        max-width: 80%;
+        width: 80%;
+        max-width: 800px;
         margin-left: auto;
         margin-right: auto;
+        color: var(--font-light)
+    }
+
+    .normal-link{
+        text-decoration: none;
+        color: var(--primary);
     }
 
     .content-grid {
