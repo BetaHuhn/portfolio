@@ -157,14 +157,14 @@ function defaultState() {
         language: "Vue.js • Node.js"
       },
       {
-        name: "Aufgaben Manager",
-        demo: "https://zgk.mxis.ch",
-        github: "BetaHuhn/aufgabenManager",
+        name: "drkmd.js",
+        demo: "https://codepen.io/BetaHuhn/pen/oNxdBzK",
+        github: "BetaHuhn/drkmd.js",
         description: {
-          de: "Eine einfach zu benutzende Plattform für Schüler und Lehrer für die Verwaltung von Hausaufgaben während der Corona-Home-Schooling Zeit.",
-          en: "An easy to use homework manager for schools during the corona pandemic."
+          de: "Einfache Bibliothek zur Integration einer Dark-Mode- / Light-Mode-Logik in jede Website. Bei NPM verfügbar.",
+          en: "Simple library to integrate a dark-mode/light-mode logic with any website. Available for via NPM."
         },
-        language: "HTML5 • Node.js"
+        language: "JavaScript • CSS"
       },
       {
         name: "Portfolio Website",
@@ -177,17 +177,37 @@ function defaultState() {
         language: "Vue.js"
       },
       {
-        name: "BetaHuhn Share",
-        demo: "https://share.betahuhn.de",
-        github: "BetaHuhn/BetaHuhn-Share",
+        name: "Email Verifier",
+        demo: "https://verify.mxis.ch",
+        github: "BetaHuhn/email-verify",
         description: {
-          de: "Dieses Projekt soll es erleichtern Text, URLs oder Dateien zwischen verschiedenen Geräten zu teilen.",
-          en: "Easily create a short url which links to text, URLs or files."
+          de: "Verifiziere, dass eine Email Addresse wirklich existiert.",
+          en: "Verify if an email address actually exists."
         },
         language: "HTML5 • Node.js"
       },
       {
-        name: "BetaHuhn Forward",
+        name: "Speedtest",
+        demo: "https://speedtest.mxis.ch",
+        github: "BetaHuhn/speedtest",
+        description: {
+          de: "Internet Geschwindigkeits Test",
+          en: "Simple Node.js based network speedtest."
+        },
+        language: "HTML5 • Node.js • WebSockets"
+      },
+      {
+        name: "Aufgaben Manager",
+        demo: "https://zgk.mxis.ch",
+        github: "BetaHuhn/aufgabenManager",
+        description: {
+          de: "Eine einfach zu benutzende Plattform für Schüler und Lehrer für die Verwaltung von Hausaufgaben während der Corona-Home-Schooling Zeit.",
+          en: "An easy to use homework manager for schools during the corona pandemic."
+        },
+        language: "HTML5 • Node.js"
+      },
+      {
+        name: "Email Forwarding",
         demo: "https://forward.betahuhn.de",
         github: "BetaHuhn/betahuhn-forward",
         description: {
