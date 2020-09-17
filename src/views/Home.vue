@@ -160,7 +160,7 @@
     }
     .landing-wrapper {
         /* background-color: rgb(117, 117, 117); */
-        background: url("/static/backgroundBig.jpg");
+        background: url("https://assets.mxis.ch/portfolio/backgroundBig.jpg");
         background-position: center center;
         background-size: cover;
     }

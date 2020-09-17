@@ -1,6 +1,6 @@
 <template>
     <div class="photo-item" @mouseover="$hideCursor" @mouseleave="$showCursor">
-         <v-lazy-image @click.native="show" :src="'/static/images/medium/photo-' + id + '.jpg'" :src-placeholder="'/static/images/lazy/photo-' + id + '.jpg'" />
+         <v-lazy-image @click.native="show" :src="'https://assets.mxis.ch/portfolio/images/medium/photo-' + id + '.jpg'" :src-placeholder="'https://assets.mxis.ch/portfolio/images/lazy/photo-' + id + '.jpg'" />
     </div>
 </template>
 

@@ -2,7 +2,7 @@
     <div @click="hide" class="modal" id="modal">
         <Loader v-if="!ready" :message="content[content.current].loadingImage"/>
         <span class="close" id="close">&times;</span>
-        <v-lazy-image class="image-modal" :class="ready && 'showImage'" :src="'/static/images/full/photo-' + id + '.jpg'" @load="load" />
+        <v-lazy-image class="image-modal" :class="ready && 'showImage'" :src="'https://assets.mxis.ch/portfolio/images/full/photo-' + id + '.jpg'" @load="load" />
     </div>
 </template>
 
