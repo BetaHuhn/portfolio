@@ -73,14 +73,22 @@ const routes = [
     component: () => import("@/views/Gallery")
   },
   {
-    path: '/experience/schesaplana',
-    alias: '/schesaplana',
+    path: '/schesaplana',
     name: 'SchesaplanaExperience',
     meta: {
       title: 'Schesaplana - Maximilian Schiller',
       scrollToTop: true
     },
     component: () => import("@/views/experiences/Schesaplana")
+  },
+  {
+    path: '/dolomites',
+    name: 'Dolomites',
+    meta: {
+      title: 'Dolomites - Maximilian Schiller',
+      scrollToTop: true
+    },
+    component: () => import("@/views/experiences/Dolomites")
   },
   {
     path: '/inprint',

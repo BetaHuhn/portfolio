@@ -155,7 +155,7 @@
         transition: all 0.5s;
         transition-delay: 1s;
     }
-    .appear-enter, .appear-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    .appear-enter, .appear-leave-to{
         opacity: 0;
         top: 55%;
     }
