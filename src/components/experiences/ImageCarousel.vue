@@ -25,10 +25,10 @@
         },
         methods: {
             prev(){
-                this.current--;
+                if(this.current > 0) this.current--;
             },
             next(){
-                this.current++;
+                if(this.current < this.images.length - 1) this.current++;
             }
         }
        
@@ -69,6 +69,7 @@
 
     img{
         opacity: 1;
+        box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.18);
     }
 
     .fade-enter-active, .fade-leave-active {

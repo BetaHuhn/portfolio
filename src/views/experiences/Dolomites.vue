@@ -7,7 +7,13 @@
             <button @click="buttonLink('https://instagram.com/theflyingflo')" class="primary-button">Check him out</button>
         </Intro>
         <ImageCarousel baseUrl="https://assets.mxis.ch/portfolio/images/experiences/dolomites/" :images="carousel"/>
-        <div id="space"></div>
+        <SplitView :image1="{ src: 'https://assets.mxis.ch/portfolio/images/experiences/dolomites/photo-18.jpg', title: 'Lago di Braies'}" :image2="{ src: 'https://assets.mxis.ch/portfolio/images/experiences/dolomites/photo-16.jpg', title: 'Passo Sella'}" />
+        <Detail title="Big Headline" image="https://assets.mxis.ch/portfolio/images/experiences/dolomites/photo-19.jpg">
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+            <p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+        </Detail>
+        <Landscape baseUrl="https://assets.mxis.ch/portfolio/images/experiences/dolomites/" :images="landscapes" />
+        <Grid title="Images" subtitle="Image grid" baseUrl="https://assets.mxis.ch/portfolio/images/experiences/dolomites/" :images="grid" />
     </experience-base>
 </template>
 
@@ -16,19 +22,29 @@
     import Hero from '@/components/experiences/Hero'
     import Intro from '@/components/experiences/Intro'
     import ImageCarousel from '@/components/experiences/ImageCarousel'
+    import SplitView from '@/components/experiences/SplitView'
+    import Detail from '@/components/experiences/Detail'
+    import Landscape from '@/components/experiences/Landscape'
+    import Grid from '@/components/experiences/Grid'
 
     export default {
         name: 'Dolomites',
         data() {
             return {
-                carousel: ["photo-1.jpg", "photo-2.jpg", "photo-3.jpg"]
+                carousel: ["photo-14.jpg", "photo-13.jpg", "photo-3.jpg", "photo-17.jpg", "photo-2.jpg"],
+                landscapes: [{ src: "photo-21.jpg", title: "Torri del Sella"}, { src: "photo-15.jpg", title: "Piz Sella"}, { src: "photo-20.jpg", title: "Lagazuoi"}],
+                grid: ["photo-4.jpg", "photo-5.jpg", "photo-6.jpg", "photo-7.jpg", "photo-8.jpg", "photo-9.jpg", "photo-10.jpg", "photo-11.jpg", "photo-12.jpg"]
             }
         },
         components: {
             ExperienceBase,
             Hero,
             Intro,
-            ImageCarousel
+            ImageCarousel,
+            SplitView,
+            Detail,
+            Landscape,
+            Grid
         },
         computed: {
             content: {
@@ -52,10 +68,6 @@
 
     body{
         background: #b7b9c1;
-    }
-
-    #space {
-        height: 200vh;
     }
 
     .primary-button {

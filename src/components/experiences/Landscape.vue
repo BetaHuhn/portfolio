@@ -48,6 +48,7 @@
         background: var(--landscape-image);
         background-position: center center;
         background-size: cover;
+        box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.18);
     }
 
     .controlBtn{
