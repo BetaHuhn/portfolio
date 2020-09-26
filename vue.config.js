@@ -1,18 +1,5 @@
 var hljs = require('highlight.js'); // https://highlightjs.org/
 
-// Actual default values
-var md = require('markdown-it')({
-  highlight: function (str, lang) {
-    if (lang && hljs.getLanguage(lang)) {
-      try {
-        return hljs.highlight(lang, str).value;
-      } catch (__) {}
-    }
-
-    return ''; // use external default escaping
-  }
-});
-
 module.exports = {
     publicPath: '/',
     chainWebpack(config){
@@ -30,17 +17,17 @@ module.exports = {
             preset: 'default',
             breaks: true,
             preprocess: function(markdownIt, source) {
-              // do any thing
               return source;
             },
             highlight: function (str, lang) {
                 if (lang && hljs.getLanguage(lang)) {
                   try {
                     return hljs.highlight(lang, str).value;
+                  // eslint-disable-next-line no-empty
                   } catch (__) {}
                 }
             
-                return ''; // use external default escaping
+                return '';
               },
             use: [
               require('markdown-it')
