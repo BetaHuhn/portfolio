@@ -291,8 +291,16 @@ export default new Vuex.Store({
     changeIsScroll(state, newValue) {
       state.isScroll = newValue;
     },
-    showImageModal(state, id){
-      state.photos.current = id;
+    showImageModal(state, value){
+      let src, dir;
+      if(typeof value === 'string'){
+        src = value
+      }else{
+        src = value.src;
+        dir = value.dir
+      }
+      state.photos.src = src;
+      state.photos.direction = dir;
       state.photos.modal = true;
     },
     hideImageModal(state){

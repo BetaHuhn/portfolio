@@ -5,7 +5,7 @@
             <p>{{subtitle}}</p>
         </div>
         <div class="images">
-            <img v-for="image in images" :key="image" :src="baseUrl + image" >
+            <img v-for="image in images" :key="image" :src="baseUrl + image" @click="show(baseUrl + image)" @mouseover="$hideCursor" @mouseleave="$showCursor">
         </div>
     </section>
 </template>
@@ -19,6 +19,12 @@
             subtitle: String,
             images: Array,
             baseUrl: String
+        },
+        methods: {
+            show: function (src) {
+                document.body.classList.add("modal-open");
+                this.$store.dispatch("showImageModal", src)
+            }
         }
     }
 </script>

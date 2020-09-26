@@ -1,11 +1,11 @@
 <template>
     <section class="image-carousel">
         <div class="carousel">
-            <div class="controlBtn" @click="prev()" :class="{ 'hide': current == 0 }"><font-awesome-icon icon="chevron-left" size="lg" /></div>
+            <div class="controlBtn" @click="prev()" :class="{ 'hide': current == 0 }" @mouseover="$hideCursor" @mouseleave="$showCursor"><font-awesome-icon icon="chevron-left" size="lg" /></div>
             <transition name="fade">
-                <img :src="baseUrl + images[current]" />
+                <img :src="baseUrl + images[current]" @click="show(baseUrl + images[current])" />
             </transition>
-            <div class="controlBtn" @click="next()" :class="{ 'hide': current == images.length - 1 }"><font-awesome-icon icon="chevron-right" size="lg" /></div>
+            <div class="controlBtn" @click="next()" :class="{ 'hide': current == images.length - 1 }" @mouseover="$hideCursor" @mouseleave="$showCursor"><font-awesome-icon icon="chevron-right" size="lg" /></div>
         </div>
     </section>
 </template>
@@ -29,6 +29,10 @@
             },
             next(){
                 if(this.current < this.images.length - 1) this.current++;
+            },
+            show: function (src) {
+                document.body.classList.add("modal-open");
+                this.$store.dispatch("showImageModal", src)
             }
         }
        

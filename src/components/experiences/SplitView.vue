@@ -1,11 +1,11 @@
 <template>
     <section class="split-view">
         <div class="half left">
-            <img :src="image1.src">
+            <img :src="image1.src" @click="show(image1.src, 'left')">
             <h3>{{image1.title}}</h3>
         </div>
         <div class="half right">
-            <img :src="image2.src">
+            <img :src="image2.src" @click="show(image2.src, 'right')">
             <h3>{{image2.title}}</h3>
         </div>
     </section>
@@ -23,6 +23,12 @@
             image2: {
                 src: String,
                 title: String
+            }
+        },
+        methods: {
+            show: function (src, dir) {
+                document.body.classList.add("modal-open");
+                this.$store.dispatch("showImageModal", { src, dir })
             }
         }
     }

@@ -1,6 +1,6 @@
 <template>
-    <div class="hero" :style="{ '--hero-image': `url(${image})`  }">
-        <div class="hero-text" :style="{ '--text-to-bottom': `${textToBottom}rem`}">
+    <div class="hero" :style="{ '--hero-image': `url(${image})`, '--image-height': `${imageHeight}vh` }">
+        <div class="hero-text" :style="{ '--text-to-bottom': `${textToBottom}rem` }">
             <h1>{{title}}</h1>
             <h2>{{subtitle}}</h2>
         </div>
@@ -13,7 +13,8 @@
     name: 'Hero',
     data () {
         return {
-            textToBottom: 9
+            textToBottom: 9,
+            imageHeight: 100
         }
     },
     props: {
@@ -25,7 +26,9 @@
       handleScroll: function () {
         let toTop = window.scrollY;
         let newValue =  toTop / 20 + 9;
+        let imageHeight = 100 - ( toTop / 15 );
         this.textToBottom = newValue < 100 ? newValue : 100;
+        this.imageHeight = imageHeight > 50 ? imageHeight : 50;
       }
     },
     created() {
@@ -40,7 +43,7 @@
 <style scoped>
     .hero{
         width: 100%;
-        height: 100vh;
+        height: var(--image-height);
         background: var(--hero-image);
         background-position: center center;
         background-size: cover;

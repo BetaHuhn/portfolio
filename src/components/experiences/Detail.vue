@@ -6,7 +6,7 @@
                 <slot></slot>
             </div>
             <div class="image">
-                <img :src="image" >
+                <img :src="image" @click="show(image)" >
             </div>
         </div>
     </section>
@@ -19,6 +19,12 @@
         props: {
             title: String,
             image: String
+        },
+        methods: {
+            show: function (src) {
+                document.body.classList.add("modal-open");
+                this.$store.dispatch("showImageModal", { src, dir: 'right' })
+            }
         }
     }
 </script>

@@ -20,7 +20,7 @@
         methods: {
             show: function () {
                 document.body.classList.add("modal-open");
-                this.$store.dispatch("showImageModal", this.id)
+                this.$store.dispatch("showImageModal", 'https://assets.mxis.ch/portfolio/images/full/photo-' + this.id + '.jpg')
                
             }
         }

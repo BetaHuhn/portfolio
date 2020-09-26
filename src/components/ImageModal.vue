@@ -2,7 +2,7 @@
     <div @click="hide" class="modal" id="modal">
         <Loader v-if="!ready" :message="content[content.current].loadingImage"/>
         <span class="close" id="close">&times;</span>
-        <v-lazy-image class="image-modal" :class="ready && 'showImage'" :src="'https://assets.mxis.ch/portfolio/images/full/photo-' + id + '.jpg'" @load="load" />
+        <v-lazy-image class="image-modal" :style="{ '--direction': direction === 'right' ? '60%' : direction === 'left' ? '40%' : '50%' }" :class="ready && 'showImage'" :src="src" @load="load" />
     </div>
 </template>
 
@@ -22,8 +22,12 @@
             Loader
         },
         props: {
-            id: {
-                type: Number
+            src: {
+                type: String
+            },
+            direction: {
+                type: String,
+                default: 'center'
             }
         },
         computed: {
@@ -60,15 +64,20 @@
         max-height: 90%;
         max-width: 90%;
         top: 50%;
-        left: 50%;
+        left: var(--direction);
         position: absolute;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) scale(0.8);
         box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.18);
         visibility: hidden;
+        opacity: 0;
+        transition: all .4s ease;
     }
 
     .showImage{
         visibility: visible;
+        opacity: 1;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
     }
 
     .close {

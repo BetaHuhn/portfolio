@@ -1,7 +1,9 @@
 <template>
     <div id="home">
         <NavBar />
-        <ImageModal v-if="photos.modal" :id="photos.current"></ImageModal>
+        <transition name="fade">
+            <ImageModal v-if="photos.modal" :src="photos.src"></ImageModal>
+        </transition>
         <div class="landing-wrapper">
             <div class="landing">
                 <Console hostname="betahuhn@MaxServer" path="/about" :messages="content[content.current].messages"
@@ -332,5 +334,11 @@
         width: 80%;
         margin-top: 4rem;
         border: 0;
+    }
+    .fade-enter-active, .fade-leave-active {
+        transition: all .4s;
+    }
+    .fade-enter, .fade-leave-to {
+        opacity: 0;
     }
 </style>

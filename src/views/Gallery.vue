@@ -1,7 +1,9 @@
 <template>
     <div id="gallery">
         <NavBar />
-        <ImageModal v-if="photos.modal" :id="photos.current"></ImageModal>
+        <transition name="fade">
+            <ImageModal v-if="photos.modal" :src="photos.src"></ImageModal>
+        </transition>
         <div class="landing-wrapper">
             <div class="landing">
                 <h1 id="galleryHead" class="galleryHead">{{content[content.current].gallery}}</h1>
@@ -286,5 +288,12 @@
     .navLink a:active:after {
         transform: translateY(1px);
         transition: none
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: all .4s;
+    }
+    .fade-enter, .fade-leave-to {
+        opacity: 0;
     }
 </style>

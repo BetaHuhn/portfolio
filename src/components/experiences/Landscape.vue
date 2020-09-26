@@ -1,7 +1,7 @@
 <template>
     <section class="landscape">
-        <div class="image" :style="{ '--landscape-image': `url(${baseUrl + images[current].src})`  }"></div>
-        <div class="controlBtn">
+        <div class="image" :style="{ '--landscape-image': `url(${baseUrl + images[current].src})`  }" @click="show(baseUrl + images[current].src)"></div>
+        <div class="controlBtn" @mouseover="$hideCursor" @mouseleave="$showCursor">
             <font-awesome-icon @click="next()" :class="{ 'hide': current == images.length - 1 }" icon="chevron-up" size="lg" />
             <font-awesome-icon @click="prev()" :class="{ 'hide': current == 0 }" icon="chevron-down" size="lg" />
         </div>
@@ -28,6 +28,10 @@
             },
             next(){
                 this.current++;
+            },
+            show: function (src) {
+                document.body.classList.add("modal-open");
+                this.$store.dispatch("showImageModal", src)
             }
         }
     }

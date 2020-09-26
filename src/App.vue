@@ -54,7 +54,6 @@
   }
 
   .modal-open {
-    overflow: hidden;
     width: 100%;
   }
 
