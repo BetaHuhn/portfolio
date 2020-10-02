@@ -51,7 +51,7 @@ function defaultState() {
         endText: "Oder schreib mich direkt an: hello@mxis.ch",
       },
       en: {
-        skills: "Some things I know...",
+        skills: "Tech I've worked with...",
         projects: "Some of my recent Projects",
         projectsSubline: "From URL shortening and Open-Source libraries, to secure email forwarding, everything I built has the goal to help simplify tasks and protect users privacy. Here are some of the things I built in the last year:",
         projectsDev: 'Currently I am building a self-hosted, open-source URL shortener and extending my email forwarding service into MailPal, a fully featured platform which helps you keep your inbox free and stops companies from tracking you around the internet.',
@@ -218,8 +218,7 @@ function defaultState() {
       },
       {
         name: "MailPal",
-        demo: "https://mailpal.cc",
-        github: "",
+        development: true,
         description: {
           de: "Du brauchst eine Wegwerf E-Mail-Adresse für eine Website? Du willst nicht der ganzen Welt deine persönliche E-Mail-Adresse mitteilen? Mit diesem Service kannst du schnell und einfach eine temporäre E-Mail-Adresse erstellen. Noch in der Entwicklung.",
           en: "Need a throw away email for a website? Don't want to share your personal email with the whole world? With this service you can create alias emails which temporarly redirects emails to your main email. Currenly in development."
