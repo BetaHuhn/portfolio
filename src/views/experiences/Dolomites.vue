@@ -1,19 +1,19 @@
 <template>
     <experience-base :style="{ '--primary': '#E1C069'  }">
-        <Hero title="Dolomites" subtitle="by Maximilian Schiller" image="https://assets.mxis.ch/portfolio/images/experiences/dolomites/photo-1.jpg" />
+        <Hero title="Dolomites" subtitle="by Maximilian Schiller" image="https://cdn.mxis.ch/assets/portfolio/images/experiences/dolomites/photo-1.jpg" />
         <Intro title="Dolomites" :from="1600014400815" :to="1601057400815">
             <p>Occaecat adipisicing ex duis consequat aute laboris incididunt id ad est anim id laboris do. Minim velit amet enim esse culpa. Do dolore tempor irure sint ut in ut id qui culpa aliquip laboris. Ullamco irure nulla dolore elit excepteur amet cillum id mollit dolor. Elit adipisicing deserunt voluptate do aliqua ullamco qui sunt nostrud anim. </p> 
             <p> Ad consequat eu voluptate quis esse incididunt eu aliquip aute deserunt in. Sunt occaecat nostrud culpa aute pariatur sunt non. Magna aliqua aliquip eiusmod aliqua exercitation. Officia cupidatat aute nulla voluptate ipsum est cillum in.</p>
             <button @click="buttonLink('https://instagram.com/theflyingflo')" class="primary-button" @mouseover="$hideCursor" @mouseleave="$showCursor">Check him out</button>
         </Intro>
-        <ImageCarousel baseUrl="https://assets.mxis.ch/portfolio/images/experiences/dolomites/" :images="carousel"/>
-        <SplitView :image1="{ src: 'https://assets.mxis.ch/portfolio/images/experiences/dolomites/photo-18.jpg', title: 'Lago di Braies'}" :image2="{ src: 'https://assets.mxis.ch/portfolio/images/experiences/dolomites/photo-16.jpg', title: 'Passo Sella'}" />
-        <Detail title="Big Headline" image="https://assets.mxis.ch/portfolio/images/experiences/dolomites/photo-19.jpg">
+        <ImageCarousel baseUrl="https://cdn.mxis.ch/assets/portfolio/images/experiences/dolomites/" :images="carousel"/>
+        <SplitView :image1="{ src: 'https://cdn.mxis.ch/assets/portfolio/images/experiences/dolomites/photo-18.jpg', title: 'Lago di Braies'}" :image2="{ src: 'https://cdn.mxis.ch/assets/portfolio/images/experiences/dolomites/photo-16.jpg', title: 'Passo Sella'}" />
+        <Detail title="Big Headline" image="https://cdn.mxis.ch/assets/portfolio/images/experiences/dolomites/photo-19.jpg">
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
             <p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
         </Detail>
-        <Landscape baseUrl="https://assets.mxis.ch/portfolio/images/experiences/dolomites/" :images="landscapes" />
-        <Grid title="More Images" subtitle="Image grid" baseUrl="https://assets.mxis.ch/portfolio/images/experiences/dolomites/" :images="grid" />
+        <Landscape baseUrl="https://cdn.mxis.ch/assets/portfolio/images/experiences/dolomites/" :images="landscapes" />
+        <Grid title="More Images" subtitle="Image grid" baseUrl="https://cdn.mxis.ch/assets/portfolio/images/experiences/dolomites/" :images="grid" />
     </experience-base>
 </template>
 
