@@ -162,6 +162,6 @@
     }
 
     .blue {
-        color: #468dd9;
+        color:#5da0e8;
     }
 </style>

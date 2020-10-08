@@ -33,7 +33,7 @@
 <style>
   :root {
     --font: #fff;
-    --font-light: rgb(148, 148, 148);
+    --font-light: rgb(156 156 156);
     --background: #222;
     --background-light: #333;
     --background-light-nd: #2b2b2b;

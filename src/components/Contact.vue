@@ -2,14 +2,14 @@
     <div class="contact-form">
         <div class="contact-content" v-if="!success && !error">
             <label for="name">{{content[content.current].name}}</label>
-            <input @mouseover="$hideCursor" @mouseleave="$showCursor" v-model="name" name="name" type="text" :class="nameInvalid && 'invalidInput'" placeholder="Richard Hendrix">
+            <input id="name" @mouseover="$hideCursor" @mouseleave="$showCursor" v-model="name" name="name" type="text" :class="nameInvalid && 'invalidInput'" placeholder="Richard Hendrix">
             <label for="email">{{content[content.current].email}}</label>
-            <input @mouseover="$hideCursor" @mouseleave="$showCursor" v-model="email" name="email" type="email" :class="emailInvalid && 'invalidInput'" placeholder="richard@piedpiper.com">
+            <input id="email" @mouseover="$hideCursor" @mouseleave="$showCursor" v-model="email" name="email" type="email" :class="emailInvalid && 'invalidInput'" placeholder="richard@piedpiper.com">
             <label for="message">{{content[content.current].message}}</label>
-            <textarea @mouseover="$hideCursor" @mouseleave="$showCursor" v-model="message" name="message" :class="messageInvalid && 'invalidInput'" :placeholder="content[content.current].messagePlaceholder" />
+            <textarea id="message" @mouseover="$hideCursor" @mouseleave="$showCursor" v-model="message" name="message" :class="messageInvalid && 'invalidInput'" :placeholder="content[content.current].messagePlaceholder" />
             <div class="hero">
                 <a @mouseover="$hideCursor" @mouseleave="$showCursor" id="heroBtn" class="hero__button" @click="submitMessage" style="--x:285px; --y:57px;">
-                <span>{{content[content.current].reachOut}}</span>
+                    <span>{{content[content.current].reachOut}}</span>
                 </a>
                 <div class="hero__line"></div>
                 <p class="p4">{{content[content.current].orEmail}} <a @mouseover="$hideCursor" @mouseleave="$showCursor" class="contactLink" href="mailto:hello@mxis.ch" target="_blank">hello@mxis.ch</a></p>

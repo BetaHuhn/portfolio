@@ -14,8 +14,8 @@ function defaultState() {
         projectsSubline: "From URL shortening and Open-Source libraries, to secure email forwarding, everything I built has the goal to help simplify tasks and protect users privacy. Here are some of the things I built in the last year:",
         projectsDev: 'Im Moment arbeite ich an einem open-source, self-hosted URL kürzer und an MailPal, einer Platform welche dabei hilft deine Inbox von Spam frei zuhalten und deine Privatsphäre zu schützen.',
         link:{
-          click: "Klicke",
-          here: "hier",
+          click: "Besuche die ",
+          here: "Galerie",
           more: "um mehr zu sehen"
         },
         gallery: "Fotogalerie",
@@ -56,8 +56,8 @@ function defaultState() {
         projectsSubline: "From URL shortening and Open-Source libraries, to secure email forwarding, everything I built has the goal to help simplify tasks and protect users privacy. Here are some of the things I built in the last year:",
         projectsDev: 'Currently I am building a self-hosted, open-source URL shortener and extending my email forwarding service into MailPal, a fully featured platform which helps you keep your inbox free and stops companies from tracking you around the internet.',
         link:{
-          click: "Click",
-          here: "here",
+          click: "Visit the ",
+          here: "gallery",
           more: "to see more"
         },
         gallery: "Photo Gallery",

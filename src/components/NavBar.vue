@@ -2,7 +2,7 @@
   <div id="header" class="navbar noselect" :class="isScroll && 'headerScroll'">
     <router-link to="/" class="nolink" >
       <div class="logo" @mouseover="$hideCursor" @mouseleave="$showCursor">
-        <img width="40px" src="/static/logo.png">
+        <img alt="logo" width="40px" src="/static/logo.png">
         <p>Maximilian Schiller</p>
       </div>
     </router-link>

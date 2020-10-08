@@ -10,11 +10,14 @@
                     :endText="content[content.current].endText" />
                 <div id="social" class="socials">
                     <a @mouseover="$hideCursor" @mouseleave="$showCursor" href="https://github.com/BetaHuhn">
-                        <font-awesome-icon :icon="['fab', 'github']" size="lg" class="iconLogo" /></a>
+                        <font-awesome-icon title="GitHub" :icon="['fab', 'github']" size="lg" class="iconLogo" />
+                    </a>
                     <a @mouseover="$hideCursor" @mouseleave="$showCursor" href="https://instagram.com/creerow">
-                        <font-awesome-icon :icon="['fab', 'instagram']" size="lg" class="iconLogo" /></a>
+                        <font-awesome-icon title="Instagram" :icon="['fab', 'instagram']" size="lg" class="iconLogo" />
+                    </a>
                     <a @mouseover="$hideCursor" @mouseleave="$showCursor" href="https://dribbble.com/betahuhn">
-                        <font-awesome-icon :icon="['fab', 'dribbble']" size="lg" class="iconLogo" /></a>
+                        <font-awesome-icon title="Dribbble" :icon="['fab', 'dribbble']" size="lg" class="iconLogo" />
+                    </a>
                 </div>
                 <div id="stickTo"></div>
             </div>
