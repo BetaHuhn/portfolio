@@ -1,7 +1,7 @@
 <template>
     <experience-base>
         <div class="head-photo">
-            <v-lazy-image :src="'/static/images/experience/photo-0.jpg'" @load="loaded = true" />
+            <v-lazy-image :src="'https://cdn.mxis.ch/assets/portfolio/images/experiences/schesaplana/photo-0.jpg'" @load="loaded = true" />
             <div v-if="loaded" class="content-transition"></div>
         </div>
         <transition name="appear">
@@ -28,7 +28,7 @@
                 <section class="image-section">
                     <carousel>
                         <carousel-item v-for="index in 4" :key="index">
-                            <v-lazy-image :src="'/static/images/experience/photo-1.jpg'" />
+                            <v-lazy-image :src="'https://cdn.mxis.ch/assets/portfolio/images/experiences/schesaplana/photo-1.jpg'" />
                         </carousel-item>
                     </carousel>
                 </section>

@@ -3,7 +3,7 @@ export default {
         {
             id: "schesaplana",
             date: "August 21, 2019",
-            image: "/static/images/full/photo-12.jpg",
+            image: "https://cdn.mxis.ch/assets/portfolio/images/full/photo-12.jpg",
             de: {
                 title: "Schesaplana Wandertrip",
                 description: "Letztes Jahr bin ich mit meinem Cousin Florian auf eine 2-Tägige Wandertour im Österreichischen Brandner Tal gegangen."
@@ -16,7 +16,7 @@ export default {
         {
             id: "denmark",
             date: "May 5, 2018",
-            image: "/static/images/full/photo-69.jpg",
+            image: "https://cdn.mxis.ch/assets/portfolio/images/full/photo-69.jpg",
             de: {
                 title: "Roadtrip nach Dänemark",
                 description: "Letztes Jahr bin ich mit meinem Cousin Florian auf eine 2-Tägige Wandertour im Österreichischen Brandner Tal gegangen."
@@ -31,7 +31,7 @@ export default {
         {
             id: "qrgen",
             date: "May 10, 2020",
-            image: "/static/images/blog/banner.png",
+            image: "https://cdn.mxis.ch/assets/portfolio/images/full/photo-69.jpg",
             de: {
                 title: "Roadtrip nach Dänemark",
                 description: "Letztes Jahr bin ich mit meinem Cousin Florian auf eine 2-Tägige Wandertour im Österreichischen Brandner Tal gegangen."

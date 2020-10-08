@@ -1,10 +1,11 @@
 {
   "name": "portfolio-website",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "prod": "vue-cli-service build --modern",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
