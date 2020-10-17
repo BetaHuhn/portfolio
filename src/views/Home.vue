@@ -8,6 +8,7 @@
             <Hero />
             <About />
             <Projects />
+            <Photographs />
         </main>
         <div class="spacer"></div>
         <Footer />
@@ -21,6 +22,7 @@
     import Hero from '@/components/v2/sections/Hero'
     import About from '@/components/v2/sections/About'
     import Projects from '@/components/v2/sections/Projects'
+    import Photographs from '@/components/v2/sections/Photographs'
 
     export default {
         name: 'Home',
@@ -30,6 +32,7 @@
             Hero,
             About,
             Projects,
+            Photographs,
             Footer
         },
         data: function () {
