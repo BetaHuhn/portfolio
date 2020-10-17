@@ -45,7 +45,7 @@
         display: block;
         position: absolute;
         z-index: 999;
-        color: var(--font);
+        color: var(--font-white);
         top: calc(45% + 65px);
         transform: translateY(-50%);
         left: 50%;

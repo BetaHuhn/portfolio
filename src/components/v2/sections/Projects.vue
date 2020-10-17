@@ -33,6 +33,11 @@
         margin-bottom: 7rem;
     }
 
+    .projects-wrapper h1{
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
     .list{
         display: flex;
         flex-direction: column;
