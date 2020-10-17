@@ -7,9 +7,9 @@
       </div>
     </router-link>
     <div class="nav" v-if="!modal">
-      <p class="link" @mouseover="$hideCursor" @mouseleave="$showCursor" :class="languageIsEn && 'primary'" @click="switchLangToEn">en</p>
+      <p class="lang-link" @mouseover="$hideCursor" @mouseleave="$showCursor" :class="languageIsEn && 'primary'" @click="switchLangToEn">en</p>
       <p>/</p>
-      <p class="link" @mouseover="$hideCursor" @mouseleave="$showCursor" :class="languageIsDe && 'primary'" @click="switchLangToDe">de</p>
+      <p class="lang-link" @mouseover="$hideCursor" @mouseleave="$showCursor" :class="languageIsDe && 'primary'" @click="switchLangToDe">de</p>
     </div>
   </div>
 </template>
@@ -63,22 +63,19 @@
   }
 </script>
 
-<style scope>
+<style>
   .navbar {
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     top: 0;
     width: 100%;
     height: 70px;
     font-size: 20px;
     transition: 0.2s ease-in-out;
-    -webkit-transition: 0.2s ease-in-out;
-    -moz-transition: 0.2s ease-in-out;
-    -o-transition: 0.2s ease-in-out;
   }
 
   .headerScroll {
-    background: var(--background-light);
+    background: var(--background);
     box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.18);
   }
 
@@ -88,7 +85,7 @@
     margin-right: 2rem;
   }
 
-  .link {
+  .lang-link {
     text-decoration: none;
     color: var(--font);
     margin: 1.2rem;
@@ -130,7 +127,7 @@
   }
 
   @media screen and (max-width: 750px) {
-    .link{
+    .lang-link{
       margin-right: 5px;
       margin-left: 5px;
     }
