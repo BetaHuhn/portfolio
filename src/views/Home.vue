@@ -7,7 +7,9 @@
         <main>
             <Hero />
             <About />
+            <Projects />
         </main>
+        <div class="spacer"></div>
         <Footer />
     </div>
 </template>
@@ -16,8 +18,9 @@
     import NavBar from '@/components/NavBar'
     import ImageModal from '@/components/ImageModal'
     import Footer from '@/components/Footer'
-    import Hero from '@/components/v2/Hero'
-    import About from '@/components/v2/About'
+    import Hero from '@/components/v2/sections/Hero'
+    import About from '@/components/v2/sections/About'
+    import Projects from '@/components/v2/sections/Projects'
 
     export default {
         name: 'Home',
@@ -26,6 +29,7 @@
             ImageModal,
             Hero,
             About,
+            Projects,
             Footer
         },
         data: function () {
@@ -86,8 +90,9 @@
         animation: fadein 1s;
     }
 
-    main{
-        min-height: 200vh;
+    /* During development */
+    .spacer{
+        height: 100vh;
     }
 
     .underline {

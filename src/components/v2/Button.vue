@@ -6,8 +6,7 @@
   export default {
     name: 'Button',
     props: {
-        title: String,
-        size: Number
+        title: String
     }
   }
 </script>
@@ -17,7 +16,7 @@
         appearance: none;
         border: 0;
         outline: 0;
-        padding: 18px 25px;
+        padding: 15px 25px;
         font-weight: 700;
         border-radius: 15px;
         border: 3px solid var(--background-dark);

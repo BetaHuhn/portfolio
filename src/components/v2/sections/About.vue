@@ -19,9 +19,10 @@
 
 <style scoped>
     .about-wrapper{
-        width: 85%;
-        max-width: 1600px;
+        width: 80%;
+        max-width: 1400px;
         margin: auto;
+        margin-bottom: 7rem;
     }
 
     .content{
