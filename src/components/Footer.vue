@@ -2,9 +2,9 @@
 	<footer>
 		<div class="footer">
 			<div class="bottomNav">
-				<router-link @mouseover.native="$hideCursor" @mouseleave.native="$showCursor" to="/" class="nolink">Home</router-link>
-				<router-link @mouseover.native="$hideCursor" @mouseleave.native="$showCursor" to="/gallery" class="nolink">{{content[content.current].gallery}}</router-link>
-				<router-link @mouseover.native="$hideCursor" @mouseleave.native="$showCursor" :to="'/' + content[content.current].inprint.toLowerCase()" class="nolink">{{content[content.current].inprint}}</router-link>
+				<router-link @mouseover.native="$hideCursor" @mouseleave.native="$showCursor" to="/" class="nolink-footer">Home</router-link>
+				<router-link @mouseover.native="$hideCursor" @mouseleave.native="$showCursor" to="/gallery" class="nolink-footer">{{content[content.current].gallery}}</router-link>
+				<router-link @mouseover.native="$hideCursor" @mouseleave.native="$showCursor" :to="'/' + content[content.current].inprint.toLowerCase()" class="nolink-footer">{{content[content.current].inprint}}</router-link>
 			</div>
 			<p class="noselect">© Maximilian Schiller 2020</p>
 		</div>
@@ -24,7 +24,7 @@
 	}
 </script>
 
-<style scope>
+<style>
 	footer {
 		width: 100%;
 		background-color: var(--background-dark);
@@ -64,7 +64,7 @@
 		}
 	}
 
-	.nolink {
+	.nolink-footer {
 		text-decoration: none;
 		color: var(--font-white);
 	}

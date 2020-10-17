@@ -3,7 +3,6 @@
     <router-link to="/" class="nolink" >
       <div class="logo" @mouseover="$hideCursor" @mouseleave="$showCursor">
         <img alt="logo" width="40px" src="/static/logo.png">
-        <p>Maximilian Schiller</p>
       </div>
     </router-link>
     <div class="nav" v-if="!modal">
@@ -74,8 +73,11 @@
     transition: 0.2s ease-in-out;
   }
 
+  /* Blur doesn't work on ff */
   .headerScroll {
-    background: var(--background);
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
     box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.18);
   }
 
@@ -107,6 +109,7 @@
 
   .logo img {
     margin-right: 1rem;
+    margin-top: 1rem
   }
 
   .nolink{
