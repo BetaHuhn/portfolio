@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="half image">
-            <div :style="{ '--image': `url(${project.image})` }"></div>
+            <div :style="{ '--image': `url(${project.image})` }" @click="show(project.image, 'right')" @mouseover="$hideCursor" @mouseleave="$showCursor"></div>
         </div>
     </section>
 </template>
@@ -55,6 +55,12 @@
                     type: Boolean,
                     default: false
                 }
+            }
+        },
+        methods: {
+            show: function (src, dir) {
+                document.body.classList.add("modal-open");
+                this.$store.dispatch("showImageModal", { src, dir })
             }
         }
     }

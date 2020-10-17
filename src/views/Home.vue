@@ -2,7 +2,7 @@
     <div id="home">
         <NavBar />
         <transition name="fade">
-            <ImageModal v-if="photos.modal" :src="photos.src"></ImageModal>
+            <ImageModal v-if="photos.modal" :src="photos.src" :direction="photos.direction"></ImageModal>
         </transition>
         <main>
             <Hero />
