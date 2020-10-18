@@ -1,22 +1,23 @@
 <template>
-    <div id="inprint">
+    <div>
         <NavBar />
-        <div class="landing-wrapper">
-            <div class="landing">
-                <h1 id="galleryHead" class="galleryHead">{{content[content.current].inprint}}</h1>
-                <div id="stickTo"></div>
+        <main>
+            <div class="headline">
+                <h1>
+                    <span class="underline">{{content[content.current].inprint}}</span>
+                </h1>
             </div>
-        </div>
-        <div class="inprint">
-            <div class="content">
-                <h2>Address</h2>
-                <p class="text">Maximilian Schiller<br />
-                    Kronbühlstr. 11a<br />
-                    78351 Bodman-Ludwigshafen</p>
-                <h2>Contact</h2>
-                <p class="text">E-Mail: <a href="mailto:webmaster@mxis.ch">webmaster@mxis.ch</a></p>
+            <div class="inprint">
+                <div class="content">
+                    <h2>Address</h2>
+                    <p>Maximilian Schiller<br />
+                        Kronbühlstr. 11a<br />
+                        78351 Bodman-Ludwigshafen</p>
+                    <h2>Contact</h2>
+                    <p>E-Mail: <a class="link" href="mailto:hello@mxis.ch">hello@mxis.ch</a></p>
+                </div>
             </div>
-        </div>
+        </main>
         <Footer />
     </div>
 </template>
@@ -86,76 +87,65 @@
 </script>
 
 <style scoped>
-    #inprint{
+    main{
         margin-bottom: 5rem;
         -webkit-animation: fadein 1s;
         -moz-animation: fadein 1s;
         -ms-animation: fadein 1s;
         -o-animation: fadein 1s;
         animation: fadein 1s;
+        min-height: 100vh;
     }
-    .landing-wrapper {
-        background: url("https://cdn.mxis.ch/assets/portfolio/backgroundBig.jpg");
-        background-position: center center;
-        background-size: cover;
-    }
-
-    .landing {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 60vh;
-    }
-
+    
     .headline {
         text-align: center;
-        margin-top: 3rem;
+        margin-top: 5rem;
         margin-bottom: 3rem;
     }
 
-    @media screen and (max-width: 750px) {
-        .headline{
-            font-size: 20px;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-        }
+    .underline {
+        position: relative;
     }
 
-    .subline {
-        text-align: center;
-        max-width: 80%;
-        margin-left: auto;
-        margin-right: auto;
+    .underline:after {
+        content: "";
+        position: absolute;
+        bottom: -14px;
+        left: -5px;
+        height: 8px;
+        width: calc(100% + 10px);
+        border: solid 4px var(--primary);
+        border-color: var(--primary) transparent transparent transparent;
+        border-radius: 40%;
     }
 
-    .fixed-top {
-        position: fixed;
-        top: 0;
-        margin-top: 15px;
-        z-index: 1001;
-        font-size: 25px;
+    .link {
+        position: relative;
+        text-decoration: none;
+        color: var(--font);
+        margin: 0;
+        transition: color .2s ease;
     }
 
-    @media screen and (max-width: 750px) {
-        .galleryHead{
-            margin-right: 10px;
-            margin-left: 10px;
-            font-size: 30px;
-        }
-        .fixed-top {
-            font-size: 18px;
-            margin-top: 22px;
-        }
+    .link:after {
+        content: "";
+        position: absolute;
+        bottom: -12px;
+        left: -5px;
+        height: 8px;
+        width: calc(100% + 5px);
+        border: solid 2px var(--primary-light);
+        border-color: var(--primary-light) transparent transparent transparent;
+        border-radius: 30%;
+        transition: all .2s ease;
     }
 
-    #stickTo{
-        margin-top: -80px;
+    .link:hover{
+        color: var(--primary);
     }
 
-    .iconLogo {
-        margin-right: 1rem;
+    .link:hover:after{
+        bottom: -14px;
     }
 
     .content{
@@ -163,12 +153,6 @@
         height: 100%;
         margin: auto;
         margin-bottom: 3rem;
-    }
-
-    .content a {
-        text-decoration: none;
-        color: #60ddaf;
-        font-weight: 600;
     }
 
     .content h1 {
