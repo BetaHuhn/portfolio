@@ -2,23 +2,23 @@
     <div class="contact-wrapper">
         <div class="contact">
             <div class="headline">
-                <h1>{{content[content.current].contactHead}}</h1>
-                <p>{{content[content.current].contactSub}}</p>
+                <h1>{{content[content.current].contact.title}}</h1>
+                <p>{{content[content.current].contact.subtitle}}</p>
             </div>
             <div class="content" v-if="!success && !error">
-                <label for="name">{{content[content.current].name}}</label>
+                <label for="name">{{content[content.current].contact.name}}</label>
                 <input id="name" @mouseover="$hideCursor" @mouseleave="$showCursor" v-model="name" name="name" type="text" :class="nameInvalid && 'invalidInput'" placeholder="Richard Hendrix">
-                <label for="email">{{content[content.current].email}}</label>
+                <label for="email">{{content[content.current].contact.email}}</label>
                 <input id="email" @mouseover="$hideCursor" @mouseleave="$showCursor" v-model="email" name="email" type="email" :class="emailInvalid && 'invalidInput'" placeholder="richard@piedpiper.com">
-                <label for="message">{{content[content.current].message}}</label>
-                <textarea id="message" @mouseover="$hideCursor" @mouseleave="$showCursor" v-model="message" name="message" :class="messageInvalid && 'invalidInput'" :placeholder="content[content.current].messagePlaceholder" />
+                <label for="message">{{content[content.current].contact.message}}</label>
+                <textarea id="message" @mouseover="$hideCursor" @mouseleave="$showCursor" v-model="message" name="message" :class="messageInvalid && 'invalidInput'" :placeholder="content[content.current].contact.messagePlaceholder" />
                 <div class="actions">
-                    <PrimaryBtn class="submit" @click.native="submitMessage">{{content[content.current].reachOut}}</PrimaryBtn>
-                    <p>{{content[content.current].orEmail}} <a @mouseover="$hideCursor" @mouseleave="$showCursor" class="link" href="mailto:hello@mxis.ch" target="_blank">hello@mxis.ch</a></p>
+                    <PrimaryBtn class="submit" @click.native="submitMessage">{{content[content.current].contact.reachOut}}</PrimaryBtn>
+                    <p>{{content[content.current].contact.orEmail}} <a @mouseover="$hideCursor" @mouseleave="$showCursor" class="link" href="mailto:hello@mxis.ch" target="_blank">hello@mxis.ch</a></p>
                 </div>
             </div>
-            <p v-else-if="success" class="message success">{{content[content.current].success}}</p>
-            <p v-else-if="error" class="message error">{{content[content.current].errorContact}}</p>
+            <p v-else-if="success" class="message success">{{content[content.current].contact.success}}</p>
+            <p v-else-if="error" class="message error">{{content[content.current].contact.error}}</p>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" width="1487.052" height="945.291" viewBox="0 0 1487.052 945.291"><path class="bg-svg" d="M79.536-35.751c63.123-227.713,474.257,1.326,779.981,17.178s372.428-129.657,548.918-81.012,191.5,258.236,34.818,530.979-610.771,459.166-951.7,342.38S16.413,191.961,79.536-35.751Z" transform="translate(-64.431 136.044)"/></svg>
     </div>
@@ -40,10 +40,8 @@
             PrimaryBtn
         },
         computed: {
-            content: {
-                get: function () {
-                    return this.$store.state.content;
-                },
+            content: function () {
+                return this.$store.state.content;
             },
             name:{
                 get: function(){ 

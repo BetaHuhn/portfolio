@@ -2,11 +2,11 @@
     <section class="hero-wrapper">
         <div class="half content">
             <h1>
-                Hey! I'm 
+                {{content[content.current].title}}
                 <span class="underline">Maximilian</span>
             </h1>
-            <p>I'm a 17 year old student and self-tought Web Developer/Photographer from Germany</p>
-            <primary-btn title="Contact me">CONTACT ME</primary-btn>
+            <p>{{content[content.current].subtitle}}</p>
+            <primary-btn title="Contact me">{{content[content.current].contactMe}}</primary-btn>
         </div>
         <div class="half hero-img">
             <div @click="show('https://cdn.mxis.ch/assets/portfolio/hero.jpg', 'right')" @mouseover="$hideCursor" @mouseleave="$showCursor"></div>
@@ -28,6 +28,11 @@
                 document.body.classList.add("modal-open");
                 this.$store.dispatch("showImageModal", { src, dir })
             }
+        },
+        computed: {
+            content: function () {
+                return this.$store.state.content;
+            }
         }
     }
 </script>
@@ -48,7 +53,7 @@
     }
 
     .content{
-        max-width: 400px;
+        max-width: 450px;
     }
 
     .content h1{

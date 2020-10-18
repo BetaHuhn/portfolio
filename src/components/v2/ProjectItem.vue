@@ -3,12 +3,12 @@
         <div class="half content">
             <h1>{{project.name}}</h1>
             <span>{{project.language}}</span>
-            <p>{{descriptionText}}</p>
+            <p>{{project[content.current].description}}</p>
             <div class="actions">
                 <a :href="project.link" class="action-btn" :class="{ 'development': project.link === undefined }" @mouseover="$hideCursor" @mouseleave="$showCursor">
-                    {{project.linkText}}
+                    {{project[content.current].linkText}}
                 </a>
-                <p v-if="project.github">or check it out on <a :href="`https://github.com/${project.github}`" class="link" @mouseover="$hideCursor" @mouseleave="$showCursor">GitHub</a></p>
+                <p v-if="project.github">{{content[content.current].projects.github}} <a :href="`https://github.com/${project.github}`" class="link" @mouseover="$hideCursor" @mouseleave="$showCursor">GitHub</a></p>
             </div>
         </div>
         <div class="half image">
@@ -23,38 +23,23 @@
         computed: {
             content: function () {
                 return this.$store.state.content;
-            },
-            descriptionText: function() {
-                return this.project.description[this.content.current];
             }
         },
         props: {
             project: {
-                name: {
-                    type: String
+                name: String,
+                de: {
+                    description: String,
+                    linkText: String
                 },
-                description: {
-                    type: String
+                en: {
+                    description: String,
+                    linkText: String
                 },
-                link: {
-                    type: String
-                },
-                linkText: {
-                    type: String
-                },
-                image: {
-                    type: String
-                },
-                language: {
-                    type: String
-                },
-                github: {
-                    type: String
-                },
-                development: {
-                    type: Boolean,
-                    default: false
-                }
+                link: String,
+                image: String,
+                language: String,
+                github: String
             }
         },
         methods: {

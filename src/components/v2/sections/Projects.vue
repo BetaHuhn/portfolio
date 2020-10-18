@@ -1,11 +1,11 @@
 <template>
     <section class="projects-wrapper">
         <h1>
-            <span class="underline">Recent Projects</span>
+            <span class="underline">{{content[content.current].projects.title}}</span>
         </h1>
         <div class="list">
             <ProjectItem v-for="project in projects" :key="project.name" :project="project" />
-            <p>Check out all my projects on <a class="link" href="https://github.com/betahuhn" @mouseover="$hideCursor" @mouseleave="$showCursor">GitHub</a></p>
+            <p>{{content[content.current].projects.checkOut}} <a class="link" href="https://github.com/betahuhn" @mouseover="$hideCursor" @mouseleave="$showCursor">GitHub</a></p>
         </div>
     </section>
 </template>
@@ -21,7 +21,10 @@
         computed: {
             projects: function () {
                 return this.$store.state.projects;
-            }
+            },
+            content: function () {
+                return this.$store.state.content;
+            },
         }
     }
 </script>
