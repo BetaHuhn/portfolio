@@ -1,7 +1,7 @@
 <template>
     <section id="contact" class="contact-wrapper">
         <div class="contact">
-            <div class="headline">
+            <div class="headline" v-if="!success && !error">
                 <h1>{{content[content.current].contact.title}}</h1>
                 <p>{{content[content.current].contact.subtitle}}</p>
             </div>
@@ -208,10 +208,12 @@
 
     .success{
         color: var(--primary);
+        font-weight: 700;
     }
     
     .error{
         color: var(--red);
+        font-weight: 700;
     }
 
     .bg-svg{
