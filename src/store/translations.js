@@ -16,7 +16,7 @@ export default {
 		},
 		gallery: "Fotogalerie",
 		inprint: "Impressum",
-		followInstagram: "Folg mir auf Instagram",
+		followInstagram: "Folg mir auf",
 		contact: {
 			title: "Sag Hallo!",
 			subtitle: "Du hast eine Frage? Willst einfach mal Hi sagen? Egal was, schreib mir einfach!",
@@ -64,7 +64,7 @@ export default {
 		},
 		gallery: "Photographs",
 		inprint: "Inprint",
-		followInstagram: "Follow me on Instagram",
+		followInstagram: "Follow me on",
 		contact: {
 			title: "Lets talk!",
 			subtitle: "Have a question? Just want to say Hi? Either way, reach out!",

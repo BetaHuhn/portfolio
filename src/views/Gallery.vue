@@ -4,25 +4,26 @@
         <transition name="fade">
             <ImageModal v-if="photos.modal" :src="photos.src"></ImageModal>
         </transition>
-        <div class="landing-wrapper">
-            <div class="landing">
-                <h1 id="galleryHead" class="galleryHead">{{content[content.current].gallery}}</h1>
-                <div id="stickTo"></div>
+        <main>
+            <div class="headline">
+                <h1>
+                    <span class="underline">{{content[content.current].gallery}}</span>
+                </h1>
             </div>
-        </div>
-        <div class="gallery">
-            <div class="navLink">
-                <a @mouseover="$hideCursor" @mouseleave="$showCursor" href="https://instagram.com/creerow">{{content[content.current].followInstagram}}</a><span> 👉</span>
+            <div class="gallery">
+                <div class="navLink">
+                    <p>{{content[content.current].followInstagram}} <a class="link" @mouseover="$hideCursor" @mouseleave="$showCursor" href="https://instagram.com/creerow">Instagram</a> 👉</p>
+                </div>
+                <div class="photo-grid">
+                    <Photo v-for="index in photos.total" :key="index" :id="index" />
+                </div>
+                <div class="action-wrapper">
+                    <a href="/" class="action-btn" @mouseover="$hideCursor" @mouseleave="$showCursor">
+                        {{content[content.current].backHome}}
+                    </a>
+                </div>
             </div>
-            <div class="photo-grid">
-                <Photo v-for="index in photos.total" :key="index" :id="index" />
-            </div>
-            <div class="hero">
-                <router-link @mouseover="$hideCursor" @mouseleave="$showCursor" id="heroBtn" class="hero__button" to="/" style="--x:285px; --y:57px;">
-                    <span>{{content[content.current].backHome}}</span>
-                </router-link>
-            </div>
-        </div>
+        </main>
         <Footer />
     </div>
 </template>
@@ -59,43 +60,28 @@
             },
         },
         methods: {
-            scrollSocial: function () {
-                const windowTop = window.pageYOffset;
-                const top = document.getElementById("stickTo").offsetTop;
-                if(windowTop > top){
-                    this.socialAttached = true;
-                    document.getElementById("galleryHead").classList.add('fixed-top');
-                }else{
-                    this.socialAttached = false;
-                    document.getElementById("galleryHead").classList.remove('fixed-top');
-                }
-            },
             detectLang: function () {
                 if (localStorage.getItem('lang')){
-                    if(localStorage.getItem('lang') == "de"){
-                        localStorage.setItem('lang', "de");
-                        this.$store.dispatch("switchLangToDe");
-                    }else{
-                        localStorage.setItem('lang', "en");
-                        this.$store.dispatch("switchLangToEn");
+                    if(localStorage.getItem('lang') === 'de'){
+                        localStorage.setItem('lang', 'de');
+                        return this.$store.dispatch("switchLangToDe");
                     }
-                }else{
-                    if(navigator.language.includes("de")){
-                        localStorage.setItem('lang', "de");
-                        this.$store.dispatch("switchLangToDe");
-                    }else{
-                        localStorage.setItem('lang', "en");
-                        this.$store.dispatch("switchLangToEn");
-                    }	
-                }	 
+
+                    localStorage.setItem('lang', 'en');
+                    return this.$store.dispatch("switchLangToEn");
+                }
+
+                if(navigator.language.includes('de')){
+                    localStorage.setItem('lang', 'de');
+                    return this.$store.dispatch("switchLangToDe");
+                }
+                
+                localStorage.setItem('lang', 'en');
+                return this.$store.dispatch("switchLangToEn");
             }
         },
         created() {
             this.detectLang();
-            window.addEventListener('scroll', this.scrollSocial);
-        },
-        destroyed() {
-            window.removeEventListener('scroll', this.scrollSocial);
         }
     }
 </script>
@@ -109,25 +95,61 @@
         -o-animation: fadein 1s;
         animation: fadein 1s;
     }
-    .landing-wrapper {
-        background: url("https://cdn.mxis.ch/assets/portfolio/backgroundBig.jpg");
-        background-position: center center;
-        background-size: cover;
-    }
-
-    .landing {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 60vh;
-    }
 
     .headline {
         text-align: center;
-        margin-top: 3rem;
+        margin-top: 5rem;
         margin-bottom: 3rem;
+    }
+
+    .underline {
+        position: relative;
+    }
+
+    .underline:after {
+        content: "";
+        position: absolute;
+        bottom: -14px;
+        left: -5px;
+        height: 8px;
+        width: calc(100% + 10px);
+        border: solid 4px var(--primary);
+        border-color: var(--primary) transparent transparent transparent;
+        border-radius: 40%;
+    }
+
+    .link {
+        position: relative;
+        text-decoration: none;
+        color: var(--font);
+        margin: 0;
+        transition: color .2s ease;
+    }
+
+    .link:after {
+        content: "";
+        position: absolute;
+        bottom: -12px;
+        left: -5px;
+        height: 8px;
+        width: calc(100% + 5px);
+        border: solid 2px var(--primary-light);
+        border-color: var(--primary-light) transparent transparent transparent;
+        border-radius: 30%;
+        transition: all .2s ease;
+    }
+
+    .link:hover{
+        color: var(--primary);
+    }
+
+    .link:hover:after{
+        bottom: -14px;
+    }
+
+    .navLink{
+        text-align: center;
+        margin-bottom: 2rem;
     }
 
     @media screen and (max-width: 750px) {
@@ -184,10 +206,6 @@
         }
     }
 
-    #stickTo{
-        margin-top: -80px;
-    }
-
     .iconLogo {
         margin-right: 1rem;
     }
@@ -197,96 +215,30 @@
         margin-bottom: 3rem;
     }
 
-    .hero {
-        display:grid;
-        justify-items:center;
-        grid-gap:0.8rem;
-        margin:1rem 0;
-        padding:0 10%;
-        text-align:center
-    }
-    @media (max-width:1200px) {
-        .hero {
-            padding:0
-        }
-    }
-    @media (max-width:600px) {
-        .hero {
-            margin-top:10vh
-        }
-    }
-    .hero__buttons {
-        display:grid;
-        justify-items:center;
-        grid-gap:1rem
-    }
-    .hero__button {
-        display:inline-block;
-        position:relative;
-        padding:1rem 2.5rem;
-        background:radial-gradient(farthest-corner at var(--x,0) var(--y,0),var(--primary),var(--primary));
-        text-decoration:none;
-        text-align:center;
-        white-space:nowrap;
-        cursor:pointer;
-        -webkit-user-select:none;
-        -moz-user-select:none;
-        -ms-user-select:none;
-        user-select:none;
-        border:0;
-        border-radius:100px
-    }
-    .hero__button:after {
-        content:"";
-        position:absolute;
-        left:3px;
-        right:3px;
-        top:3px;
-        bottom:3px;
-        background:var(--background-light);
-        border-radius:inherit;
-        opacity:.9;
-        transition:opacity .6s cubic-bezier(.51,.92,.24,1)
-    }
-    .hero__button span {
-        position:relative;
-        color:var(--font);
-        z-index:1
-    }
-    .hero__button:hover:after {
-        opacity:.8
-    }
-
-    .navLink{
+    .action-wrapper{
         text-align: center;
-        margin-bottom: 2rem;
     }
 
-    .navLink a {
-        position: relative;
-        color: var(--font);
+    .action-btn {
+        padding: 10px 15px;
+        border-radius: 15px;
+        border: 3px solid var(--background-dark);
+        cursor: pointer;
         text-decoration: none;
-        white-space: nowrap;
-        font-size: 20px;
-    }
-    .navLink a:after {
-        content: "";
-        position: absolute;
-        height: 2px;
-        left: 0;
-        right: 0;
-        top: 100%;
-        background: var(--primary);
-        transition: transform .3s cubic-bezier(.51, .92, .24, 1)
-    }
-    
-    .navLink a:hover:after {
-        transform: translateY(2px)
+        background: var(--background-dark);
+        color: var(--font-white);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
     }
 
-    .navLink a:active:after {
-        transform: translateY(1px);
-        transition: none
+    .action-btn:focus {
+        border: 3px solid var(--primary);
+        filter: brightness(105%);
+    }
+
+    .action-btn:active {
+        transform: scale(0.95);
     }
 
     .fade-enter-active, .fade-leave-active {
