@@ -3,9 +3,10 @@
         <h1>
             <span class="underline">Photographs</span>
         </h1>
-         <div class="photo-grid">
+        <div class="photo-grid">
             <Photo v-for="index in photos.firstLoad" :key="index" :id="index" />
         </div>
+        <p>Visit the <a class="link" href="/gallery" @mouseover="$hideCursor" @mouseleave="$showCursor">Gallery</a> to see more</p>
         
     </section>
 </template>
@@ -32,11 +33,15 @@
         max-width: 1400px;
         margin: auto;
         margin-bottom: 7rem;
+        text-align: center;
     }
 
     .photograph-wrapper h1{
-        text-align: center;
         margin-bottom: 4rem;
+    }
+
+    .photograph-wrapper p{
+        font-size: 17px;
     }
 
     .photo-grid {
@@ -48,6 +53,7 @@
         justify-items: center;
         max-width: 1200px;
         margin: auto;
+        margin-bottom: 2rem;
     }
 
 
