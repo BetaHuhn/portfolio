@@ -1,5 +1,5 @@
 <template>
-    <section class="project-item">
+    <section :id="project.name" class="project-item">
         <div class="half content">
             <h1>{{project.name}}</h1>
             <span>{{project.language}}</span>

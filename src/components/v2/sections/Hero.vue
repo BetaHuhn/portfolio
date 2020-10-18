@@ -6,7 +6,9 @@
                 <span class="underline">Maximilian</span>
             </h1>
             <p>{{content[content.current].subtitle}}</p>
-            <primary-btn title="Contact me">{{content[content.current].contactMe}}</primary-btn>
+            <a href="#contact">
+                <primary-btn title="Contact me">{{content[content.current].contactMe}}</primary-btn>
+            </a>
         </div>
         <div class="half hero-img">
             <div @click="show('https://cdn.mxis.ch/assets/portfolio/hero.jpg', 'right')" @mouseover="$hideCursor" @mouseleave="$showCursor"></div>

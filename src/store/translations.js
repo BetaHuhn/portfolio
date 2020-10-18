@@ -62,7 +62,7 @@ export default {
 			here: "gallery",
 			more: "to see more"
 		},
-		gallery: "Photo Gallery",
+		gallery: "Photographs",
 		inprint: "Inprint",
 		followInstagram: "Follow me on Instagram",
 		contact: {

@@ -1,7 +1,7 @@
 <template>
-    <section class="photograph-wrapper">
+    <section id="photographs" class="photograph-wrapper">
         <h1>
-            <span class="underline">Photographs</span>
+            <span class="underline">{{content[content.current].gallery}}</span>
         </h1>
         <div class="photo-grid">
             <Photo v-for="index in photos.firstLoad" :key="index" :id="index" />
@@ -22,7 +22,10 @@
         computed: {
             photos: function () {
                 return this.$store.state.photos;
-            }
+            },
+            content: function () {
+                return this.$store.state.content;
+            },
         }
     }
 </script>

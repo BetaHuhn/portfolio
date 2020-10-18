@@ -1,5 +1,5 @@
 <template>
-    <div class="contact-wrapper">
+    <section id="contact" class="contact-wrapper">
         <div class="contact">
             <div class="headline">
                 <h1>{{content[content.current].contact.title}}</h1>
@@ -21,7 +21,7 @@
             <p v-else-if="error" class="message error">{{content[content.current].contact.error}}</p>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" width="1487.052" height="945.291" viewBox="0 0 1487.052 945.291"><path class="bg-svg" d="M79.536-35.751c63.123-227.713,474.257,1.326,779.981,17.178s372.428-129.657,548.918-81.012,191.5,258.236,34.818,530.979-610.771,459.166-951.7,342.38S16.413,191.961,79.536-35.751Z" transform="translate(-64.431 136.044)"/></svg>
-    </div>
+    </section>
 </template>
 
 <script>

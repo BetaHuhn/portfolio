@@ -1,12 +1,11 @@
 <template>
-    <section class="skills-wrapper">
+    <section id="skills" class="skills-wrapper">
         <h1>
             <span class="underline">{{content[content.current].skills}}</span>
         </h1>
         <div class="skill-grid">
             <SkillCard v-for="skill in skills" :key="skill.name" :skill="skill" />
         </div>
-        
     </section>
 </template>
 

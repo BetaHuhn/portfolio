@@ -1,5 +1,5 @@
 <template>
-    <section class="projects-wrapper">
+    <section id="projects" class="projects-wrapper">
         <h1>
             <span class="underline">{{content[content.current].projects.title}}</span>
         </h1>
