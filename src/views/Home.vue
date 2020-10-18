@@ -9,6 +9,7 @@
             <About />
             <Projects />
             <Photographs />
+            <Contact />
         </main>
         <div class="spacer"></div>
         <Footer />
@@ -23,6 +24,7 @@
     import About from '@/components/v2/sections/About'
     import Projects from '@/components/v2/sections/Projects'
     import Photographs from '@/components/v2/sections/Photographs'
+    import Contact from '@/components/v2/sections/Contact'
 
     export default {
         name: 'Home',
@@ -33,6 +35,7 @@
             About,
             Projects,
             Photographs,
+            Contact,
             Footer
         },
         data: function () {

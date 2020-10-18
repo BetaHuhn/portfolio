@@ -36,6 +36,7 @@
 		--font-white: #fff;
 		--font-light: #858585;
 		--background: #fff;
+		--background-light:rgb(244, 244, 244);
 		--background-dark: #202020;
 		--primary: #60ddaf;
 		--primary-light: #c7fbe8;
