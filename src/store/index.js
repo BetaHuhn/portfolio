@@ -1,6 +1,5 @@
 import Vue from "vue"
 import Vuex from "vuex"
-import blog from '../statics/blog.js';
 import projects from './projects'
 import skills from './skills'
 import translations from './translations'
@@ -22,9 +21,6 @@ function defaultState() {
     },
     skills: skills,
     projects: projects,
-    blog: {
-      ...blog,
-    },
     photos: {
       firstLoad: 6,
       total: 200,

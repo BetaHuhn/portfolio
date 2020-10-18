@@ -6,9 +6,6 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faStar, faDatabase, faArrowRight, faMountain, faChevronDown, faChevronUp, faChevronLeft, faChevronRight, faCode, faCodeBranch } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faInstagram, faDribbble, faVuejs, faLinux, faHtml5, faNodeJs, faGitAlt, faAdobe, faPython } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import VueCodeHighlight from 'vue-code-highlight';
- 
-Vue.use(VueCodeHighlight)
  
 library.add(faStar, faGithub, faInstagram, faDribbble, faDatabase, faVuejs, faLinux, faHtml5, faNodeJs, faGitAlt, faAdobe, faPython, faArrowRight, faMountain, faChevronDown, faChevronUp, faChevronLeft, faChevronRight, faCode, faCodeBranch)
  
