@@ -3,7 +3,7 @@ export default {
 		title: "Hey! Ich bin",
 		subtitle: "Web Entwickler und Hobby Fotograf aus Konstanz am schönen Bodensee.",
 		contactMe: "SAG HALLO",
-		skills: "Damit habe ich bereits gearbeitet...",
+		skills: "Damit arbeite ich...",
 		projects: {
 			title: "Meine Projekte",
 			checkOut: "Alle Projekte sind auch auf",
@@ -51,7 +51,7 @@ export default {
 		title: "Hey! I'm",
 		subtitle: "I'm a 17 year old student and self-tought Web Developer/Photographer from Germany",
 		contactMe: "CONTACT ME",
-		skills: "Tech I've worked with...",
+		skills: "Tools I work with...",
 		projects: {
 			title: "Recent Projects",
 			checkOut: "Check out all my projects on",

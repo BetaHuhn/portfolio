@@ -8,6 +8,7 @@
             <Hero />
             <About />
             <Projects />
+            <Skills />
             <Photographs />
             <Contact />
         </main>
@@ -23,6 +24,7 @@
     import Hero from '@/components/v2/sections/Hero'
     import About from '@/components/v2/sections/About'
     import Projects from '@/components/v2/sections/Projects'
+    import Skills from '@/components/v2/sections/Skills'
     import Photographs from '@/components/v2/sections/Photographs'
     import Contact from '@/components/v2/sections/Contact'
 
@@ -34,6 +36,7 @@
             Hero,
             About,
             Projects,
+            Skills,
             Photographs,
             Contact,
             Footer

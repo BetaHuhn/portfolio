@@ -26,7 +26,7 @@ export default [{
         name: "Linux",
         description: "Cloud Computing/Server Administration",
         icon: ['fab', "linux"],
-        color: "#fff"
+        color: "#000"
     },
     {
         name: "Python",
@@ -49,7 +49,7 @@ export default [{
     {
         name: "Adobe Creative Cloud",
         description: "UI Design & Photo Manipulation",
-        icon: ['fab', "adobe"],
+        icon: ['fas', "pencil-ruler"],
         color: "#FA0F00"
     },
 ]

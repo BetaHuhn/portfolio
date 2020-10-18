@@ -32,7 +32,7 @@
 
 <style scope>
     .skill-item {
-        background-color: var(--background-light);
+        background-color: var(--background);
         border-radius: 10px;
         padding: 10px 20px;
         width: 90%;
