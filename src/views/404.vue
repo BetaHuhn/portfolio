@@ -7,15 +7,15 @@
                     <div class="branding noselect">
                         <div class="wordmark"> <img src="/static/404.svg"></div>
                     </div>
-                    <h2>{{content[content.current].error}} 404</h2>
+                    <h2>{{ $t('error.name') }} 404</h2>
                     <div style="text-align:center;margin-bottom:40px;">
-                        <p>{{content[content.current].notFound}}</p>
+                        <p>{{ $t('error.notFound') }}</p>
                     </div>
                     <div class="main-button">
-                        <button @mouseover="$hideCursor" @mouseleave="$showCursor" onclick="window.location.href='/'" class="clean"> ← {{content[content.current].backHome}}</button> 
+                        <button @mouseover="$hideCursor" @mouseleave="$showCursor" onclick="window.location.href='/'" class="clean"> ← {{ $t('backHome') }}</button> 
                     </div>
                     <div> 
-                        <a @mouseover="$hideCursor" @mouseleave="$showCursor" class="reportLink" target="_top" href="mailto:webmaster@mxis.ch">{{content[content.current].reportProblem}}</a> 
+                        <a @mouseover="$hideCursor" @mouseleave="$showCursor" class="reportLink" target="_top" href="mailto:webmaster@mxis.ch">{{ $t('error.report') }}</a> 
                     </div>
                 </div>
             </div>
@@ -30,13 +30,6 @@
         name: 'App',
         components:{
             NavBar
-        },
-        computed: {
-            content: {
-                get: function () {
-                    return this.$store.state.content;
-                },
-            }
         },
         methods:{
             detectLang: function () {

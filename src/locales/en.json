@@ -1,0 +1,57 @@
+{
+  "title": "Hey! I'm",
+  "subtitle": "I'm a 17 year old student and self-tought Web Developer/Photographer from Germany",
+  "contactMe": "Contact me",
+  "skills": "Tools I work with...",
+  "projects": {
+    "title": "Recent Projects",
+    "checkOut": "Check out all my projects on {github}",
+    "github": "or check it out on {github}"
+  },
+  "link": {
+    "click": "Visit the ",
+    "here": "gallery",
+    "more": "to see more"
+  },
+  "gallery": {
+    "title": "Photographs",
+    "visit": "Visit the {gallery} to see more",
+    "name": "Gallery"
+  },
+  "contact": {
+    "title": "Lets talk!",
+    "subtitle": "Have a question? Just want to say Hi? Either way, reach out!",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "messagePlaceholder": "Your question, feedback or message goes here",
+    "reachOut": "Reach out!",
+    "orEmail": "or send an email to",
+    "success": "Your message was sent!",
+    "error": "Your message couldn't be sent, sorry"
+  },
+  "inprint": "Inprint",
+  "home": "Home",
+  "followInstagram": "Follow me on",
+  "address": "Address",
+  "by": "by",
+  "error": {
+    "name": "Error",
+    "unknown": "An error ocurred, please try again.",
+    "notFound": "This page doesn't exist",
+    "report": "Report a problem"
+  },
+  "backHome": "Go back home",
+  "loading": "Loading...",
+  "loadingImage": "Loading Image...",
+  "loadingExperience": "Loading Experience...",
+  "loadingError": "Error: Couldn't load content",
+  "messages": [
+    "Hello, my Name is Maximilian",
+    "I'm a 17 year old student from Germany",
+    "I mostly do Web Desgin/Developement with Vue.js and Node.js",
+    "I also have a passion for photograhpy",
+    "You can find me around the Internet by the handle @BetaHuhn"
+  ],
+  "endText": "Or directly send me an email: hello@mxis.ch"
+}

@@ -1,0 +1,56 @@
+{
+    "title": "Hey! Ich bin",
+    "subtitle": "Web Entwickler und Hobby Fotograf aus Konstanz am schönen Bodensee.",
+    "contactMe": "Sag Hallo",
+    "skills": "Damit arbeite ich...",
+    "projects": {
+        "title": "Meine Projekte",
+        "checkOut": "Alle Projekte sind auch auf {github} vorhanden",
+        "github": "oder auf {github} ansehen"
+    },
+    "link": {
+        "click": "Besuche die ",
+        "here": "Galerie",
+        "more": "um mehr zu sehen"
+    },
+    "gallery": {
+        "title": "Fotogalerie",
+        "visit": "Besuche die {gallery} um mehr zu sehen",
+        "name": "Galerie"
+    },
+    "contact": {
+        "title": "Sag Hallo!",
+        "subtitle": "Du hast eine Frage? Willst einfach mal Hi sagen? Egal was, schreib mir einfach!",
+        "name": "Name",
+        "message": "Nachricht",
+        "messagePlaceholder": "Deine Frage, Feedback oder Nachricht kommt hier her",
+        "reachOut": "Abschicken",
+        "orEmail": "oder sende eine E-Mail an",
+        "success": "Deine Nachricht wurde abgeschickt!",
+        "error": "Deine Nachricht konnte leider nicht abgeschickt werden"
+    },
+    "inprint": "Impressum",
+    "home": "Startseite",
+    "followInstagram": "Folg mir auf",
+    "address": "Addresse",
+    "by": "von",
+    "error": {
+        "name": "Fehler",
+        "unknown": "Es ist ein Fehler aufgetreten, bitter versuche es erneut",
+        "notFound": "Diese Seite existiert nicht",
+        "report": "Ein Problem melden"
+    },
+    "backHome": "Zurück",
+    "loading": "Lädt...",
+    "loadingImage": "Lädt Vollbild...",
+    "loadingExperience": "Lädt Experience...",
+    "loadingError": "Fehler: Der Inhalt konnte nicht geladen werden",
+    "messages": [
+        "Hallo, mein Name ist Maximilian",
+        "Ich bin 17 Jahre alt und komme vom wunderschönen Bodensee",
+        "In meiner Freizeit mache ich viel mit Vue.js und Node.js",
+        "Neben dem programmieren gehört auch fotografie zu meinen Hobbys",
+        "Im Internet findet man mich unter dem handle @BetaHuhn"
+    ],
+    "endText": "Oder schreib mich direkt an: hello@mxis.ch"
+}

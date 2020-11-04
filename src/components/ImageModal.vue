@@ -1,6 +1,6 @@
 <template>
     <div @click="hide" class="modal" id="modal">
-        <Loader v-if="!ready" :message="content[content.current].loadingImage"/>
+        <Loader v-if="!ready" :message="$t('loadingImage')"/>
         <span class="close" id="close">&times;</span>
         <v-lazy-image class="image-modal" :style="{ '--direction': direction === 'right' ? '60%' : direction === 'left' ? '40%' : '50%' }" :class="ready && 'showImage'" :src="src" @load="load" />
     </div>
@@ -29,13 +29,6 @@
                 type: String,
                 default: 'center'
             }
-        },
-        computed: {
-            content: {
-                get: function () {
-                    return this.$store.state.content;
-                }
-            },
         },
         methods: {
             hide: function () {
@@ -81,7 +74,7 @@
     }
 
     .close {
-        color: var(--font-color);
+        color: var(--font-white);
         float: right;
         font-size: 40px;
         font-weight: bold;
