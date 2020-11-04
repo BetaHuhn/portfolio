@@ -1,5 +1,65 @@
 export default [
     {
+        name: "ackee-report",
+        de: {
+            description: "CLI tool to generate performance reports of websites using the self-hosted analytics tool Ackee.",
+            linkText: "NPM Packet ansehen",
+        },
+        en: {
+            description: "CLI tool to generate performance reports of websites using the self-hosted analytics tool Ackee.",
+            linkText: "View NPM package",
+        },
+        link: "https://www.npmjs.com/package/ackee-report",
+        github: "BetaHuhn/ackee-report",
+        image: "https://cdn.mxis.ch/assets/ackee-report/social.jpg",
+        language: "JavaScript • NPM"
+    },
+    {
+        name: "ejs-serve",
+        de: {
+            description: "Build, watch and serve your EJS templates in your browser. ejs-serve is a CLI tool for developing/working with EJS templates.",
+            linkText: "NPM Packet ansehen",
+        },
+        en: {
+            description: "Build, watch and serve your EJS templates in your browser. ejs-serve is a CLI tool for developing/working with EJS templates.",
+            linkText: "View NPM package",
+        },
+        link: "https://www.npmjs.com/package/ejs-serve",
+        github: "BetaHuhn/ejs-serve",
+        image: "",
+        language: "JavaScript • NPM"
+    },
+    {
+        name: "spaces-cli",
+        de: {
+            description: "Lade einfach und schnell Dateien von DigitalOcean Spaces mit hilfe diesem CLI tool hoch und herunter.",
+            linkText: "NPM Packet ansehen",
+        },
+        en: {
+            description: "Quickly upload and download files from DigitalOcean Spaces via this CLI tool.",
+            linkText: "View NPM package",
+        },
+        link: "https://www.npmjs.com/package/spaces-cli",
+        github: "BetaHuhn/spaces-cli",
+        image: "",
+        language: "JavaScript • NPM"
+    },
+    {
+        name: "feedback-js",
+        de: {
+            description: "Feedback modal für jede Website. Füge einfach den script tag hinzu und gebe deinen API endpoint an!",
+            linkText: "NPM Packet ansehen",
+        },
+        en: {
+            description: "Simple modern feedback modal for any website. Just include the script tag and point it to your API endpoint!",
+            linkText: "View NPM package",
+        },
+        link: "https://www.npmjs.com/package/@betahuhn/feedback-js",
+        github: "BetaHuhn/feedback-js",
+        image: "https://cdn.mxis.ch/assets/feedback-js/preview.jpg",
+        language: "JavaScript • NPM"
+    },
+    {
         name: "running-at",
         de: {
             description: "Einfache Bibliothek zur Integration einer Dark-Mode- / Light-Mode-Logik in jede Website. Bei NPM verfügbar.",
