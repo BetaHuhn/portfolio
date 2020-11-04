@@ -6,7 +6,9 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faStar, faDatabase, faArrowRight, faMountain, faChevronDown, faChevronUp, faChevronLeft, faChevronRight, faCode, faCodeBranch, faPencilRuler } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faInstagram, faDribbble, faVuejs, faLinux, faHtml5, faNodeJs, faGitAlt, faPython } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
- 
+import VueTilt from 'vue-tilt.js'
+Vue.use(VueTilt)
+
 library.add(faStar, faGithub, faInstagram, faDribbble, faDatabase, faVuejs, faLinux, faHtml5, faNodeJs, faGitAlt, faPencilRuler, faPython, faArrowRight, faMountain, faChevronDown, faChevronUp, faChevronLeft, faChevronRight, faCode, faCodeBranch)
  
 Vue.component('font-awesome-icon', FontAwesomeIcon)

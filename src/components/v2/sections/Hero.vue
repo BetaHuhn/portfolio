@@ -11,7 +11,7 @@
             </a>
         </div>
         <div class="half hero-img">
-            <div @click="show('https://cdn.mxis.ch/assets/portfolio/hero.jpg', 'right')" @mouseover="$hideCursor" @mouseleave="$showCursor"></div>
+            <div @click="show('https://cdn.mxis.ch/assets/portfolio/hero.jpg', 'right')" @mouseover="$hideCursor" @mouseleave="$showCursor" v-tilt="{ speed: 1000, max: 5, gyroscope: false }"></div>
             <svg xmlns="http://www.w3.org/2000/svg" width="820.664" height="709.432" viewBox="0 0 820.664 709.432"><path class="bg-svg" d="M84.514,35.223C211.51-86,320.618,24.033,492.33,55.737s249.608,10.35,291.732,103.5-48.115,138.1-123.239,269.11-41.5,247.477-189.957,257.734-338.952,1.958-435.54-160.757S-42.481,156.444,84.514,35.223Z" transform="translate(25.857 20.392)"/></svg>
         </div>
     </section>
