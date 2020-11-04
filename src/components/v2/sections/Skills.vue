@@ -1,7 +1,7 @@
 <template>
     <section id="skills" class="skills-wrapper">
         <h1>
-            <span class="underline">{{content[content.current].skills}}</span>
+            <span class="underline">{{ $t('skills') }}</span>
         </h1>
         <div class="skill-grid">
             <SkillCard v-for="skill in skills" :key="skill.name" :skill="skill" />
@@ -20,9 +20,6 @@
         computed: {
             skills: function () {
                 return this.$store.state.skills;
-            },
-            content: function () {
-                return this.$store.state.content;
             }
         }
     }

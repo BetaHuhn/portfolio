@@ -2,9 +2,9 @@
 	<footer>
 		<div class="footer">
 			<div class="bottomNav">
-				<router-link @mouseover.native="$hideCursor" @mouseleave.native="$showCursor" to="/" class="nolink-footer">Home</router-link>
-				<router-link @mouseover.native="$hideCursor" @mouseleave.native="$showCursor" to="/gallery" class="nolink-footer">{{content[content.current].gallery}}</router-link>
-				<router-link @mouseover.native="$hideCursor" @mouseleave.native="$showCursor" :to="'/' + content[content.current].inprint.toLowerCase()" class="nolink-footer">{{content[content.current].inprint}}</router-link>
+				<router-link @mouseover.native="$hideCursor" @mouseleave.native="$showCursor" to="/" class="nolink-footer">{{ $t('home') }}</router-link>
+				<router-link @mouseover.native="$hideCursor" @mouseleave.native="$showCursor" :to="'/' + $t('gallery.name').toLowerCase()" class="nolink-footer">{{ $t('gallery.name') }}</router-link>
+				<router-link @mouseover.native="$hideCursor" @mouseleave.native="$showCursor" :to="'/' + $t('inprint').toLowerCase()" class="nolink-footer">{{ $t('inprint') }}</router-link>
 			</div>
 			<p class="noselect">© Maximilian Schiller 2020</p>
 		</div>

@@ -42,23 +42,23 @@
         },
         methods: {
             detectLang: function () {
-                if (localStorage.getItem('lang')) {
-                    if (localStorage.getItem('lang') == "de") {
-                        localStorage.setItem('lang', "de");
-                        this.$store.dispatch("switchLangToDe");
-                    } else {
-                        localStorage.setItem('lang', "en");
-                        this.$store.dispatch("switchLangToEn");
+                if (localStorage.getItem('lang')){
+                    if(localStorage.getItem('lang') === 'de'){
+                        localStorage.setItem('lang', 'de');
+                        return this.$i18n.locale = 'de'
                     }
-                } else {
-                    if (navigator.language.includes("de")) {
-                        localStorage.setItem('lang', "de");
-                        this.$store.dispatch("switchLangToDe");
-                    } else {
-                        localStorage.setItem('lang', "en");
-                        this.$store.dispatch("switchLangToEn");
-                    }
+
+                    localStorage.setItem('lang', 'en');
+                    return this.$i18n.locale = 'en'
                 }
+
+                if(navigator.language.includes('de')){
+                    localStorage.setItem('lang', 'de');
+                    return this.$i18n.locale = 'de'
+                }
+                
+                localStorage.setItem('lang', 'en');
+                return this.$i18n.locale = 'en'
             },
         },
         created() {

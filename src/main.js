@@ -7,10 +7,11 @@ import { faStar, faDatabase, faArrowRight, faMountain, faChevronDown, faChevronU
 import { faGithub, faInstagram, faDribbble, faVuejs, faLinux, faHtml5, faNodeJs, faGitAlt, faPython } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueTilt from 'vue-tilt.js'
+import i18n from './i18n'
 Vue.use(VueTilt)
 
 library.add(faStar, faGithub, faInstagram, faDribbble, faDatabase, faVuejs, faLinux, faHtml5, faNodeJs, faGitAlt, faPencilRuler, faPython, faArrowRight, faMountain, faChevronDown, faChevronUp, faChevronLeft, faChevronRight, faCode, faCodeBranch)
- 
+
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
@@ -26,5 +27,6 @@ Vue.prototype.$showCursor = function() {
 new Vue({
   store,
   router,
+  i18n,
   render: h => h(App)
 }).$mount('#app')

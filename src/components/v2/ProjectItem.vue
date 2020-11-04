@@ -3,12 +3,16 @@
         <div class="half content">
             <h1>{{project.name}}</h1>
             <span>{{project.language}}</span>
-            <p>{{project[content.current].description}}</p>
+            <p>{{project[$i18n.locale].description}}</p>
             <div class="actions">
                 <a :href="project.link" class="action-btn" :class="{ 'development': project.link === undefined }" @mouseover="$hideCursor" @mouseleave="$showCursor">
-                    {{project[content.current].linkText}}
+                    {{project[$i18n.locale].linkText}}
                 </a>
-                <p v-if="project.github">{{content[content.current].projects.github}} <a :href="`https://github.com/${project.github}`" class="link" @mouseover="$hideCursor" @mouseleave="$showCursor">GitHub</a></p>
+                <i18n path="projects.github" tag="p">
+                    <template #github>
+                        <a :href="`https://github.com/${project.github}`" class="link" @mouseover="$hideCursor" @mouseleave="$showCursor">GitHub</a>
+                    </template>
+                </i18n>
             </div>
         </div>
         <div class="half image">
@@ -20,11 +24,6 @@
 <script>
     export default {
         name: 'ProjectItem',
-        computed: {
-            content: function () {
-                return this.$store.state.content;
-            }
-        },
         props: {
             project: {
                 name: String,

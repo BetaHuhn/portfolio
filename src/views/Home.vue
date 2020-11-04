@@ -63,22 +63,21 @@
                 if (localStorage.getItem('lang')){
                     if(localStorage.getItem('lang') === 'de'){
                         localStorage.setItem('lang', 'de');
-                        return this.$store.dispatch("switchLangToDe");
+                        return this.$i18n.locale = 'de'
                     }
 
                     localStorage.setItem('lang', 'en');
-                    return this.$store.dispatch("switchLangToEn");
+                    return this.$i18n.locale = 'en'
                 }
 
                 if(navigator.language.includes('de')){
                     localStorage.setItem('lang', 'de');
-                    return this.$store.dispatch("switchLangToDe");
+                    return this.$i18n.locale = 'de'
                 }
                 
                 localStorage.setItem('lang', 'en');
-                return this.$store.dispatch("switchLangToEn");
+                return this.$i18n.locale = 'en'
             },
-            
         },
         created() {
             this.detectLang();
@@ -97,6 +96,7 @@
         -ms-animation: fadein 1s;
         -o-animation: fadein 1s;
         animation: fadein 1s;
+        overflow: hidden;
     }
 
     /* During development */

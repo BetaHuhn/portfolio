@@ -1,12 +1,16 @@
 <template>
     <section id="photographs" class="photograph-wrapper">
         <h1>
-            <span class="underline">{{content[content.current].gallery}}</span>
+            <span class="underline">{{ $t('gallery.title') }}</span>
         </h1>
         <div class="photo-grid">
             <Photo v-for="index in photos.firstLoad" :key="index" :id="index" />
         </div>
-        <p>Visit the <a class="link" href="/gallery" @mouseover="$hideCursor" @mouseleave="$showCursor">Gallery</a> to see more</p>
+        <i18n path="gallery.visit" tag="p">
+            <template #gallery>
+                <a class="link" href="/gallery" @mouseover="$hideCursor" @mouseleave="$showCursor">{{ $t('gallery.name') }}</a>
+            </template>
+        </i18n>
         
     </section>
 </template>
@@ -22,10 +26,7 @@
         computed: {
             photos: function () {
                 return this.$store.state.photos;
-            },
-            content: function () {
-                return this.$store.state.content;
-            },
+            }
         }
     }
 </script>

@@ -4,17 +4,17 @@
         <main>
             <div class="headline">
                 <h1>
-                    <span class="underline">{{content[content.current].inprint}}</span>
+                    <span class="underline">{{ $t('inprint') }}</span>
                 </h1>
             </div>
             <div class="inprint">
                 <div class="content">
-                    <h2>Address</h2>
+                    <h2>{{ $t('address') }}</h2>
                     <p>Maximilian Schiller<br />
                         Kronbühlstr. 11a<br />
                         78351 Bodman-Ludwigshafen</p>
-                    <h2>Contact</h2>
-                    <p>E-Mail: <a class="link" href="mailto:hello@mxis.ch">hello@mxis.ch</a></p>
+                    <h2>E-Mail:</h2>
+                    <a class="link" href="mailto:hello@mxis.ch">hello@mxis.ch</a>
                 </div>
             </div>
         </main>
@@ -36,13 +36,6 @@
             return {
                 socialAttached: false
             }
-        },
-        computed: {
-            content: {
-                get: function () {
-                    return this.$store.state.content;
-                },
-            },
         },
         methods: {
             scrollSocial: function () {

@@ -7,20 +7,18 @@
         <main>
             <div class="headline">
                 <h1>
-                    <span class="underline">{{content[content.current].gallery}}</span>
+                    <span class="underline">{{ $t('gallery.name') }}</span>
                 </h1>
             </div>
             <div class="gallery">
                 <div class="navLink">
-                    <p>{{content[content.current].followInstagram}} <a class="link" @mouseover="$hideCursor" @mouseleave="$showCursor" href="https://instagram.com/creerow">Instagram</a> 👉</p>
+                    <p>{{ $t('followInstagram') }} <a class="link" @mouseover="$hideCursor" @mouseleave="$showCursor" href="https://instagram.com/creerow">Instagram</a> 👉</p>
                 </div>
                 <div class="photo-grid">
                     <Photo v-for="index in photos.total" :key="index" :id="index" />
                 </div>
                 <div class="action-wrapper">
-                    <a href="/" class="action-btn" @mouseover="$hideCursor" @mouseleave="$showCursor">
-                        {{content[content.current].backHome}}
-                    </a>
+                    <a href="/" class="action-btn" @mouseover="$hideCursor" @mouseleave="$showCursor">{{ $t('backHome') }}</a>
                 </div>
             </div>
         </main>
@@ -48,16 +46,9 @@
             }
         },
         computed: {
-            photos: {
-                get: function () {
-                    return this.$store.state.photos;
-                }
-            },
-            content: {
-                get: function () {
-                    return this.$store.state.content;
-                },
-            },
+            photos: function () {
+                return this.$store.state.photos;
+            }
         },
         methods: {
             detectLang: function () {

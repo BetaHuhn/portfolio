@@ -1,11 +1,15 @@
 <template>
     <section id="projects" class="projects-wrapper">
         <h1>
-            <span class="underline">{{content[content.current].projects.title}}</span>
+            <span class="underline">{{ $t('projects.title') }}</span>
         </h1>
         <div class="list">
             <ProjectItem v-for="project in projects" :key="project.name" :project="project" />
-            <p>{{content[content.current].projects.checkOut}} <a class="link" href="https://github.com/betahuhn" @mouseover="$hideCursor" @mouseleave="$showCursor">GitHub</a></p>
+            <i18n path="projects.checkOut" tag="p">
+                <template #github>
+                   <a class="link" href="https://github.com/betahuhn" @mouseover="$hideCursor" @mouseleave="$showCursor">GitHub</a>
+                </template>
+            </i18n>
         </div>
     </section>
 </template>
@@ -21,10 +25,7 @@
         computed: {
             projects: function () {
                 return this.$store.state.projects;
-            },
-            content: function () {
-                return this.$store.state.content;
-            },
+            }
         }
     }
 </script>

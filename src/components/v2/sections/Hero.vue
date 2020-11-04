@@ -2,12 +2,12 @@
     <section class="hero-wrapper">
         <div class="half content">
             <h1>
-                {{content[content.current].title}}
+                {{ $t('title') }}
                 <span class="underline">Maximilian</span>
             </h1>
-            <p>{{content[content.current].subtitle}}</p>
+            <p>{{ $t('subtitle') }}</p>
             <a href="#contact">
-                <primary-btn title="Contact me">{{content[content.current].contactMe}}</primary-btn>
+                <primary-btn title="Contact me">{{ $t('contactMe') }}</primary-btn>
             </a>
         </div>
         <div class="half hero-img">

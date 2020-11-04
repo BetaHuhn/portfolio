@@ -24,6 +24,16 @@ const routes = [
     component: () => import("@/views/Gallery")
   },
   {
+    path: '/dolomites',
+    alias: '/dolomiten',
+    name: 'Dolomites',
+    meta: {
+      title: 'Dolomites - Maximilian Schiller',
+      scrollToTop: true
+    },
+    component: () => import("@/views/experiences/Dolomites")
+  },
+  {
     path: '/inprint',
     alias: '/impressum',
     name: 'Inprint',
