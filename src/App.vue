@@ -6,6 +6,8 @@
 </template>
 
 <script>
+	import Feedback from '@betahuhn/feedback-js';
+
 	export default {
 		name: 'App',
 		methods: {
@@ -25,6 +27,15 @@
 			},
 		},
 		mounted() {
+			const options = {
+				id: 'portfolio',
+				emailField: true,
+				primary: '#60ddaf',
+				endpoint: 'https://api.mxis.ch/form/feedback'
+			}
+
+			new Feedback(options).attach();
+
 			window.addEventListener('mousemove', this.handleMouseMove);
 		}
 	}

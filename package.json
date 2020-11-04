@@ -10,6 +10,7 @@
     "prod": "vue-cli-service build --modern"
   },
   "dependencies": {
+    "@betahuhn/feedback-js": "^0.3.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
