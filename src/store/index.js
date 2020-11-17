@@ -319,9 +319,9 @@ export default new Vuex.Store({
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ name: context.state.contact.name, email: context.state.contact.email, message: context.state.contact.message, website: window.location.href, lang: context.state.content.current })
+        body: JSON.stringify({ id: 'portfolio', name: context.state.contact.name, email: context.state.contact.email, message: context.state.contact.message, website: window.location.href, lang: context.state.content.current })
       };
-      fetch(`https://forward.betahuhn.de/api/contact/me`, options)
+      fetch(`https://api.mxis.ch/api/form/contact`, options)
         .then(async response => {
             const data = await response.json();
             if (!response.ok) {
