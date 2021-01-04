@@ -5,7 +5,7 @@
         <div class="bottom">
             <p class="githubStats">{{languageText}}
             <div class="content-links">
-                <a v-if="project.development" class="content-link development">Under development</a>
+                <a v-if="project.development" href="#" class="content-link development">Under development</a>
                 <a v-if="!project.development" @mouseover="$hideCursor" @mouseleave="$showCursor" :href="project.demo" class="content-link">Live Demo</a>
                 <a v-if="!project.development" @mouseover="$hideCursor" @mouseleave="$showCursor" :href="`https://github.com/${project.github}`" class="content-link">GitHub</a>
             </div>
