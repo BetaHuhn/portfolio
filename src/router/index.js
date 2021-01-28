@@ -1,54 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import BlogEntries from '../statics/blog.js';
-
-const blogRoutes = [];
-
-Object.keys(BlogEntries).forEach( section => {
-  BlogEntries[section].forEach( child => {
-    blogRoutes.push({
-      path: `/${section}/${child.id}`,
-      name: child.id,
-      props: {
-        section: section,
-        blog: child
-      },
-      meta: {
-        title: child.en.title + ' - Maximilian Schiller',
-        scrollToTop: true
-      },
-      component: () => import('@/components/Blog.vue'),
-    })
-  })
-})
-
-Object.keys(BlogEntries).forEach( section => {
-  blogRoutes.push({
-    path: `/${section}`,
-    name: section,
-    props: {
-      section: section
-    },
-    meta: {
-      title: section.charAt(0).toUpperCase() + section.slice(1) + ' - Maximilian Schiller',
-      scrollToTop: true
-    },
-    component: () => import('@/views/Blog.vue'),
-  })
-})
- 
-  /* const children = BlogEntries[section].map(child => ({
-    path: child.id,
-    name: child.id,
-    component: () => import(`@/markdowns/${section}/${child.id}.md`)
-  }))
-  return {
-    path: `/${section}`,
-    name: section,
-    component: () => import('@/views/Blog.vue'),
-    children
-  } */
-
 
 Vue.use(VueRouter)
 
@@ -100,7 +51,6 @@ const routes = [
     },
     component: () => import("@/views/Inprint")
   },
-  ...blogRoutes,
   {
     path: '*',
     name: '404',

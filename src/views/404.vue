@@ -7,15 +7,15 @@
                     <div class="branding noselect">
                         <div class="wordmark"> <img src="/static/404.svg"></div>
                     </div>
-                    <h2>{{content[content.current].error}} 404</h2>
+                    <h2>{{ $t('error') }} 404</h2>
                     <div style="text-align:center;margin-bottom:40px;">
-                        <p>{{content[content.current].notFound}}</p>
+                        <p>{{ $t('notFound') }}</p>
                     </div>
                     <div class="main-button">
-                        <button @mouseover="$hideCursor" @mouseleave="$showCursor" onclick="window.location.href='/'" class="clean"> ← {{content[content.current].backHome}}</button> 
+                        <button @mouseover="$hideCursor" @mouseleave="$showCursor" onclick="window.location.href='/'" class="clean"> ← {{ $t('backHome') }}</button> 
                     </div>
                     <div> 
-                        <a @mouseover="$hideCursor" @mouseleave="$showCursor" class="reportLink" target="_top" href="mailto:webmaster@mxis.ch">{{content[content.current].reportProblem}}</a> 
+                        <a @mouseover="$hideCursor" @mouseleave="$showCursor" class="reportLink" target="_top" href="mailto:webmaster@mxis.ch">{{ $t('reportProblem') }}</a> 
                     </div>
                 </div>
             </div>
@@ -31,32 +31,25 @@
         components:{
             NavBar
         },
-        computed: {
-            content: {
-                get: function () {
-                    return this.$store.state.content;
-                },
-            }
-        },
         methods:{
             detectLang: function () {
                 if (localStorage.getItem('lang')){
-                    if(localStorage.getItem('lang') == "de"){
-                        this.$store.dispatch("switchLangToDe");
-                        localStorage.setItem('lang', "de");
-                    }else{
-                        this.$store.dispatch("switchLangToEn");
-                        localStorage.setItem('lang', "en");
+                    if(localStorage.getItem('lang') === 'de'){
+                        localStorage.setItem('lang', 'de');
+                        return this.$i18n.locale = 'de'
                     }
-                }else{
-                    if(navigator.language.includes("de")){
-                        this.$store.dispatch("switchLangToDe");
-                        localStorage.setItem('lang', "de");
-                    }else{
-                        this.$store.dispatch("switchLangToEn");
-                        localStorage.setItem('lang', "en");
-                    }	
-                }	 
+
+                    localStorage.setItem('lang', 'en');
+                    return this.$i18n.locale = 'en'
+                }
+
+                if(navigator.language.includes('de')){
+                    localStorage.setItem('lang', 'de');
+                    return this.$i18n.locale = 'de'
+                }
+                
+                localStorage.setItem('lang', 'en');
+                return this.$i18n.locale = 'en'
             }
         },
         created(){

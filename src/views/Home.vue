@@ -6,8 +6,7 @@
         </transition>
         <div class="landing-wrapper">
             <div class="landing">
-                <Console hostname="betahuhn@MaxServer" path="/about" :messages="content[content.current].messages"
-                    :endText="content[content.current].endText" />
+                <Console hostname="betahuhn@MaxServer" path="/about"/>
                 <div id="social" class="socials">
                     <a @mouseover="$hideCursor" @mouseleave="$showCursor" href="https://github.com/BetaHuhn">
                         <font-awesome-icon title="GitHub" :icon="['fab', 'github']" size="lg" class="iconLogo" />
@@ -23,23 +22,25 @@
             </div>
         </div>
         <div class="content">
-            <h1 class="headline" style="margin-bottom: 0;">{{content[content.current].projects}}</h1>
-            <p class="subline">{{content[content.current].projectsSubline}}</p>
+            <h1 class="headline" style="margin-bottom: 0;">{{ $t('projects') }}</h1>
+            <p class="subline">{{ $t('projectsSubline') }}</p>
             <div class="content-grid">
                 <ProjectCard v-for="project in projects" :key="project.name" :project="project" />
             </div>
-            <p class="subline">{{content[content.current].projectsDev}}</p>
+            <div class="navLink">
+                <p>{{ $t('checkOutGitHub') }} <a href="https://github.com/betahuhn" @mouseover="$hideCursor" @mouseleave="$showCursor">GitHub</a></p>
+            </div>
         </div>
         <div class="skills">
-            <h1 class="headline">{{content[content.current].skills}}</h1>
+            <h1 class="headline">{{ $t('skills') }}</h1>
             <div class="skill-grid">
                 <SkillCard v-for="skill in skills" :key="skill.name" :skill="skill" />
             </div>
         </div>
         <div class="gallery">
-            <h1 class="headline" style="margin-bottom: 0;">{{content[content.current].gallery}}</h1>
+            <h1 class="headline" style="margin-bottom: 0;">{{ $t('gallery') }}</h1>
             <div class="navLink">
-                <p>{{content[content.current].link.click}} <router-link @mouseover="$hideCursor" @mouseleave="$showCursor" to="/gallery">{{content[content.current].link.here}}</router-link> {{content[content.current].link.more}}</p>
+                <p>{{ $t('link.click') }} <router-link @mouseover="$hideCursor" @mouseleave="$showCursor" to="/gallery">{{ $t('link.here') }}</router-link> {{ $t('link.more') }}</p>
             </div>
             <div class="photo-grid">
                 <Photo v-for="index in photos.firstLoad" :key="index" :id="index" />
@@ -47,8 +48,8 @@
         </div>
         <hr class="devider">
         <div class="contact">
-            <h1 class="headline" style="margin-bottom: 0;">{{content[content.current].contactHead}}</h1>
-            <p class="subline">{{content[content.current].contactSub}}</p>
+            <h1 class="headline" style="margin-bottom: 0;">{{ $t('contactHead') }}</h1>
+            <p class="subline">{{ $t('contactSub') }}</p>
             <Contact />
         </div>
         <Footer />
@@ -102,12 +103,7 @@
                 get: function () {
                     return this.$store.state.photos;
                 }
-            },
-            content: {
-                get: function () {
-                    return this.$store.state.content;
-                },
-            },
+            }
         },
         methods: {
             scrollSocial: function () {
@@ -122,26 +118,24 @@
                 }
             },
             detectLang: function () {
-                console.log(this.content.current)
                 if (localStorage.getItem('lang')){
-                    if(localStorage.getItem('lang') == "de"){
-                        localStorage.setItem('lang', "de");
-                        this.$store.dispatch("switchLangToDe");
-                    }else{
-                        localStorage.setItem('lang', "en");
-                        this.$store.dispatch("switchLangToEn");
+                    if(localStorage.getItem('lang') === 'de'){
+                        localStorage.setItem('lang', 'de');
+                        return this.$i18n.locale = 'de'
                     }
-                }else{
-                    if(navigator.language.includes("de")){
-                        localStorage.setItem('lang', "de");
-                        this.$store.dispatch("switchLangToDe");
-                    }else{
-                        localStorage.setItem('lang', "en");
-                        this.$store.dispatch("switchLangToEn");
-                    }	
-                }	 
-            },
-            
+
+                    localStorage.setItem('lang', 'en');
+                    return this.$i18n.locale = 'en'
+                }
+
+                if(navigator.language.includes('de')){
+                    localStorage.setItem('lang', 'de');
+                    return this.$i18n.locale = 'de'
+                }
+                
+                localStorage.setItem('lang', 'en');
+                return this.$i18n.locale = 'en'
+            }
         },
         created() {
             this.detectLang();

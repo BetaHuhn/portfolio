@@ -47,11 +47,6 @@
             Grid
         },
         computed: {
-            content: {
-                get: function () {
-                    return this.$store.state.content;
-                },
-            },
             isScroll: function () {
                 return this.$store.state.isScroll;
             },

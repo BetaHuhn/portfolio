@@ -1,0 +1,43 @@
+{
+    "skills": "Tech I've worked with...",
+    "projects": "Some of my recent Projects",
+    "projectsSubline": "From URL shortening and Open-Source libraries, to secure email forwarding, everything I built has the goal to help simplify tasks and protect users privacy. Here are some of the things I built in the last year:",
+    "projectsDev": "Currently I am building a self-hosted, open-source URL shortener and extending my email forwarding service into MailPal, a fully featured platform which helps you keep your inbox free and stops companies from tracking you around the internet.",
+    "link": {
+      "click": "Visit the ",
+      "here": "gallery",
+      "more": "to see more"
+    },
+    "checkOutGitHub": "Check out all my projects on",
+    "gallery": "Photo Gallery",
+    "inprint": "Inprint",
+    "followInstagram": "Follow me on Instagram",
+    "contactHead": "Lets talk!",
+    "contactSub": "Have a question? Just want to say Hi? Either way, reach out!",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "messagePlaceholder": "Your question, feedback or message goes here",
+    "reachOut": "Reach out!",
+    "orEmail": "or send an email directly to",
+    "by": "by",
+    "errorUnknown": "An error ocurred, please try again.",
+    "success": "Your message was sent!",
+    "errorContact": "Your message couldn't be sent, sorry",
+    "error": "Error",
+    "notFound": "This page doesn't exist",
+    "backHome": "Go back home",
+    "reportProblem": "Report a problem",
+    "loading": "Loading...",
+    "loadingImage": "Loading Image...",
+    "loadingExperience": "Loading Experience...",
+    "loadingError": "Error: Couldn't load content",
+    "messages": [
+      "Hello, my Name is Maximilian",
+      "I'm a 17 year old student from Germany",
+      "I mostly do Web Desgin/Developement with Vue.js and Node.js",
+      "I also have a passion for photograhpy",
+      "You can find me around the Internet by the handle @BetaHuhn"
+    ],
+    "endText": "Or directly send me an email: hello@mxis.ch"
+}

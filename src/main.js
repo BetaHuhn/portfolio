@@ -7,6 +7,7 @@ import { faStar, faDatabase, faArrowRight, faMountain, faChevronDown, faChevronU
 import { faGithub, faInstagram, faDribbble, faVuejs, faLinux, faHtml5, faNodeJs, faGitAlt, faAdobe, faPython } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueCodeHighlight from 'vue-code-highlight';
+import i18n from './i18n'
  
 Vue.use(VueCodeHighlight)
  
@@ -27,5 +28,6 @@ Vue.prototype.$showCursor = function() {
 new Vue({
   store,
   router,
+  i18n,
   render: h => h(App)
 }).$mount('#app')
