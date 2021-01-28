@@ -1,4 +1,4 @@
-name: Build CI
+name: Lint CI
 on:
   push:
     branches-ignore:
@@ -7,8 +7,8 @@ on:
     branches-ignore:
       - master
 jobs:
-  build:
-    name: Build
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
@@ -22,5 +22,5 @@ jobs:
         uses: c-hive/gha-npm-cache@v1
       - name: Install dependencies
         run: npm ci
-      - name: Run build command
-        run: npm run build
+      - name: Run lint command
+        run: npm run lint
