@@ -1,7 +1,7 @@
 {
     "skills": "Damit arbeite ich...",
     "projects": "Einige meiner letzten Projekte",
-    "projectsSubline": "From URL shortening and Open-Source libraries, to secure email forwarding, everything I built has the goal to help simplify tasks and protect users privacy. Here are some of the things I built in the last year:",
+    "projectsSubline": "Von URL-Kürzern und Open Source-Bibliotheken bis hin zu einem sicheren E-Mail-Weiterleitungsdienst hat alles, was ich programmiere das Ziel, Abläufe zu vereinfachen und die Privatsphäre von Usern zu schützen. Hier sind einige der Dinge, die ich im letzten Jahr programmiert habe:",
     "projectsDev": "Im Moment arbeite ich an einem open-source, self-hosted URL kürzer und an MailPal, einer Platform welche dabei hilft deine Inbox von Spam frei zuhalten und deine Privatsphäre zu schützen.",
     "link": {
       "click": "Besuche die ",
