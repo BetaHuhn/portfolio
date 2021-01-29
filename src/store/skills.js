@@ -41,9 +41,8 @@ export default [{
         color: "#3EB1CA"
     },
     {
-        name: "Adobe Creative Cloud",
+        name: "Adobe XD • Photoshop • Lightroom",
         description: "UI Design & Photo Manipulation",
-        icon: ['fab', "adobe"],
-        color: "#FA0F00"
+        color: "#E17FDC"
     },
 ]
