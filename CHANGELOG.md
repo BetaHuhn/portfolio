@@ -1,3 +1,15 @@
+## [v1.3.1] - 2021-01-29
+
+[Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.1) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.0...v1.3.1) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.1) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.1.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.1.tar.gz))
+
+### Critical hotfixes
+
+- [`7b91abe`](https://github.com/BetaHuhn/portfolio/commit/7b91abe)  Remove adobe icon
+
+### Dependency updates
+
+- [`2ee4dfe`](https://github.com/BetaHuhn/portfolio/commit/2ee4dfe)  Update deps
+
 ## [v1.3.0] - 2021-01-28
 ### Changed
 - use i18n for translations
