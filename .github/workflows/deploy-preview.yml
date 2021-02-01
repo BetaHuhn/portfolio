@@ -1,7 +1,8 @@
-name: Deploy CI
+name: Deploy Preview CI
 on:
   push:
     branches: [experimental]
+  workflow_dispatch:
 jobs:
   preview:
     runs-on: ubuntu-latest
