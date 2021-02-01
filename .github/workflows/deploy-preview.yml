@@ -20,4 +20,3 @@ jobs:
           ALIAS_DOMAINS: |
             preview.mxis.ch
           PRODUCTION: false
-          GITHUB_DEPLOYMENT: false
