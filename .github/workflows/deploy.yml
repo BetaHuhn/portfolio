@@ -23,4 +23,4 @@ jobs:
           ALIAS_DOMAINS: |
             maximilianschiller.de
             ms-portfolio.vercel.app
-          PR_PREVIEW_DOMAIN: "{REPO}-{PR}.betahuhn.now.sh"
+          PR_PREVIEW_DOMAIN: "{REPO}-{PR}.betahuhn.vercel.app"
