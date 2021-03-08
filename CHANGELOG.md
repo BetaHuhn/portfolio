@@ -1,3 +1,7 @@
+## [v1.3.5] - 2021-03-08
+
+[Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.5) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.4...v1.3.5) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.5) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.5.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.5.tar.gz))
+
 ## [v1.3.4] - 2021-03-01
 
 [Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.4) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.3...v1.3.4) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.4) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.4.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.4.tar.gz))
