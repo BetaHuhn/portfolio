@@ -4,23 +4,6 @@ on:
     branches:
       - master
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14
-      - name: Cache node modules
-        uses: c-hive/gha-npm-cache@v1
-      - name: Install dependencies
-        run: npm ci
-      - name: Run build command
-        run: npm run build
   lint:
     name: Lint
     runs-on: ubuntu-latest
@@ -39,8 +22,9 @@ jobs:
       - name: Run lint command
         run: npm run lint
   release:
-    needs: [build, lint]
-    runs-on: ubuntu-18.04
+    needs: [lint]
+    name: Build and release
+    runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
       - name: Checkout
@@ -53,10 +37,13 @@ jobs:
         uses: c-hive/gha-npm-cache@v1
       - name: Install dependencies
         run: npm ci
-      - name: Release
+      - name: Run build command
+        run: npm run build
+      - name: Run Semantic Release
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GIT_AUTHOR_NAME: "BetaHuhn Bot"
           GIT_AUTHOR_EMAIL: "bot@mxis.ch"
           GIT_COMMITTER_NAME: "BetaHuhn Bot"
