@@ -1,3 +1,15 @@
+## [v1.3.7] - 2021-03-22
+
+[Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.7) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.6...v1.3.7) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.7) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.7.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.7.tar.gz))
+
+### Dependency updates
+
+- [`8fc5607`](https://github.com/BetaHuhn/portfolio/commit/8fc5607)  Bump elliptic from 6.5.3 to 6.5.4 (#24)
+(Issues: [`#24`](https://github.com/BetaHuhn/portfolio/issues/24))- [`703c1f7`](https://github.com/BetaHuhn/portfolio/commit/703c1f7)  Bump vue-i18n from 8.24.0 to 8.24.1 (#25)
+(Issues: [`#25`](https://github.com/BetaHuhn/portfolio/issues/25))- [`1ecc11d`](https://github.com/BetaHuhn/portfolio/commit/1ecc11d)  Bump @fortawesome/fontawesome-svg-core from 1.2.34 to 1.2.35 (#26)
+(Issues: [`#26`](https://github.com/BetaHuhn/portfolio/issues/26))- [`3d4def4`](https://github.com/BetaHuhn/portfolio/commit/3d4def4)  Bump @fortawesome/free-solid-svg-icons from 5.15.2 to 5.15.3 (#28)
+(Issues: [`#28`](https://github.com/BetaHuhn/portfolio/issues/28))
+
 ## [v1.3.6] - 2021-03-15
 
 [Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.6) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.5...v1.3.6) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.6) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.6.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.6.tar.gz))
