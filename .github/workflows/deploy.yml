@@ -25,6 +25,7 @@ jobs:
           ref: ${{ steps.script.outputs.ref }}
           repository: ${{ steps.script.outputs.repo }}
           
+      - name: Deploy to Vercel Action
         uses: BetaHuhn/deploy-to-vercel-action@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
