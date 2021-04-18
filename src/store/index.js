@@ -23,9 +23,6 @@ function defaultState() {
       modal: false
     },
     contact: {
-      name: "",
-      email: "",
-      message: "",
       success: false,
       error: false
     },
@@ -55,15 +52,6 @@ export default new Vuex.Store({
     switchLangToDe(state) {
       state.content.current = "de";
     },
-    changeContactName(state, name){
-      state.contact.name = name;
-    },
-    changeContactEmail(state, email){
-      state.contact.email = email;
-    },
-    changeContactMessage(state, message){
-      state.contact.message = message;
-    },
     changeIsScroll(state, newValue) {
       state.isScroll = newValue;
     },
@@ -90,38 +78,29 @@ export default new Vuex.Store({
     switchLangToDe(context) {
       context.commit("switchLangToDe")
     },
-    async submitMessage (context) {
+    async submitMessage ({ commit }, { name, email, message, lang }) {
       const options = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ id: 'portfolio', name: context.state.contact.name, email: context.state.contact.email, message: context.state.contact.message, website: window.location.href, lang: context.state.content.current })
+        body: JSON.stringify({ id: 'portfolio', name, email, message, website: window.location.href, lang })
       };
       fetch(`https://api.mxis.ch/api/form/contact`, options)
         .then(async response => {
             const data = await response.json();
             if (!response.ok) {
                 const error = (data && data.message) || response.status;
-                context.commit("displayError", error);
+                commit("displayError", error);
                 return Promise.reject(error);
             }
             console.log(data)
-            context.commit("displaySuccess")
+            commit("displaySuccess")
         })
         .catch(error => {
-            context.commit("displayError", error);
+            commit("displayError", error);
         });
 
-    },
-    changeContactName( context, name){
-      context.commit("changeContactName", name)
-    },
-    changeContactEmail( context, email){
-      context.commit("changeContactEmail", email)
-    },
-    changeContactMessage( context, message){
-      context.commit("changeContactMessage", message)
     },
     showImageModal( context, id ){
       context.commit("showImageModal", id)

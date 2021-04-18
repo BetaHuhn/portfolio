@@ -48,8 +48,6 @@
         </div>
         <hr class="devider">
         <div class="contact">
-            <h1 class="headline" style="margin-bottom: 0;">{{ $t('contactHead') }}</h1>
-            <p class="subline">{{ $t('contactSub') }}</p>
             <Contact />
         </div>
         <Footer />

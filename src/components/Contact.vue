@@ -1,6 +1,8 @@
 <template>
 	<div class="contact-form">
 		<div class="contact-content" v-if="!success && !error">
+			<h1>{{ $t('contactHead') }}</h1>
+			<p>{{ $t('contactSub') }}</p>
 			<label for="name">{{ $t('name') }}</label>
 			<input id="name" @mouseover="$hideCursor" @mouseleave="$showCursor" v-model="name" name="name" type="text" :class="nameInvalid && 'invalidInput'" placeholder="Richard Hendrix">
 			<label for="email">{{ $t('email')}}</label>
@@ -27,34 +29,13 @@
 			return{
 				nameInvalid: false,
 				emailInvalid: false,
-				messageInvalid: false
+				messageInvalid: false,
+				name: '',
+				email: '',
+				message: ''
 			}
 		},
 		computed: {
-			name:{
-				get: function(){ 
-					return this.$store.state.contact.name; 
-				}, 
-				set: function(nameNew){ 
-					this.$store.dispatch('changeContactName', nameNew); 
-				}
-			},
-			email:{
-				get: function(){ 
-					return this.$store.state.contact.email; 
-				}, 
-				set: function(emailNew){ 
-					this.$store.dispatch('changeContactEmail', emailNew); 
-				}
-			},
-			message:{
-				get: function(){ 
-					return this.$store.state.contact.message; 
-				}, 
-				set: function(messageNew){ 
-					this.$store.dispatch('changeContactMessage', messageNew); 
-				}
-			},
 			success:  function () {
 				return this.$store.state.contact.success;
 			},
@@ -83,7 +64,8 @@
 					this.$store.dispatch("submitMessage", {
 						name: this.name,
 						email: this.email,
-						message: this.message
+						message: this.message,
+						lang: this.$i18n.locale
 					})
 				}
 			},
@@ -96,8 +78,9 @@
 </script>
 
 <style>
-	.contact{
+	.contact-form {
 		margin-bottom: 4rem;
+		margin-top: 2rem;
 	}
 
 	.contact-content{
@@ -107,6 +90,26 @@
 		display: flex;
 		flex-direction: column;
 	}
+
+	.contact-content h1 {
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 750px) {
+        .contact-content h1 {
+            font-size: 20px;
+        }
+    }
+
+	.contact-content p {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--font-light)
+    }
+
 	.contact-content a{
 		color: var(--primary);
 		text-decoration: none;
