@@ -1,3 +1,20 @@
+## [v1.3.8] - 2021-04-18
+
+[Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.8) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.7...v1.3.8) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.8) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.8.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.8.tar.gz))
+
+### Bug fixes
+
+- [`bf51995`](https://github.com/BetaHuhn/portfolio/commit/bf51995)  Add check if skill icon is specified
+- [`a620e1b`](https://github.com/BetaHuhn/portfolio/commit/a620e1b)  Fix contact form
+
+### Dependency updates
+
+- [`fc63823`](https://github.com/BetaHuhn/portfolio/commit/fc63823)  Bump @vue/cli-plugin-babel from 4.5.11 to 4.5.12
+- [`4717222`](https://github.com/BetaHuhn/portfolio/commit/4717222)  Bump @vue/cli-plugin-router from 4.5.11 to 4.5.12
+- [`df3bc46`](https://github.com/BetaHuhn/portfolio/commit/df3bc46)  Bump @vue/cli-service from 4.5.11 to 4.5.12
+- [`f71acea`](https://github.com/BetaHuhn/portfolio/commit/f71acea)  Bump y18n from 4.0.0 to 4.0.3
+- [`d052b5d`](https://github.com/BetaHuhn/portfolio/commit/d052b5d)  Bump @vue/cli-plugin-vuex from 4.5.11 to 4.5.12
+
 ## [v1.3.7] - 2021-03-22
 
 [Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.7) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.6...v1.3.7) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.7) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.7.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.7.tar.gz))
