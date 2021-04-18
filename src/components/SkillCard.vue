@@ -1,7 +1,7 @@
 <template>
 	<div class="skill-item" @mouseover="$hideCursor" @mouseleave="$showCursor">
 		<div class="skill-wrapper">
-			<p><font-awesome-icon :icon="skill.icon" size="lg" class="skillIcon" :style="{ color: skill.color }" /> {{ skill.name }}</p>
+			<p><font-awesome-icon v-if="skill.icon !== undefined" :icon="skill.icon" size="lg" class="skillIcon" :style="{ color: skill.color }" /> {{ skill.name }}</p>
 		</div>
 		<p class="skillDesc">{{ skill.description }}</p>
 	</div>
