@@ -1,3 +1,13 @@
+## [v1.3.9] - 2021-04-26
+
+[Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.9) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.8...v1.3.9) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.9) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.9.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.9.tar.gz))
+
+### Dependency updates
+
+- [`e16d575`](https://github.com/BetaHuhn/portfolio/commit/e16d575)  Bump humanize-duration from 3.25.1 to 3.25.2
+- [`e66e3bb`](https://github.com/BetaHuhn/portfolio/commit/e66e3bb)  Bump core-js from 3.10.1 to 3.10.2
+- [`0a353b9`](https://github.com/BetaHuhn/portfolio/commit/0a353b9)  Bump core-js from 3.10.2 to 3.11.0
+
 ## [v1.3.8] - 2021-04-18
 
 [Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.8) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.7...v1.3.8) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.8) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.8.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.8.tar.gz))
