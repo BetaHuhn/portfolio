@@ -1,3 +1,13 @@
+## [v1.3.10] - 2021-05-03
+
+[Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.10) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.9...v1.3.10) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.10) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.10.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.10.tar.gz))
+
+### Dependency updates
+
+- [`d671f2b`](https://github.com/BetaHuhn/portfolio/commit/d671f2b)  Bump core-js from 3.11.0 to 3.11.1
+- [`9488910`](https://github.com/BetaHuhn/portfolio/commit/9488910)  Bump vue-i18n from 8.24.3 to 8.24.4
+- [`13f787c`](https://github.com/BetaHuhn/portfolio/commit/13f787c)  Bump ssri from 6.0.1 to 6.0.2
+
 ## [v1.3.9] - 2021-04-26
 
 [Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.9) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.8...v1.3.9) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.9) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.9.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.9.tar.gz))
