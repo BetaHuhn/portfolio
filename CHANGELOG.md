@@ -1,3 +1,14 @@
+## [v1.3.11] - 2021-05-10
+
+[Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.11) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.10...v1.3.11) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.11) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.11.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.11.tar.gz))
+
+### Dependency updates
+
+- [`64401b6`](https://github.com/BetaHuhn/portfolio/commit/64401b6)  Bump humanize-duration from 3.25.2 to 3.26.0
+- [`846c257`](https://github.com/BetaHuhn/portfolio/commit/846c257)  Bump core-js from 3.11.1 to 3.11.2
+- [`7b88c8f`](https://github.com/BetaHuhn/portfolio/commit/7b88c8f)  Bump core-js from 3.11.2 to 3.11.3
+- [`62592a4`](https://github.com/BetaHuhn/portfolio/commit/62592a4)  Bump core-js from 3.11.3 to 3.12.0
+
 ## [v1.3.10] - 2021-05-03
 
 [Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.10) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.9...v1.3.10) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.10) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.10.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.10.tar.gz))
