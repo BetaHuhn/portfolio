@@ -1,3 +1,18 @@
+## [v1.3.12] - 2021-05-17
+
+[Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.12) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.11...v1.3.12) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.12) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.12.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.12.tar.gz))
+
+### Dependency updates
+
+- [`1628716`](https://github.com/BetaHuhn/portfolio/commit/1628716)  Bump core-js from 3.12.0 to 3.12.1
+- [`e5a8d47`](https://github.com/BetaHuhn/portfolio/commit/e5a8d47)  Bump @vue/cli-plugin-eslint from 4.5.12 to 4.5.13
+- [`3e92d1a`](https://github.com/BetaHuhn/portfolio/commit/3e92d1a)  Bump @vue/cli-plugin-vuex from 4.5.12 to 4.5.13
+- [`79b42ce`](https://github.com/BetaHuhn/portfolio/commit/79b42ce)  Bump @vue/cli-plugin-router from 4.5.12 to 4.5.13
+- [`5dd70fc`](https://github.com/BetaHuhn/portfolio/commit/5dd70fc)  Bump @vue/cli-plugin-babel from 4.5.12 to 4.5.13
+- [`2f494d0`](https://github.com/BetaHuhn/portfolio/commit/2f494d0)  Bump @vue/cli-service from 4.5.12 to 4.5.13
+- [`0115e6c`](https://github.com/BetaHuhn/portfolio/commit/0115e6c)  Bump lodash from 4.17.19 to 4.17.21
+- [`7af93da`](https://github.com/BetaHuhn/portfolio/commit/7af93da)  Bump hosted-git-info from 2.8.8 to 2.8.9
+
 ## [v1.3.11] - 2021-05-10
 
 [Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.11) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.10...v1.3.11) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.11) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.11.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.11.tar.gz))
