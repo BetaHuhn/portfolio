@@ -1,3 +1,13 @@
+## [v1.3.13] - 2021-05-31
+
+[Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.13) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.12...v1.3.13) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.13) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.13.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.13.tar.gz))
+
+### Dependency updates
+
+- [`733adbb`](https://github.com/BetaHuhn/portfolio/commit/733adbb)  Bump core-js from 3.12.1 to 3.13.0
+- [`16aa7ad`](https://github.com/BetaHuhn/portfolio/commit/16aa7ad)  Bump browserslist from 4.16.3 to 4.16.6
+- [`01e002c`](https://github.com/BetaHuhn/portfolio/commit/01e002c)  Bump dns-packet from 1.3.1 to 1.3.4
+
 ## [v1.3.12] - 2021-05-17
 
 [Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.12) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.11...v1.3.12) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.12) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.12.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.12.tar.gz))
