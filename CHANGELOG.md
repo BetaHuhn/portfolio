@@ -1,3 +1,13 @@
+## [v1.3.14] - 2021-06-07
+
+[Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.14) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.13...v1.3.14) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.14) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.14.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.14.tar.gz))
+
+### Dependency updates
+
+- [`7d4a556`](https://github.com/BetaHuhn/portfolio/commit/7d4a556)  Bump core-js from 3.13.0 to 3.13.1
+- [`b8c6c08`](https://github.com/BetaHuhn/portfolio/commit/b8c6c08)  Bump eslint-plugin-vue from 7.9.0 to 7.10.0
+- [`cfa4f92`](https://github.com/BetaHuhn/portfolio/commit/cfa4f92)  Bump ws from 6.2.1 to 6.2.2
+
 ## [v1.3.13] - 2021-05-31
 
 [Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.13) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.12...v1.3.13) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.13) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.13.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.13.tar.gz))
