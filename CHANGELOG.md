@@ -1,3 +1,13 @@
+## [v1.3.15] - 2021-06-14
+
+[Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.15) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.14...v1.3.15) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.15) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.15.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.15.tar.gz))
+
+### Dependency updates
+
+- [`37a3a6a`](https://github.com/BetaHuhn/portfolio/commit/37a3a6a)  Bump core-js from 3.13.1 to 3.14.0
+- [`79a029b`](https://github.com/BetaHuhn/portfolio/commit/79a029b)  Bump humanize-duration from 3.26.0 to 3.27.0
+- [`a8cc4c2`](https://github.com/BetaHuhn/portfolio/commit/a8cc4c2)  Bump eslint-plugin-vue from 7.10.0 to 7.11.0
+
 ## [v1.3.14] - 2021-06-07
 
 [Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.14) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.13...v1.3.14) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.14) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.14.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.14.tar.gz))
