@@ -1,3 +1,12 @@
+## [v1.3.16] - 2021-06-21
+
+[Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.16) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.15...v1.3.16) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.16) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.16.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.16.tar.gz))
+
+### Dependency updates
+
+- [`9417d40`](https://github.com/BetaHuhn/portfolio/commit/9417d40)  Bump eslint-plugin-vue from 7.11.0 to 7.11.1
+- [`a1564ea`](https://github.com/BetaHuhn/portfolio/commit/a1564ea)  Bump postcss from 7.0.35 to 7.0.36
+
 ## [v1.3.15] - 2021-06-14
 
 [Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.15) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.14...v1.3.15) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.15) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.15.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.15.tar.gz))
