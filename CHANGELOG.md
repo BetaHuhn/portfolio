@@ -1,3 +1,14 @@
+## [v1.3.17] - 2021-06-28
+
+[Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.17) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.16...v1.3.17) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.17) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.17.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.17.tar.gz))
+
+### Dependency updates
+
+- [`14cf19f`](https://github.com/BetaHuhn/portfolio/commit/14cf19f)  Bump core-js from 3.14.0 to 3.15.0
+- [`7e81e9f`](https://github.com/BetaHuhn/portfolio/commit/7e81e9f)  Bump vue-i18n from 8.24.4 to 8.24.5
+- [`a6112ec`](https://github.com/BetaHuhn/portfolio/commit/a6112ec)  Bump vue-router from 3.5.1 to 3.5.2
+- [`b524a9f`](https://github.com/BetaHuhn/portfolio/commit/b524a9f)  Bump core-js from 3.15.0 to 3.15.1
+
 ## [v1.3.16] - 2021-06-21
 
 [Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.16) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.15...v1.3.16) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.16) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.16.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.16.tar.gz))
