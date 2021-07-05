@@ -1,3 +1,13 @@
+## [v1.3.18] - 2021-07-05
+
+[Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.18) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.17...v1.3.18) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.18) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.18.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.18.tar.gz))
+
+### Dependency updates
+
+- [`0cd510d`](https://github.com/BetaHuhn/portfolio/commit/0cd510d)  Bump eslint-plugin-vue from 7.11.1 to 7.12.1
+- [`9110425`](https://github.com/BetaHuhn/portfolio/commit/9110425)  Bump vue2-leaflet from 2.7.0 to 2.7.1
+- [`d387381`](https://github.com/BetaHuhn/portfolio/commit/d387381)  Bump core-js from 3.15.1 to 3.15.2
+
 ## [v1.3.17] - 2021-06-28
 
 [Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.17) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.16...v1.3.17) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.17) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.17.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.17.tar.gz))
