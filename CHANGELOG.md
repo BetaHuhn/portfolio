@@ -1,3 +1,11 @@
+## [v1.3.19] - 2021-07-12
+
+[Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.19) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.18...v1.3.19) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.19) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.19.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.19.tar.gz))
+
+### Dependency updates
+
+- [`23d8ada`](https://github.com/BetaHuhn/portfolio/commit/23d8ada)  Bump eslint-plugin-vue from 7.12.1 to 7.13.0
+
 ## [v1.3.18] - 2021-07-05
 
 [Release notes](https://github.com/BetaHuhn/portfolio/releases/tag/v1.3.18) · [Compare](https://github.com/BetaHuhn/portfolio/compare/v1.3.17...v1.3.18) · [Tag](https://github.com/BetaHuhn/portfolio/tree/v1.3.18) · Archive ([zip](https://github.com/BetaHuhn/portfolio/archive/v1.3.18.zip) · [tar.gz](https://github.com/BetaHuhn/portfolio/archive/v1.3.18.tar.gz))
